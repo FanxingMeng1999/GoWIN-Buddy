@@ -1,0 +1,133 @@
+{
+  "name": "gowin-buddy-pet",
+  "version": "0.2.1",
+  "description": "GoWIN!Buddy desktop pet runtime for universal RPG feedback loops.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node launch.js",
+    "build": "electron-builder --win --dir --config.electronDist=node_modules/electron/dist",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder --win --mac --linux",
+    "test": "node --test test/*.test.js",
+    "test:e2e:dashboard": "node --test test-e2e/dashboard-sync.e2e.test.js",
+    "install:gemini-hooks": "node hooks/gemini-install.js",
+    "install:cursor-hooks": "node hooks/cursor-install.js",
+    "install:kiro-hooks": "node hooks/kiro-install.js"
+  },
+  "keywords": [
+    "gowin",
+    "buddy",
+    "desktop-pet",
+    "electron",
+    "claude-code"
+  ],
+  "author": "FanxingMeng1999",
+  "license": "MIT",
+  "type": "commonjs",
+  "build": {
+    "appId": "com.gowin.buddy.pet",
+    "productName": "GoWIN!Buddy",
+    "mac": {
+      "icon": "assets/icon.png",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.entertainment",
+      "extendInfo": {
+        "LSUIElement": true
+      }
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "artifactName": "GoWINBuddy-Setup-${version}.${ext}",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signExecutable": false
+    },
+    "linux": {
+      "maintainer": "FanxingMeng1999 <210701967+FanxingMeng1999@users.noreply.github.com>",
+      "icon": "assets/icons",
+      "category": "Utility",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "deb",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "installerHeaderIcon": "assets/icon.ico"
+    },
+    "files": [
+      "src/**/*",
+      "assets/svg/**/*",
+      "assets/hires/**/*",
+      "assets/sounds/**/*",
+      "assets/tray-icon*.png",
+      "hooks/**/*",
+      "extensions/**/*",
+      "agents/**/*",
+      "themes/**/*",
+      "LICENSE",
+      "assets/LICENSE",
+      "!node_modules/koffi/vendor/**/*",
+      "!node_modules/koffi/src/**/*",
+      "!node_modules/koffi/doc/**/*"
+    ],
+    "asarUnpack": [
+      "hooks/**/*",
+      "extensions/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "assets/icon.ico",
+        "to": "icon.ico"
+      }
+    ],
+    "publish": []
+  },
+  "devDependencies": {
+    "electron": "^41.0.2",
+    "electron-builder": "^26.8.1",
+    "playwright-core": "^1.54.1"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.3",
+    "htmlparser2": "^12.0.0",
+    "koffi": "^2.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FanxingMeng1999/GoWIN-Buddy.git",
+    "directory": "apps/pet-desktop"
+  },
+  "homepage": "https://github.com/FanxingMeng1999/GoWIN-Buddy",
+  "bugs": {
+    "url": "https://github.com/FanxingMeng1999/GoWIN-Buddy/issues"
+  }
+}

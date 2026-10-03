@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+  <style>
+    :root {
+      --card-bg: rgba(255, 253, 248, 0.96);
+      --card-border: rgba(253, 186, 116, 0.38);
+      --card-shadow: 0 12px 28px rgba(249, 115, 22, 0.2);
+      --title: #25324a;
+      --body: #55637f;
+      --accent-strong: #f97316;
+      --accent-soft: rgba(251, 191, 36, 0.2);
+      --ornament: rgba(255, 255, 255, 0.55);
+      --emoji-bg: rgba(16, 185, 129, 0.16);
+      --emoji-fg: #059669;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    body {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: calc(100% - 8px);
+      min-height: 74px;
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      box-shadow: var(--card-shadow);
+      backdrop-filter: blur(10px);
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+      transition: opacity 180ms ease, transform 220ms ease;
+    }
+
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .emoji,
+    .copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .emoji {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--emoji-bg);
+      color: var(--emoji-fg);
+      font-size: 16px;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .copy {
+      min-width: 0;
+    }
+
+    .title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--title);
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .message {
+      margin-top: 4px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: var(--body);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .card.variant-grid::before {
+      inset: 8px;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.14) 1px, transparent 1px);
+      background-size: 16px 16px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.1));
+    }
+
+    .card.variant-grid::after {
+      inset: auto 10px 8px auto;
+      width: 88px;
+      height: 28px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 40%, var(--accent-soft), transparent 55%);
+      opacity: 0.75;
+    }
+
+    .card.variant-night {
+      border-radius: 16px;
+    }
+
+    .card.variant-night::before {
+      background:
+        radial-gradient(circle at 18% 24%, rgba(255,255,255,0.16), transparent 22%),
+        radial-gradient(circle at 82% 18%, var(--accent-soft), transparent 24%),
+        linear-gradient(135deg, rgba(255,255,255,0.06), transparent 56%);
+      opacity: 0.95;
+    }
+
+    .card.variant-night::after {
+      inset: 0;
+      background:
+        radial-gradient(circle at 24% 30%, rgba(255,255,255,0.3) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 74% 22%, rgba(255,255,255,0.24) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 88% 64%, rgba(255,255,255,0.18) 0 1px, transparent 1.5px);
+      opacity: 0.7;
+    }
+
+    .card.variant-milk {
+      border-radius: 18px;
+    }
+
+    .card.variant-milk::before {
+      background-image:
+        radial-gradient(circle at 22px 18px, rgba(255,255,255,0.46) 0 1.5px, transparent 2px),
+        radial-gradient(circle at 96px 46px, rgba(255,255,255,0.42) 0 1.5px, transparent 2px),
+        radial-gradient(circle at 182px 28px, rgba(255,255,255,0.38) 0 1.5px, transparent 2px),
+        radial-gradient(circle at 222px 60px, rgba(255,255,255,0.3) 0 1.5px, transparent 2px);
+      opacity: 0.85;
+    }
+
+    .card.variant-milk::after {
+      inset: auto 10px 8px 10px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.65), transparent);
+      opacity: 0.9;
+    }
+
+    .card.variant-lab {
+      border-radius: 12px 18px 12px 18px;
+    }
+
+    .card.variant-lab::before {
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 13px,
+          rgba(255,255,255,0.08) 13px,
+          rgba(255,255,255,0.08) 14px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 13px,
+          rgba(255,255,255,0.06) 13px,
+          rgba(255,255,255,0.06) 14px
+        );
+      opacity: 0.42;
+    }
+
+    .card.variant-lab::after {
+      inset: 8px auto 8px 8px;
+      width: 12px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, var(--accent-strong), transparent);
+      opacity: 0.72;
+    }
+
+    .card.variant-soda {
+      border-radius: 18px 18px 14px 14px;
+    }
+
+    .card.variant-soda::before {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.16), transparent 42%),
+        radial-gradient(circle at 82% 24%, var(--accent-soft), transparent 24%),
+        radial-gradient(circle at 18% 78%, rgba(255,255,255,0.14), transparent 22%);
+      opacity: 0.96;
+    }
+
+    .card.variant-soda::after {
+      background:
+        radial-gradient(circle at 16% 24%, rgba(255,255,255,0.34) 0 5px, transparent 6px),
+        radial-gradient(circle at 82% 68%, rgba(255,255,255,0.28) 0 7px, transparent 8px),
+        radial-gradient(circle at 72% 22%, rgba(255,255,255,0.18) 0 3px, transparent 4px);
+      opacity: 0.88;
+    }
+
+    .card.variant-paper {
+      border-radius: 14px 18px 14px 18px;
+    }
+
+    .card.variant-paper::before {
+      inset: 8px 10px;
+      background:
+        linear-gradient(180deg, transparent 0 10px, rgba(91, 77, 53, 0.08) 10px 11px, transparent 11px 21px),
+        linear-gradient(90deg, rgba(255,255,255,0.14), transparent 28%);
+      opacity: 0.68;
+    }
+
+    .card.variant-paper::after {
+      inset: 10px 14px auto auto;
+      width: 72px;
+      height: 18px;
+      border-radius: 4px;
+      transform: rotate(7deg);
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.48), rgba(255,255,255,0.16));
+      box-shadow: 0 4px 10px rgba(120, 88, 46, 0.12);
+      opacity: 0.85;
+    }
+
+    .card.variant-aurora {
+      border-radius: 20px 20px 14px 20px;
+    }
+
+    .card.variant-aurora::before {
+      background:
+        linear-gradient(120deg, transparent 10%, var(--accent-soft) 38%, transparent 66%),
+        radial-gradient(circle at 20% 24%, rgba(255,255,255,0.2), transparent 22%),
+        radial-gradient(circle at 80% 72%, rgba(255,255,255,0.14), transparent 28%);
+      opacity: 0.96;
+    }
+
+    .card.variant-aurora::after {
+      inset: 10px auto auto 12px;
+      width: 144px;
+      height: 48px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--ornament), transparent);
+      filter: blur(12px);
+      transform: rotate(-10deg);
+      opacity: 0.34;
+    }
+
+    .card.variant-cocoa {
+      border-radius: 16px;
+    }
+
+    .card.variant-cocoa::before {
+      background:
+        radial-gradient(circle at 18% 24%, rgba(255,255,255,0.14), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,0.08), transparent 42%),
+        repeating-linear-gradient(90deg, transparent 0 18px, rgba(255,255,255,0.04) 18px 20px);
+      opacity: 0.82;
+    }
+
+    .card.variant-cocoa::after {
+      inset: auto 16px 10px auto;
+      width: 76px;
+      height: 22px;
+      background:
+        radial-gradient(circle at 18% 62%, rgba(255,255,255,0.42) 0 4px, transparent 5px),
+        radial-gradient(circle at 54% 42%, rgba(255,255,255,0.28) 0 6px, transparent 7px),
+        radial-gradient(circle at 82% 60%, rgba(255,255,255,0.18) 0 3px, transparent 4px);
+      opacity: 0.58;
+    }
+
+    .card.tone-mint {
+      --emoji-bg: rgba(16, 185, 129, 0.16);
+      --emoji-fg: #059669;
+    }
+
+    .card.tone-sky {
+      --emoji-bg: rgba(59, 130, 246, 0.16);
+      --emoji-fg: #2563eb;
+    }
+
+    .card.tone-orange {
+      --emoji-bg: rgba(249, 115, 22, 0.18);
+      --emoji-fg: #ea580c;
+    }
+
+    .card.tone-purple {
+      --emoji-bg: rgba(168, 85, 247, 0.17);
+      --emoji-fg: #9333ea;
+    }
+  </style>
+</head>
+<body>
+  <div id="reminderCard" class="card variant-grid tone-mint">
+    <div id="emoji" class="emoji">💡</div>
+    <div class="copy">
+      <div id="title" class="title">小提醒</div>
+      <div id="message" class="message">稍微休息一下，再继续推进。</div>
+    </div>
+  </div>
+
+  <script>
+    const card = document.getElementById("reminderCard");
+    const emojiEl = document.getElementById("emoji");
+    const titleEl = document.getElementById("title");
+    const messageEl = document.getElementById("message");
+    let visibleTimer = null;
+
+    function clearVisibleTimer() {
+      if (!visibleTimer) return;
+      clearTimeout(visibleTimer);
+      visibleTimer = null;
+    }
+
+    function normalizeTone(value) {
+      const tone = String(value || "").trim().toLowerCase();
+      if (tone === "sky" || tone === "orange" || tone === "purple" || tone === "mint") return tone;
+      return "mint";
+    }
+
+    function normalizeVariant(value) {
+      const variant = String(value || "").trim().toLowerCase();
+      if (
+        variant === "night" ||
+        variant === "milk" ||
+        variant === "lab" ||
+        variant === "soda" ||
+        variant === "paper" ||
+        variant === "aurora" ||
+        variant === "cocoa" ||
+        variant === "grid"
+      ) {
+        return variant;
+      }
+      return "grid";
+    }
+
+    function applyStyle(style) {
+      const source = style && typeof style === "object" ? style : {};
+      const mapping = {
+        "--card-bg": source.cardBg || "rgba(255, 253, 248, 0.96)",
+        "--card-border": source.cardBorder || "rgba(253, 186, 116, 0.38)",
+        "--card-shadow": source.cardShadow || "0 12px 28px rgba(249, 115, 22, 0.2)",
+        "--title": source.titleColor || "#25324a",
+        "--body": source.bodyColor || "#55637f",
+        "--accent-strong": source.accentStrong || "#f97316",
+        "--accent-soft": source.accentSoft || "rgba(251, 191, 36, 0.2)",
+        "--ornament": source.ornamentColor || "rgba(255, 255, 255, 0.55)",
+      };
+      Object.entries(mapping).forEach(([key, value]) => card.style.setProperty(key, value));
+      return normalizeVariant(source.variant);
+    }
+
+    function render(payload) {
+      const title = typeof payload.title === "string" && payload.title.trim() ? payload.title.trim() : "小提醒";
+      const message = typeof payload.message === "string" && payload.message.trim()
+        ? payload.message.trim()
+        : "稍微休息一下，再继续推进。";
+      const emoji = typeof payload.emoji === "string" && payload.emoji.trim() ? payload.emoji.trim() : "💡";
+      const tone = normalizeTone(payload.tone);
+      const variant = applyStyle(payload.style);
+      const visible = card.classList.contains("visible");
+      card.className = `card variant-${variant} tone-${tone}`;
+      if (visible) card.classList.add("visible");
+      titleEl.textContent = title;
+      messageEl.textContent = message;
+      emojiEl.textContent = emoji;
+    }
+
+    function show(payload) {
+      render(payload || {});
+      clearVisibleTimer();
+      card.classList.add("visible");
+      visibleTimer = setTimeout(() => {
+        card.classList.remove("visible");
+        visibleTimer = null;
+      }, 5000);
+    }
+
+    function hide() {
+      clearVisibleTimer();
+      card.classList.remove("visible");
+    }
+
+    if (window.petReminderAPI) {
+      window.petReminderAPI.onShow((payload) => show(payload));
+      window.petReminderAPI.onHide(() => hide());
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; script-src 'self'; style-src 'self'; img-src 'self' file:; media-src 'self';">
+  <link rel="stylesheet" href="styles.css">
+  <title>GoWIN!Buddy</title>
+</head>
+<body>
+  <div id="pet-container">
+    <object id="clawd" type="image/svg+xml"></object>
+    <div id="pet-level-badge" class="pet-level-badge" data-state="idle" hidden>
+      <svg class="pet-level-ring" viewBox="0 0 36 36" aria-hidden="true">
+        <defs>
+          <linearGradient id="pet-level-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fb923c"/>
+            <stop offset="55%" stop-color="#ec4899"/>
+            <stop offset="100%" stop-color="#a855f7"/>
+          </linearGradient>
+        </defs>
+        <circle class="pet-level-ring-bg" cx="18" cy="18" r="15.5"></circle>
+        <circle class="pet-level-ring-fg" cx="18" cy="18" r="15.5"></circle>
+      </svg>
+      <div class="pet-level-content">
+        <div class="pet-level-prefix">Lv</div>
+        <div class="pet-level-value" id="pet-level-value">1</div>
+      </div>
+      <div class="pet-level-spark" aria-hidden="true"></div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "gowin-buddy-workspace",
+  "private": true,
+  "version": "0.2.1",
+  "description": "GoWIN!Buddy desktop pet and local RPG dashboard",
+  "license": "MIT",
+  "scripts": {
+    "bootstrap:deps": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap-local-deps.ps1",
+    "pet:start": "npm run start --prefix apps/pet-desktop",
+    "pet:test": "npm test --prefix apps/pet-desktop",
+    "test:e2e": "npm run test:e2e:dashboard --prefix apps/pet-desktop",
+    "assets:generate": "python scripts/generate-public-art.py --root .",
+    "brand:sync-icons": "python scripts/sync-brand-icons.py --root .",
+    "installer": "powershell -NoProfile -ExecutionPolicy Bypass -File installer/windows/build-installer.ps1",
+    "launcher": "powershell -NoProfile -ExecutionPolicy Bypass -File launcher/windows/GoWINBuddy.Launcher.ps1 -Action launch"
+  }
+}

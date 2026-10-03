@@ -1,0 +1,152 @@
+{
+  "_comment": "Sprout Buddy theme template; copy to your userData/themes folder and customize.",
+  "schemaVersion": 1,
+  "discoverable": false,
+  "name": "My Theme",
+  "author": "FanxingMeng1999",
+  "version": "1.0.0",
+  "description": "Original Sprout Buddy artwork · My Theme",
+  "license": "MIT",
+  "viewBox": {
+    "x": -15,
+    "y": -25,
+    "width": 45,
+    "height": 45
+  },
+  "eyeTracking": {
+    "enabled": true,
+    "states": [
+      "idle",
+      "dozing",
+      "mini-idle"
+    ],
+    "eyeRatioX": 0.5,
+    "eyeRatioY": 0.76,
+    "maxOffset": 1.1,
+    "bodyScale": 0.15,
+    "shadowStretch": 0.15,
+    "shadowShift": 0.3,
+    "ids": {
+      "eyes": "eyes-js",
+      "body": "body-js",
+      "shadow": "shadow-js",
+      "dozeEyes": "eyes-doze"
+    },
+    "shadowOrigin": "7.5px 15px"
+  },
+  "states": {
+    "_comment": "Each state maps to an array of filenames in assets/. SVG, GIF, APNG, WebP all work. Only eyeTracking.states entries MUST be SVG.",
+    "idle": [
+      "idle-follow.svg"
+    ],
+    "thinking": [
+      "thinking.gif"
+    ],
+    "working": [
+      "typing.gif"
+    ],
+    "error": [
+      "error.gif"
+    ],
+    "attention": [
+      "happy.gif"
+    ],
+    "notification": [
+      "notification.gif"
+    ],
+    "sleeping": [
+      "sleeping.gif"
+    ],
+    "waking": [
+      "waking.gif"
+    ]
+  },
+  "_comment_optional_states": "These states are optional. If omitted, Clawd falls back to idle/sleeping automatically.",
+  "workingTiers": [
+    {
+      "_comment": "Show different animations based on concurrent session count",
+      "minSessions": 3,
+      "file": "building.gif"
+    },
+    {
+      "minSessions": 2,
+      "file": "juggling.gif"
+    },
+    {
+      "minSessions": 1,
+      "file": "typing.gif"
+    }
+  ],
+  "idleAnimations": [
+    {
+      "_comment": "Random animations played during idle. duration in ms.",
+      "file": "idle-look.gif",
+      "duration": 6500
+    }
+  ],
+  "timings": {
+    "_comment": "All values in milliseconds. Omit to use defaults.",
+    "mouseIdleTimeout": 20000,
+    "mouseSleepTimeout": 60000
+  },
+  "hitBoxes": {
+    "default": {
+      "x": -2,
+      "y": -7,
+      "w": 19,
+      "h": 25
+    },
+    "sleeping": {
+      "x": -2,
+      "y": 0,
+      "w": 19,
+      "h": 18
+    },
+    "wide": {
+      "x": -5,
+      "y": -8,
+      "w": 25,
+      "h": 26
+    }
+  },
+  "sleepingHitboxFiles": [
+    "sleeping.gif"
+  ],
+  "reactions": {
+    "_comment": "Click/drag reaction animations. All optional — omit the whole block to disable reactions.",
+    "drag": {
+      "file": "react-drag.gif"
+    },
+    "clickLeft": {
+      "file": "react-left.gif",
+      "duration": 2500
+    },
+    "clickRight": {
+      "file": "react-right.gif",
+      "duration": 2500
+    },
+    "double": {
+      "files": [
+        "react-double.gif"
+      ],
+      "duration": 3500
+    }
+  },
+  "sounds": {
+    "_comment": "Map logical sound names to audio files in sounds/ subdirectory. Omit this block to use built-in defaults. Set a value to null to disable that sound.",
+    "complete": "complete.wav",
+    "confirm": "confirm.wav"
+  },
+  "miniMode": {
+    "_comment": "Set supported:false (or remove this block entirely) to disable mini mode for your theme.",
+    "supported": false
+  },
+  "objectScale": {
+    "_comment": "Fine-tune the rendered size relative to viewBox. Defaults work for most themes.",
+    "widthRatio": 1.9,
+    "heightRatio": 1.3,
+    "offsetX": -0.45,
+    "offsetY": -0.25
+  },
+  "repo": "https://github.com/FanxingMeng1999/GoWIN-Buddy"
+}

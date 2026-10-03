@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "name": "Aurora Pop",
+  "author": "FanxingMeng1999",
+  "version": "1.1.0",
+  "description": "Original Sprout Buddy artwork · Aurora Pop",
+  "order": 70,
+  "license": "MIT",
+  "repo": "https://github.com/FanxingMeng1999/GoWIN-Buddy",
+  "viewBox": {
+    "x": -15,
+    "y": -25,
+    "width": 45,
+    "height": 45
+  },
+  "eyeTracking": {
+    "enabled": true,
+    "states": [
+      "idle",
+      "dozing",
+      "mini-idle"
+    ],
+    "eyeRatioX": 0.5,
+    "eyeRatioY": 0.76,
+    "maxOffset": 1.1,
+    "bodyScale": 0.15,
+    "shadowStretch": 0.15,
+    "shadowShift": 0.3,
+    "ids": {
+      "eyes": "eyes-js",
+      "body": "body-js",
+      "shadow": "shadow-js",
+      "dozeEyes": "eyes-doze"
+    },
+    "shadowOrigin": "7.5px 15px"
+  },
+  "states": {
+    "idle": [
+      "aurora-pop-idle-follow.svg"
+    ],
+    "yawning": [
+      "aurora-pop-idle-yawn.svg"
+    ],
+    "dozing": [
+      "aurora-pop-idle-doze.svg"
+    ],
+    "collapsing": [
+      "aurora-pop-collapse-sleep.svg"
+    ],
+    "thinking": [
+      "aurora-pop-working-thinking.svg"
+    ],
+    "working": [
+      "aurora-pop-working-typing.svg"
+    ],
+    "juggling": [
+      "aurora-pop-working-juggling.svg"
+    ],
+    "sweeping": [
+      "aurora-pop-working-sweeping.svg"
+    ],
+    "error": [
+      "aurora-pop-error.svg"
+    ],
+    "attention": [
+      "aurora-pop-happy.svg"
+    ],
+    "notification": [
+      "aurora-pop-notification.svg"
+    ],
+    "carrying": [
+      "aurora-pop-working-carrying.svg"
+    ],
+    "sleeping": [
+      "aurora-pop-sleeping.svg"
+    ],
+    "waking": [
+      "aurora-pop-wake.svg"
+    ]
+  },
+  "workingTiers": [
+    {
+      "minSessions": 3,
+      "file": "aurora-pop-working-building.svg"
+    },
+    {
+      "minSessions": 2,
+      "file": "aurora-pop-working-juggling.svg"
+    },
+    {
+      "minSessions": 1,
+      "file": "aurora-pop-working-typing.svg"
+    }
+  ],
+  "jugglingTiers": [
+    {
+      "minSessions": 2,
+      "file": "aurora-pop-working-conducting.svg"
+    },
+    {
+      "minSessions": 1,
+      "file": "aurora-pop-working-juggling.svg"
+    }
+  ],
+  "idleAnimations": [
+    {
+      "file": "aurora-pop-idle-look.svg",
+      "duration": 6500
+    },
+    {
+      "file": "aurora-pop-working-debugger.svg",
+      "duration": 14000
+    },
+    {
+      "file": "aurora-pop-idle-reading.svg",
+      "duration": 14000
+    }
+  ],
+  "displayHintMap": {
+    "aurora-pop-working-building.svg": "aurora-pop-working-building.svg",
+    "aurora-pop-working-typing.svg": "aurora-pop-working-typing.svg",
+    "aurora-pop-working-juggling.svg": "aurora-pop-working-juggling.svg",
+    "aurora-pop-working-conducting.svg": "aurora-pop-working-conducting.svg",
+    "aurora-pop-idle-reading.svg": "aurora-pop-idle-reading.svg",
+    "aurora-pop-working-debugger.svg": "aurora-pop-working-debugger.svg",
+    "aurora-pop-working-thinking.svg": "aurora-pop-working-thinking.svg",
+    "rios-idle-base": "aurora-pop-idle-follow.svg",
+    "rios-work-base": "aurora-pop-working-typing.svg",
+    "rios-idle-route-compass": "aurora-pop-idle-look.svg",
+    "rios-work-route-compass": "aurora-pop-working-building.svg",
+    "rios-idle-midterm-goggles": "aurora-pop-idle-look.svg",
+    "rios-work-midterm-goggles": "aurora-pop-working-debugger.svg",
+    "rios-idle-seminar-lanyard": "aurora-pop-idle-follow.svg",
+    "rios-work-seminar-lanyard": "aurora-pop-working-conducting.svg",
+    "rios-idle-paper-scroll": "aurora-pop-idle-reading.svg",
+    "rios-work-paper-scroll": "aurora-pop-working-thinking.svg",
+    "rios-idle-funding-ribbon": "aurora-pop-idle-look.svg",
+    "rios-work-funding-ribbon": "aurora-pop-working-carrying.svg",
+    "rios-idle-gold-medal": "aurora-pop-happy.svg",
+    "rios-work-gold-medal": "aurora-pop-working-wizard.svg",
+    "rios-idle-thesis-stack": "aurora-pop-idle-reading.svg",
+    "rios-work-thesis-stack": "aurora-pop-working-ultrathink.svg",
+    "rios-idle-defense-crown": "aurora-pop-happy.svg",
+    "rios-work-defense-crown": "aurora-pop-working-conducting.svg"
+  },
+  "timings": {
+    "minDisplay": {
+      "attention": 4000,
+      "error": 5000,
+      "sweeping": 5500,
+      "notification": 2500,
+      "carrying": 3000,
+      "working": 1000,
+      "thinking": 1000
+    },
+    "autoReturn": {
+      "attention": 4000,
+      "error": 5000,
+      "sweeping": 300000,
+      "notification": 2500,
+      "carrying": 3000
+    },
+    "yawnDuration": 3000,
+    "wakeDuration": 1500,
+    "deepSleepTimeout": 600000,
+    "mouseIdleTimeout": 20000,
+    "mouseSleepTimeout": 60000
+  },
+  "hitBoxes": {
+    "default": {
+      "x": -2,
+      "y": -7,
+      "w": 19,
+      "h": 25
+    },
+    "sleeping": {
+      "x": -2,
+      "y": 0,
+      "w": 19,
+      "h": 18
+    },
+    "wide": {
+      "x": -5,
+      "y": -8,
+      "w": 25,
+      "h": 26
+    }
+  },
+  "wideHitboxFiles": [
+    "aurora-pop-error.svg",
+    "aurora-pop-notification.svg",
+    "aurora-pop-working-conducting.svg"
+  ],
+  "sleepingHitboxFiles": [
+    "aurora-pop-sleeping.svg",
+    "aurora-pop-collapse-sleep.svg"
+  ],
+  "reactions": {
+    "drag": {
+      "file": "aurora-pop-react-drag.svg"
+    },
+    "clickLeft": {
+      "file": "aurora-pop-react-left.svg",
+      "duration": 2500
+    },
+    "clickRight": {
+      "file": "aurora-pop-react-right.svg",
+      "duration": 2500
+    },
+    "annoyed": {
+      "file": "aurora-pop-react-annoyed.svg",
+      "duration": 3500
+    },
+    "double": {
+      "files": [
+        "aurora-pop-react-double.svg",
+        "aurora-pop-react-double-jump.svg"
+      ],
+      "duration": 3500
+    }
+  },
+  "miniMode": {
+    "supported": true,
+    "offsetRatio": 0.486,
+    "states": {
+      "mini-idle": [
+        "aurora-pop-mini-idle.svg"
+      ],
+      "mini-alert": [
+        "aurora-pop-mini-alert.svg"
+      ],
+      "mini-happy": [
+        "aurora-pop-mini-happy.svg"
+      ],
+      "mini-enter": [
+        "aurora-pop-mini-enter.svg"
+      ],
+      "mini-peek": [
+        "aurora-pop-mini-peek.svg"
+      ],
+      "mini-crabwalk": [
+        "aurora-pop-mini-crabwalk.svg"
+      ],
+      "mini-enter-sleep": [
+        "aurora-pop-mini-enter-sleep.svg"
+      ],
+      "mini-sleep": [
+        "aurora-pop-mini-sleep.svg"
+      ]
+    },
+    "timings": {
+      "minDisplay": {
+        "mini-alert": 4000,
+        "mini-happy": 4000
+      },
+      "autoReturn": {
+        "mini-alert": 4000,
+        "mini-happy": 4000
+      }
+    },
+    "glyphFlips": {
+      "pixel-z": 4,
+      "pixel-z-small": 3
+    }
+  },
+  "reminderCard": {
+    "variant": "aurora",
+    "cardBg": "rgba(246, 244, 255, 0.93)",
+    "cardBorder": "rgba(125, 211, 252, 0.3)",
+    "cardShadow": "0 14px 28px rgba(74, 55, 145, 0.2)",
+    "titleColor": "#32285f",
+    "bodyColor": "#5c5780",
+    "accentStrong": "#22d3ee",
+    "accentSoft": "rgba(244, 114, 182, 0.2)",
+    "ornamentColor": "rgba(255, 255, 255, 0.66)"
+  },
+  "quickTaskCard": {
+    "variant": "aurora",
+    "panelBg": "rgba(246, 244, 255, 0.93)",
+    "panelBorder": "rgba(125, 211, 252, 0.3)",
+    "panelShadow": "0 14px 28px rgba(74, 55, 145, 0.2)",
+    "textMain": "#32285f",
+    "textMuted": "#5c5780",
+    "line": "rgba(244, 114, 182, 0.2)",
+    "chipBg": "rgba(244, 114, 182, 0.2)",
+    "chipText": "#22d3ee",
+    "success": "#67E8F9",
+    "summaryBg": "rgba(255,255,255,0.72)",
+    "itemBg": "rgba(255,255,255,0.84)",
+    "itemDoneBg": "rgba(245,248,251,0.92)",
+    "inputBg": "rgba(255,255,255,0.9)",
+    "closeBg": "rgba(255, 255, 255, 0.66)",
+    "closeText": "#22d3ee",
+    "scrollThumb": "rgba(244, 114, 182, 0.2)",
+    "autoDot": "#F472B6",
+    "autoDotGlow": "rgba(244, 114, 182, 0.2)"
+  },
+  "sounds": {
+    "complete": "complete.wav",
+    "confirm": "confirm.wav"
+  },
+  "objectScale": {
+    "widthRatio": 1.9,
+    "heightRatio": 1.3,
+    "offsetX": -0.45,
+    "offsetY": -0.25
+  }
+}

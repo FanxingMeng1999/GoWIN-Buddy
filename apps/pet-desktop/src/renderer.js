@@ -1,0 +1,508 @@
+// --- Render window: pure view (SVG rendering + eye tracking) ---
+// All input (pointer/drag/click) is handled by the hit window (hit-renderer.js).
+// Reactions are triggered via IPC from main (relayed from hit window).
+
+const container = document.getElementById("pet-container");
+
+// ── Theme config (injected via preload.js additionalArguments) ──
+let tc = window.themeConfig || {};
+
+function initWithConfig(cfg) {
+  tc = cfg || {};
+  _assetsPath = tc.assetsPath || "../assets/svg";
+  _sourceAssetsPath = tc.sourceAssetsPath || null;
+  _assetUrls = tc.assetUrls || {};
+  _assetMetadata = tc.assetMetadata || {};
+  _visualQuality = tc.visualQuality || null;
+  _eyeIds = (tc.eyeTracking && tc.eyeTracking.ids) || { eyes: "eyes-js", body: "body-js", shadow: "shadow-js", dozeEyes: "eyes-doze" };
+  _bodyScale = (tc.eyeTracking && tc.eyeTracking.bodyScale) || 0.33;
+  _shadowStretch = (tc.eyeTracking && tc.eyeTracking.shadowStretch) || 0.15;
+  _shadowShift = (tc.eyeTracking && tc.eyeTracking.shadowShift) || 0.3;
+  _eyeTrackingStates = (tc.eyeTrackingStates) || ["idle", "dozing", "mini-idle"];
+  _dragSvg = tc.dragSvg || "clawd-react-drag.svg";
+  _idleFollowSvg = tc.idleFollowSvg || "clawd-idle-follow.svg";
+  _glyphFlipDefs = tc.glyphFlips || { "pixel-z": 4, "pixel-z-small": 3 };
+}
+
+let _assetsPath;
+let _sourceAssetsPath;
+let _assetUrls;
+let _assetMetadata;
+let _visualQuality;
+let _eyeIds;
+let _bodyScale;
+let _shadowStretch;
+let _shadowShift;
+let _eyeTrackingStates;
+let _dragSvg;
+let _idleFollowSvg;
+let _glyphFlipDefs;
+initWithConfig(tc);
+
+// Theme switch: reload + IPC push overrides additionalArguments
+window.electronAPI.onThemeConfig((newConfig) => {
+  initWithConfig(newConfig);
+});
+
+// Release an <object> SVG element: navigate away to unload the SVG document
+// (stops CSS animations and frees the internal frame), then remove from DOM.
+function releaseObject(el) {
+  if (!el) return;
+  try { el.data = ""; } catch {}
+  el.remove();
+}
+
+// Release an <img> element from DOM
+function releaseImg(el) {
+  if (!el) return;
+  try { el.src = ""; } catch {}
+  el.remove();
+}
+
+// --- Reaction state (visual side) ---
+let isReacting = false;
+let isDragReacting = false;
+let reactTimer = null;
+let currentIdleSvg = null;    // tracks which SVG is currently showing
+let dndEnabled = false;
+let miniLeftFlip = false;
+
+window.electronAPI.onDndChange((enabled) => {
+  dndEnabled = enabled;
+  syncBadgeDndAttribute();
+});
+
+window.electronAPI.onMiniModeChange((enabled, edge) => {
+  miniLeftFlip = enabled && edge === "left";
+  miniModeActive = !!enabled;
+  container.classList.toggle("mini-left", miniLeftFlip);
+  syncBadgeMiniAttribute();
+  if (miniLeftFlip) {
+    applyGlyphFlipCompensation(clawdEl);
+  } else {
+    removeGlyphFlipCompensation(clawdEl);
+  }
+});
+
+// ── Pet level badge (Lv. + XP ring) ──────────────────────────────────
+const RING_CIRCUMFERENCE = 97.39;
+const badgeEl = document.getElementById("pet-level-badge");
+const badgeValueEl = document.getElementById("pet-level-value");
+const badgeRingFgEl = badgeEl ? badgeEl.querySelector(".pet-level-ring-fg") : null;
+let lastBadgeLevel = null;
+let badgePulseTimer = null;
+let miniModeActive = false;
+
+function syncBadgeDndAttribute() {
+  if (!badgeEl) return;
+  if (dndEnabled) badgeEl.setAttribute("data-dnd", "true");
+  else badgeEl.removeAttribute("data-dnd");
+}
+
+function syncBadgeMiniAttribute() {
+  if (!badgeEl) return;
+  if (miniModeActive) badgeEl.setAttribute("data-mini", "true");
+  else badgeEl.removeAttribute("data-mini");
+}
+
+function applyPetStats(payload) {
+  if (!badgeEl || !payload || typeof payload !== "object") return;
+  const level = Math.max(1, Number(payload.level) || 1);
+  const percent = Math.max(0, Math.min(100, Number(payload.percent) || 0));
+  const titleParts = [`Lv.${level}`];
+  if (payload.title) titleParts.push(String(payload.title));
+  if (typeof payload.currentXp === "number" && typeof payload.nextXp === "number") {
+    titleParts.push(`${payload.currentXp} / ${payload.nextXp} XP`);
+  }
+  badgeEl.title = titleParts.join(" · ");
+
+  if (badgeValueEl) badgeValueEl.textContent = String(level);
+  if (badgeRingFgEl) {
+    const offset = RING_CIRCUMFERENCE * (1 - percent / 100);
+    badgeRingFgEl.style.strokeDashoffset = String(offset);
+  }
+  if (badgeEl.hasAttribute("hidden")) badgeEl.removeAttribute("hidden");
+
+  if (lastBadgeLevel !== null && level > lastBadgeLevel) {
+    badgeEl.classList.remove("is-leveling");
+    void badgeEl.offsetWidth;
+    badgeEl.classList.add("is-leveling");
+    if (badgePulseTimer) clearTimeout(badgePulseTimer);
+    badgePulseTimer = setTimeout(() => {
+      if (badgeEl) badgeEl.classList.remove("is-leveling");
+      badgePulseTimer = null;
+    }, 950);
+  }
+  lastBadgeLevel = level;
+}
+
+if (window.electronAPI && typeof window.electronAPI.onPetStatsChange === "function") {
+  window.electronAPI.onPetStatsChange((payload) => applyPetStats(payload));
+}
+if (window.electronAPI && typeof window.electronAPI.requestPetStats === "function") {
+  window.electronAPI.requestPetStats();
+}
+
+// Counter-flip asymmetric pixel-art glyphs (Zzz) inside SVG defs so they
+// render correctly when the container has scaleX(-1). Only the glyph shape
+// is flipped — CSS animation transforms (float direction) are unaffected.
+function applyGlyphFlipCompensation(objectEl) {
+  if (!objectEl || objectEl.tagName !== "OBJECT") return;
+  try {
+    const doc = objectEl.contentDocument;
+    if (!doc) return;
+    for (const [id, w] of Object.entries(_glyphFlipDefs)) {
+      const el = doc.getElementById(id);
+      if (el) el.setAttribute("transform", `translate(${w}, 0) scale(-1, 1)`);
+    }
+  } catch {}
+}
+
+function removeGlyphFlipCompensation(objectEl) {
+  if (!objectEl || objectEl.tagName !== "OBJECT") return;
+  try {
+    const doc = objectEl.contentDocument;
+    if (!doc) return;
+    for (const id of Object.keys(_glyphFlipDefs)) {
+      const el = doc.getElementById(id);
+      if (el) el.removeAttribute("transform");
+    }
+  } catch {}
+}
+
+function getObjectSvgName(objectEl) {
+  if (!objectEl) return null;
+  const data = (objectEl.tagName === "OBJECT")
+    ? (objectEl.getAttribute("data") || objectEl.data || "")
+    : (objectEl.getAttribute("src") || objectEl.src || "");
+  if (!data) return null;
+  const clean = data.split(/[?#]/)[0];
+  const parts = clean.split("/");
+  return parts[parts.length - 1] || null;
+}
+
+// ── Dual-channel rendering ──
+// Object channel: <object type="image/svg+xml"> for SVG states needing eye tracking
+// Img channel: <img> for all other formats (SVG/GIF/APNG/WebP pure playback)
+
+/**
+ * Determine if a state+file needs the <object> channel (eye tracking).
+ */
+function needsObjectChannel(state, file) {
+  if (!file) return false;
+  if (!file.endsWith(".svg")) return false;
+  return _eyeTrackingStates.includes(state);
+}
+
+/**
+ * Get the full asset URL for a file.
+ * SVGs use _assetsPath (which may point to cache for external themes).
+ * Non-SVGs use _sourceAssetsPath if available (direct from theme dir).
+ */
+function getAssetUrl(file) {
+  if (!file) return "";
+  if (_assetUrls && _assetUrls[file]) return _assetUrls[file];
+  if (file.endsWith(".svg") || !_sourceAssetsPath) {
+    return `${_assetsPath}/${file}`;
+  }
+  return `${_sourceAssetsPath}/${file}`;
+}
+
+// --- IPC-triggered reactions (from hit window via main relay) ---
+window.electronAPI.onStartDragReaction(() => startDragReaction());
+window.electronAPI.onEndDragReaction(() => endDragReaction());
+window.electronAPI.onPlayClickReaction((svg, duration) => playReaction(svg, duration));
+
+function playReaction(svgFile, durationMs) {
+  isReacting = true;
+  detachEyeTracking();
+  window.electronAPI.pauseCursorPolling();
+
+  // Reactions always use <img> channel (no eye tracking needed)
+  swapToFile(svgFile, null, false);
+
+  reactTimer = setTimeout(() => endReaction(), durationMs);
+}
+
+function endReaction() {
+  if (!isReacting) return;
+  isReacting = false;
+  reactTimer = null;
+  window.electronAPI.resumeFromReaction();
+}
+
+function cancelReaction() {
+  if (isReacting) {
+    if (reactTimer) { clearTimeout(reactTimer); reactTimer = null; }
+    isReacting = false;
+  }
+  if (isDragReacting) {
+    isDragReacting = false;
+  }
+}
+
+// --- Drag reaction (loops while dragging) ---
+function startDragReaction() {
+  if (isDragReacting) return;
+  if (dndEnabled) return;
+
+  if (isReacting) {
+    if (reactTimer) { clearTimeout(reactTimer); reactTimer = null; }
+    isReacting = false;
+  }
+
+  isDragReacting = true;
+  detachEyeTracking();
+  window.electronAPI.pauseCursorPolling();
+  swapToFile(_dragSvg, null, false);
+}
+
+function endDragReaction() {
+  if (!isDragReacting) return;
+  isDragReacting = false;
+  window.electronAPI.resumeFromReaction();
+}
+
+// --- Generic swap function: handles both <object> and <img> channels ---
+let clawdEl = document.getElementById("clawd");
+let pendingNext = null;
+let currentDisplayedSvg = getObjectSvgName(clawdEl);
+currentIdleSvg = currentDisplayedSvg;
+
+/**
+ * Swap to a new animation file.
+ * @param {string} file - animation filename
+ * @param {string|null} state - current state name (for eye tracking decision)
+ * @param {boolean} [useObjectChannel] - force object channel (true), img (false), or auto (undefined)
+ */
+function swapToFile(file, state, useObjectChannel) {
+  if (pendingNext) {
+    if (pendingNext.tagName === "OBJECT") releaseObject(pendingNext);
+    else releaseImg(pendingNext);
+    pendingNext = null;
+  }
+
+  const useObj = useObjectChannel !== undefined ? useObjectChannel : needsObjectChannel(state, file);
+  const url = getAssetUrl(file);
+
+  if (useObj) {
+    // Object channel: <object type="image/svg+xml">
+    const next = document.createElement("object");
+    next.type = "image/svg+xml";
+    next.id = "clawd";
+    next.style.opacity = "0";
+
+    const swap = () => {
+      if (pendingNext !== next) return;
+      next.style.transition = "none";
+      next.style.opacity = "1";
+      for (const child of [...container.querySelectorAll("object, img.clawd-img")]) {
+        if (child !== next) {
+          if (child.tagName === "OBJECT") releaseObject(child);
+          else releaseImg(child);
+        }
+      }
+      pendingNext = null;
+      clawdEl = next;
+      currentDisplayedSvg = file;
+
+      if (state && needsObjectChannel(state, file)) {
+        attachEyeTracking(next);
+      }
+      if (miniLeftFlip) applyGlyphFlipCompensation(next);
+    };
+
+    next.addEventListener("load", swap, { once: true });
+    next.data = url;
+    container.appendChild(next);
+    pendingNext = next;
+    setTimeout(() => {
+      if (pendingNext !== next) return;
+      try { if (!next.contentDocument) { releaseObject(next); pendingNext = null; return; } } catch {}
+      swap();
+    }, 3000);
+  } else {
+    // Img channel: <img> for pure playback (all formats)
+    const next = document.createElement("img");
+    next.className = "clawd-img";
+    next.id = "clawd";
+    next.style.opacity = "0";
+
+    const swap = () => {
+      if (pendingNext !== next) return;
+      next.style.transition = "none";
+      next.style.opacity = "1";
+      for (const child of [...container.querySelectorAll("object, img.clawd-img")]) {
+        if (child !== next) {
+          if (child.tagName === "OBJECT") releaseObject(child);
+          else releaseImg(child);
+        }
+      }
+      pendingNext = null;
+      clawdEl = next;
+      currentDisplayedSvg = file;
+    };
+
+    next.addEventListener("load", swap, { once: true });
+    next.src = url;
+    container.appendChild(next);
+    pendingNext = next;
+    // Timeout fallback for images that fail to load
+    setTimeout(() => {
+      if (pendingNext !== next) return;
+      swap();
+    }, 3000);
+  }
+}
+
+// --- State change → switch animation (preload + instant swap) ---
+window.electronAPI.onStateChange((state, svg) => {
+  // Main process state change → cancel any active click reaction
+  cancelReaction();
+
+  if (pendingNext) {
+    if (pendingNext.tagName === "OBJECT") releaseObject(pendingNext);
+    else releaseImg(pendingNext);
+    pendingNext = null;
+  }
+
+  // Same file already displayed — just update eye tracking state
+  if (clawdEl && clawdEl.isConnected && currentDisplayedSvg === svg) {
+    if (needsObjectChannel(state, svg) && !eyeTarget) {
+      if (clawdEl.tagName === "OBJECT") attachEyeTracking(clawdEl);
+    } else if (!needsObjectChannel(state, svg)) {
+      detachEyeTracking();
+    }
+    currentIdleSvg = svg;
+    return;
+  }
+  detachEyeTracking();
+
+  swapToFile(svg, state);
+  currentIdleSvg = svg;
+});
+
+// --- Eye tracking (idle state only) ---
+let eyeTarget = null;
+let bodyTarget = null;
+let shadowTarget = null;
+let lastEyeDx = 0;
+let lastEyeDy = 0;
+let eyeAttachToken = 0;
+
+function applyEyeMove(dx, dy) {
+  if (eyeTarget) {
+    eyeTarget.style.transform = `translate(${dx}px, ${dy}px)`;
+  }
+  if (bodyTarget || shadowTarget) {
+    const bdx = Math.round(dx * _bodyScale * 2) / 2;
+    const bdy = Math.round(dy * _bodyScale * 2) / 2;
+    if (bodyTarget) bodyTarget.style.transform = `translate(${bdx}px, ${bdy}px)`;
+    if (shadowTarget) {
+      const absDx = Math.abs(bdx);
+      const scaleX = 1 + absDx * _shadowStretch;
+      const shiftX = Math.round(bdx * _shadowShift * 2) / 2;
+      shadowTarget.style.transform = `translate(${shiftX}px, 0) scaleX(${scaleX})`;
+    }
+  }
+}
+
+function attachEyeTracking(objectEl) {
+  if (!objectEl || objectEl.tagName !== "OBJECT") return;
+  const token = ++eyeAttachToken;
+  eyeTarget = null;
+  bodyTarget = null;
+  shadowTarget = null;
+
+  const tryAttach = (attempt) => {
+    if (token !== eyeAttachToken) return;
+    if (!objectEl || !objectEl.isConnected) return;
+
+    try {
+      const svgDoc = objectEl.contentDocument;
+      const eyes = svgDoc && svgDoc.getElementById(_eyeIds.eyes);
+      if (eyes) {
+        eyeTarget = eyes;
+        bodyTarget = svgDoc.getElementById(_eyeIds.body);
+        shadowTarget = svgDoc.getElementById(_eyeIds.shadow);
+        applyEyeMove(lastEyeDx, lastEyeDy);
+        return;
+      }
+    } catch (e) {
+      console.warn("Cannot access SVG contentDocument for eye tracking:", e.message);
+      return;
+    }
+
+    if (attempt >= 60) {
+      console.warn("Timed out waiting for SVG eye targets");
+      return;
+    }
+    setTimeout(() => tryAttach(attempt + 1), 16);
+  };
+
+  tryAttach(0);
+}
+
+function detachEyeTracking() {
+  eyeAttachToken++;
+  eyeTarget = null;
+  bodyTarget = null;
+  shadowTarget = null;
+}
+
+window.electronAPI.onEyeMove((dx, dy) => {
+  const effectiveDx = miniLeftFlip ? -dx : dx;
+  lastEyeDx = effectiveDx;
+  lastEyeDy = dy;
+  // Detect stale eye targets (e.g. after DWM z-order recovery invalidates contentDocument)
+  if (eyeTarget && !eyeTarget.ownerDocument?.defaultView) {
+    eyeTarget = null;
+    bodyTarget = null;
+    shadowTarget = null;
+    if (clawdEl && clawdEl.isConnected && clawdEl.tagName === "OBJECT") attachEyeTracking(clawdEl);
+    return;
+  }
+  applyEyeMove(effectiveDx, dy);
+});
+
+// --- Sound playback (IPC from main, receives file:// URL from theme) ---
+const _audioCache = {};
+window.electronAPI.onPlaySound((url) => {
+  let audio = _audioCache[url];
+  if (!audio) {
+    audio = new Audio(url);
+    _audioCache[url] = audio;
+  }
+  audio.currentTime = 0;
+  audio.play().catch(() => {});
+});
+
+// --- Wake from doze (smooth eye opening) ---
+window.electronAPI.onWakeFromDoze(() => {
+  if (clawdEl && clawdEl.tagName === "OBJECT" && clawdEl.contentDocument) {
+    try {
+      const eyes = clawdEl.contentDocument.getElementById(_eyeIds.dozeEyes || "eyes-doze");
+      if (eyes) eyes.style.transform = "scaleY(1)";
+    } catch (e) {}
+  }
+});
+
+// --- Initial frame: set data from theme config (avoids hardcoded path in HTML) ---
+if (clawdEl && clawdEl.tagName === "OBJECT" && !clawdEl.data) {
+  const initialSvg = _idleFollowSvg;
+  const url = getAssetUrl(initialSvg);
+  currentDisplayedSvg = initialSvg;
+  currentIdleSvg = initialSvg;
+  if (needsObjectChannel("idle", initialSvg)) {
+    clawdEl.data = url;
+    // Attach eye tracking once loaded
+    clawdEl.addEventListener("load", () => {
+      if (clawdEl && clawdEl.isConnected) {
+        attachEyeTracking(clawdEl);
+        if (miniLeftFlip) applyGlyphFlipCompensation(clawdEl);
+      }
+    }, { once: true });
+  } else {
+    swapToFile(initialSvg, "idle", false);
+  }
+}

@@ -1,0 +1,42 @@
+name: Source checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version: '24.14.0'
+          cache: npm
+          cache-dependency-path: apps/pet-desktop/package-lock.json
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.11.9'
+      - name: Check public source
+        run: python scripts/verify-public-source.py
+      - name: Install locked dependencies
+        run: npm ci --prefix apps/pet-desktop
+      - name: Unit and persistence checks
+        run: |
+          npm test --prefix apps/pet-desktop
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/tests/test_dashboard_host.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/Test-BootstrapRuntimePriority.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/Test-QualityProcessScope.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Dashboard browser checks
+        run: |
+          $env:GOWIN_TOOL_PYTHON = (Get-Command python).Source
+          npm run test:e2e:dashboard --prefix apps/pet-desktop
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Production dependency audit
+        run: npm audit --omit=dev --prefix apps/pet-desktop

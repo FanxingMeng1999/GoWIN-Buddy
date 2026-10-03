@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+#pet-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  position: relative;
+  overflow: hidden;
+}
+
+#pet-container.dragging {
+  cursor: grabbing;
+}
+
+#clawd {
+  width: 190%;
+  height: 130%;
+  position: absolute;
+  left: -45%;
+  top: -25%;
+  pointer-events: none;
+}
+
+#pet-container.mini-left {
+  transform: scaleX(-1);
+}
+
+/* ── Pet level badge ─────────────────────────────────────────────── */
+.pet-level-badge {
+  position: absolute;
+  top: 6%;
+  right: 8%;
+  width: 56px;
+  height: 56px;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 14px rgba(236, 72, 153, 0.28))
+          drop-shadow(0 1px 2px rgba(15, 23, 42, 0.18));
+  transform-origin: 50% 60%;
+  animation: pet-badge-breath 3.6s ease-in-out infinite;
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.2s ease;
+}
+
+.pet-level-badge[hidden] {
+  display: none !important;
+}
+
+#pet-container.mini-left .pet-level-badge {
+  transform: scaleX(-1);
+}
+
+#pet-container.mini-left .pet-level-badge .pet-level-content {
+  transform: translate(-50%, -50%) scaleX(-1);
+}
+
+.pet-level-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.pet-level-ring-bg,
+.pet-level-ring-fg {
+  fill: none;
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  cx: 18;
+  cy: 18;
+  r: 15.5;
+}
+
+.pet-level-ring-bg {
+  stroke: rgba(255, 255, 255, 0.55);
+}
+
+.pet-level-ring-fg {
+  stroke: url(#pet-level-gradient);
+  stroke-dasharray: 97.39;
+  stroke-dashoffset: 97.39;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.55s cubic-bezier(0.22, 0.68, 0.32, 1.05);
+}
+
+.pet-level-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 26%, #ffffff 0 38%, #fff7ed 42%, #fde68a 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 4px rgba(217, 119, 6, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.pet-level-prefix {
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #c2410c;
+  text-transform: uppercase;
+  margin-top: -1px;
+}
+
+.pet-level-value {
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #7c2d12;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2px;
+  margin-top: 1px;
+}
+
+.pet-level-spark {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.7) 0%, rgba(251, 146, 60, 0.0) 70%);
+}
+
+@keyframes pet-badge-breath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes pet-badge-pulse {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.22); }
+  45% { transform: scale(0.94); }
+  70% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pet-badge-spark {
+  0% { opacity: 0; transform: scale(0.6); }
+  35% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(1.6); }
+}
+
+.pet-level-badge.is-leveling {
+  animation: pet-badge-pulse 0.9s cubic-bezier(0.22, 0.68, 0.32, 1.4) 1;
+}
+
+.pet-level-badge.is-leveling .pet-level-spark {
+  animation: pet-badge-spark 0.85s ease-out 1;
+}
+
+.pet-level-badge[data-dnd="true"] {
+  opacity: 0.45;
+  filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.22)) grayscale(0.55);
+}
+
+.pet-level-badge[data-mini="true"] {
+  display: none !important;
+}

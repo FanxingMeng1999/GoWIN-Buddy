@@ -1,0 +1,196 @@
+{
+  "tasks": [],
+  "focusSessions": [],
+  "workRecords": {},
+  "foods": [],
+  "moodHistory": {},
+  "mindRecords": {},
+  "graduationTargetDate": "",
+  "achievements": [
+    {
+      "id": "paper-output",
+      "title": "作品产出",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-file-signature",
+      "accent": "text-dopamine-coral"
+    },
+    {
+      "id": "academic-presence",
+      "title": "交流探索",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-users-line",
+      "accent": "text-dopamine-orange"
+    },
+    {
+      "id": "experiment-sprint",
+      "title": "实践攻关",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-flask",
+      "accent": "text-dopamine-sky"
+    },
+    {
+      "id": "milestone-push",
+      "title": "里程碑推进",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-flag-checkered",
+      "accent": "text-dopamine-purple"
+    },
+    {
+      "id": "literature-radar",
+      "title": "阅读积累",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-book-open",
+      "accent": "text-dopamine-coral"
+    },
+    {
+      "id": "body-charge",
+      "title": "身体充能",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-dumbbell",
+      "accent": "text-dopamine-mint"
+    },
+    {
+      "id": "life-anchor",
+      "title": "生活回稳",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-heart",
+      "accent": "text-dopamine-lime"
+    },
+    {
+      "id": "daily-rhythm",
+      "title": "日常节律",
+      "unit": "次",
+      "count": 0,
+      "icon": "fa-bolt",
+      "accent": "text-dopamine-purple"
+    }
+  ],
+  "achievementLogs": [],
+  "taskDensityMode": "compact",
+  "achievementViewMode": "active",
+  "achievementLogWeekExpanded": {},
+  "achievementLogDayExpanded": {},
+  "extraCountdowns": [],
+  "longTermMilestones": [
+    {
+      "id": "project-plan",
+      "title": "完成一个学习计划",
+      "track": "学习成长",
+      "theme": "milestone",
+      "icon": "fa-lightbulb",
+      "description": "把一个可执行的学习计划推进到完成。",
+      "carrotLabel": "节点奖励 · 学有所获",
+      "carrotAmount": 0,
+      "rewardXp": 120,
+      "rewardStars": 18,
+      "stage": 0,
+      "claimed": false
+    },
+    {
+      "id": "project-release",
+      "title": "发布一个个人作品",
+      "track": "作品产出",
+      "theme": "publication",
+      "icon": "fa-file-alt",
+      "description": "把想法变成可以展示、分享或交付的作品。",
+      "carrotLabel": "成果奖励 · 看见进步",
+      "carrotAmount": 0,
+      "rewardXp": 180,
+      "rewardStars": 30,
+      "stage": 0,
+      "claimed": false
+    },
+    {
+      "id": "habit-goal",
+      "title": "达成一个健康习惯",
+      "track": "生活节奏",
+      "theme": "activity",
+      "icon": "fa-heart",
+      "description": "为自己设定一个具体、可持续的健康习惯目标。",
+      "carrotLabel": "生活奖励 · 稳定节奏",
+      "carrotAmount": 0,
+      "rewardXp": 140,
+      "rewardStars": 20,
+      "stage": 0,
+      "claimed": false
+    },
+    {
+      "id": "personal-milestone",
+      "title": "完成一个长期目标",
+      "track": "长期目标",
+      "theme": "milestone",
+      "icon": "fa-flag-checkered",
+      "description": "将自己的长期目标拆成阶段，并记录最后的达成。",
+      "carrotLabel": "终点奖励 · 继续出发",
+      "carrotAmount": 0,
+      "rewardXp": 210,
+      "rewardStars": 34,
+      "stage": 0,
+      "claimed": false
+    }
+  ],
+  "longTermView": {
+    "expandedGroups": {}
+  },
+  "achievementLogExpanded": false,
+  "woodfishCount": 0,
+  "gameState": {
+    "xp": 0,
+    "stars": 0,
+    "rewardLogs": [],
+    "questClaims": {
+      "date": "",
+      "claimed": {}
+    },
+    "questProgress": {
+      "date": "",
+      "progress": {}
+    },
+    "dailyCounters": {
+      "date": "",
+      "woodfish": 0
+    },
+    "questView": {
+      "mode": "focus"
+    },
+    "bestStreak": 0,
+    "checkIn": {
+      "lastClaimDate": "",
+      "streak": 0,
+      "history": []
+    },
+    "weeklyCycle": {
+      "weekKey": "",
+      "claimed": false,
+      "claimedTier": 0,
+      "claimedAt": "",
+      "claimEvents": [],
+      "questCounts": {
+        "main": 0,
+        "side": 0,
+        "daily": 0,
+        "longterm": 0,
+        "bonus": 0,
+        "weekly": 0
+      }
+    },
+    "titleShards": 0,
+    "badges": [],
+    "unlockedTitles": [],
+    "equippedTitle": "",
+    "petCollection": {
+      "unlocked": [
+        "deskpet-base"
+      ],
+      "equipped": "deskpet-base",
+      "unlockLog": []
+    }
+  }
+}

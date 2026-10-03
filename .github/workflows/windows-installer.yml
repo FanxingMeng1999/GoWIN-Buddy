@@ -1,0 +1,25 @@
+name: Build Windows installer
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  installer:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version: '24.14.0'
+      - name: Build standalone installer
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File installer/windows/build-installer.ps1
+      - name: Write checksum
+        run: |
+          $hash = (Get-FileHash installer/windows/dist/GoWINBuddy-Setup.exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  GoWINBuddy-Setup.exe" | Set-Content installer/windows/dist/SHA256SUMS.txt -Encoding utf8
+      - uses: actions/upload-artifact@v7.0.1
+        with:
+          name: GoWINBuddy-Windows-installer
+          path: |
+            installer/windows/dist/GoWINBuddy-Setup.exe
+            installer/windows/dist/SHA256SUMS.txt

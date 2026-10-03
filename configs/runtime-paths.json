@@ -1,0 +1,17 @@
+{
+  "node": {
+    "explicit_env": "GOWIN_NODE_PATH",
+    "bundled": "tools/runtime/node/node.exe",
+    "fallback": "PATH"
+  },
+  "python": {
+    "explicit_env": "GOWIN_BUNDLED_PYTHON",
+    "bundled": "tools/runtime/python/windows-x64/3.11.9/python.exe",
+    "fallback": "PATH"
+  },
+  "dashboard": {
+    "host_script": "apps/rpg-hub/host/personal_dashboard_host.py",
+    "state_json": "data/state/game_state.json",
+    "runtime_json": "runtime/rpg_hub/runtime.json"
+  }
+}

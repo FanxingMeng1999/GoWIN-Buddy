@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "name": "Sunset Soda",
+  "author": "FanxingMeng1999",
+  "version": "1.1.0",
+  "description": "Original Sprout Buddy artwork · Sunset Soda",
+  "order": 50,
+  "license": "MIT",
+  "repo": "https://github.com/FanxingMeng1999/GoWIN-Buddy",
+  "viewBox": {
+    "x": -15,
+    "y": -25,
+    "width": 45,
+    "height": 45
+  },
+  "eyeTracking": {
+    "enabled": true,
+    "states": [
+      "idle",
+      "dozing",
+      "mini-idle"
+    ],
+    "eyeRatioX": 0.5,
+    "eyeRatioY": 0.76,
+    "maxOffset": 1.1,
+    "bodyScale": 0.15,
+    "shadowStretch": 0.15,
+    "shadowShift": 0.3,
+    "ids": {
+      "eyes": "eyes-js",
+      "body": "body-js",
+      "shadow": "shadow-js",
+      "dozeEyes": "eyes-doze"
+    },
+    "shadowOrigin": "7.5px 15px"
+  },
+  "states": {
+    "idle": [
+      "sunset-soda-idle-follow.svg"
+    ],
+    "yawning": [
+      "sunset-soda-idle-yawn.svg"
+    ],
+    "dozing": [
+      "sunset-soda-idle-doze.svg"
+    ],
+    "collapsing": [
+      "sunset-soda-collapse-sleep.svg"
+    ],
+    "thinking": [
+      "sunset-soda-working-thinking.svg"
+    ],
+    "working": [
+      "sunset-soda-working-typing.svg"
+    ],
+    "juggling": [
+      "sunset-soda-working-juggling.svg"
+    ],
+    "sweeping": [
+      "sunset-soda-working-sweeping.svg"
+    ],
+    "error": [
+      "sunset-soda-error.svg"
+    ],
+    "attention": [
+      "sunset-soda-happy.svg"
+    ],
+    "notification": [
+      "sunset-soda-notification.svg"
+    ],
+    "carrying": [
+      "sunset-soda-working-carrying.svg"
+    ],
+    "sleeping": [
+      "sunset-soda-sleeping.svg"
+    ],
+    "waking": [
+      "sunset-soda-wake.svg"
+    ]
+  },
+  "workingTiers": [
+    {
+      "minSessions": 3,
+      "file": "sunset-soda-working-building.svg"
+    },
+    {
+      "minSessions": 2,
+      "file": "sunset-soda-working-juggling.svg"
+    },
+    {
+      "minSessions": 1,
+      "file": "sunset-soda-working-typing.svg"
+    }
+  ],
+  "jugglingTiers": [
+    {
+      "minSessions": 2,
+      "file": "sunset-soda-working-conducting.svg"
+    },
+    {
+      "minSessions": 1,
+      "file": "sunset-soda-working-juggling.svg"
+    }
+  ],
+  "idleAnimations": [
+    {
+      "file": "sunset-soda-idle-look.svg",
+      "duration": 6500
+    },
+    {
+      "file": "sunset-soda-working-debugger.svg",
+      "duration": 14000
+    },
+    {
+      "file": "sunset-soda-idle-reading.svg",
+      "duration": 14000
+    }
+  ],
+  "displayHintMap": {
+    "sunset-soda-working-building.svg": "sunset-soda-working-building.svg",
+    "sunset-soda-working-typing.svg": "sunset-soda-working-typing.svg",
+    "sunset-soda-working-juggling.svg": "sunset-soda-working-juggling.svg",
+    "sunset-soda-working-conducting.svg": "sunset-soda-working-conducting.svg",
+    "sunset-soda-idle-reading.svg": "sunset-soda-idle-reading.svg",
+    "sunset-soda-working-debugger.svg": "sunset-soda-working-debugger.svg",
+    "sunset-soda-working-thinking.svg": "sunset-soda-working-thinking.svg",
+    "rios-idle-base": "sunset-soda-idle-follow.svg",
+    "rios-work-base": "sunset-soda-working-typing.svg",
+    "rios-idle-route-compass": "sunset-soda-idle-look.svg",
+    "rios-work-route-compass": "sunset-soda-working-building.svg",
+    "rios-idle-midterm-goggles": "sunset-soda-idle-look.svg",
+    "rios-work-midterm-goggles": "sunset-soda-working-debugger.svg",
+    "rios-idle-seminar-lanyard": "sunset-soda-idle-follow.svg",
+    "rios-work-seminar-lanyard": "sunset-soda-working-conducting.svg",
+    "rios-idle-paper-scroll": "sunset-soda-idle-reading.svg",
+    "rios-work-paper-scroll": "sunset-soda-working-thinking.svg",
+    "rios-idle-funding-ribbon": "sunset-soda-idle-look.svg",
+    "rios-work-funding-ribbon": "sunset-soda-working-carrying.svg",
+    "rios-idle-gold-medal": "sunset-soda-happy.svg",
+    "rios-work-gold-medal": "sunset-soda-working-wizard.svg",
+    "rios-idle-thesis-stack": "sunset-soda-idle-reading.svg",
+    "rios-work-thesis-stack": "sunset-soda-working-ultrathink.svg",
+    "rios-idle-defense-crown": "sunset-soda-happy.svg",
+    "rios-work-defense-crown": "sunset-soda-working-conducting.svg"
+  },
+  "timings": {
+    "minDisplay": {
+      "attention": 4000,
+      "error": 5000,
+      "sweeping": 5500,
+      "notification": 2500,
+      "carrying": 3000,
+      "working": 1000,
+      "thinking": 1000
+    },
+    "autoReturn": {
+      "attention": 4000,
+      "error": 5000,
+      "sweeping": 300000,
+      "notification": 2500,
+      "carrying": 3000
+    },
+    "yawnDuration": 3000,
+    "wakeDuration": 1500,
+    "deepSleepTimeout": 600000,
+    "mouseIdleTimeout": 20000,
+    "mouseSleepTimeout": 60000
+  },
+  "hitBoxes": {
+    "default": {
+      "x": -2,
+      "y": -7,
+      "w": 19,
+      "h": 25
+    },
+    "sleeping": {
+      "x": -2,
+      "y": 0,
+      "w": 19,
+      "h": 18
+    },
+    "wide": {
+      "x": -5,
+      "y": -8,
+      "w": 25,
+      "h": 26
+    }
+  },
+  "wideHitboxFiles": [
+    "sunset-soda-error.svg",
+    "sunset-soda-notification.svg",
+    "sunset-soda-working-conducting.svg"
+  ],
+  "sleepingHitboxFiles": [
+    "sunset-soda-sleeping.svg",
+    "sunset-soda-collapse-sleep.svg"
+  ],
+  "reactions": {
+    "drag": {
+      "file": "sunset-soda-react-drag.svg"
+    },
+    "clickLeft": {
+      "file": "sunset-soda-react-left.svg",
+      "duration": 2500
+    },
+    "clickRight": {
+      "file": "sunset-soda-react-right.svg",
+      "duration": 2500
+    },
+    "annoyed": {
+      "file": "sunset-soda-react-annoyed.svg",
+      "duration": 3500
+    },
+    "double": {
+      "files": [
+        "sunset-soda-react-double.svg",
+        "sunset-soda-react-double-jump.svg"
+      ],
+      "duration": 3500
+    }
+  },
+  "miniMode": {
+    "supported": true,
+    "offsetRatio": 0.486,
+    "states": {
+      "mini-idle": [
+        "sunset-soda-mini-idle.svg"
+      ],
+      "mini-alert": [
+        "sunset-soda-mini-alert.svg"
+      ],
+      "mini-happy": [
+        "sunset-soda-mini-happy.svg"
+      ],
+      "mini-enter": [
+        "sunset-soda-mini-enter.svg"
+      ],
+      "mini-peek": [
+        "sunset-soda-mini-peek.svg"
+      ],
+      "mini-crabwalk": [
+        "sunset-soda-mini-crabwalk.svg"
+      ],
+      "mini-enter-sleep": [
+        "sunset-soda-mini-enter-sleep.svg"
+      ],
+      "mini-sleep": [
+        "sunset-soda-mini-sleep.svg"
+      ]
+    },
+    "timings": {
+      "minDisplay": {
+        "mini-alert": 4000,
+        "mini-happy": 4000
+      },
+      "autoReturn": {
+        "mini-alert": 4000,
+        "mini-happy": 4000
+      }
+    },
+    "glyphFlips": {
+      "pixel-z": 4,
+      "pixel-z-small": 3
+    }
+  },
+  "reminderCard": {
+    "variant": "soda",
+    "cardBg": "rgba(255, 247, 238, 0.95)",
+    "cardBorder": "rgba(251, 146, 60, 0.32)",
+    "cardShadow": "0 14px 28px rgba(249, 115, 22, 0.22)",
+    "titleColor": "#6b3418",
+    "bodyColor": "#8e5b3b",
+    "accentStrong": "#fb923c",
+    "accentSoft": "rgba(252, 211, 77, 0.22)",
+    "ornamentColor": "rgba(255, 255, 255, 0.6)"
+  },
+  "quickTaskCard": {
+    "variant": "soda",
+    "panelBg": "rgba(255, 247, 238, 0.95)",
+    "panelBorder": "rgba(251, 146, 60, 0.32)",
+    "panelShadow": "0 14px 28px rgba(249, 115, 22, 0.22)",
+    "textMain": "#6b3418",
+    "textMuted": "#8e5b3b",
+    "line": "rgba(252, 211, 77, 0.22)",
+    "chipBg": "rgba(252, 211, 77, 0.22)",
+    "chipText": "#fb923c",
+    "success": "#FDBA74",
+    "summaryBg": "rgba(255,255,255,0.72)",
+    "itemBg": "rgba(255,255,255,0.84)",
+    "itemDoneBg": "rgba(245,248,251,0.92)",
+    "inputBg": "rgba(255,255,255,0.9)",
+    "closeBg": "rgba(255, 255, 255, 0.6)",
+    "closeText": "#fb923c",
+    "scrollThumb": "rgba(252, 211, 77, 0.22)",
+    "autoDot": "#FB923C",
+    "autoDotGlow": "rgba(252, 211, 77, 0.22)"
+  },
+  "sounds": {
+    "complete": "complete.wav",
+    "confirm": "confirm.wav"
+  },
+  "objectScale": {
+    "widthRatio": 1.9,
+    "heightRatio": 1.3,
+    "offsetX": -0.45,
+    "offsetY": -0.25
+  }
+}

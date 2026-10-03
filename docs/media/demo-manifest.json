@@ -1,0 +1,14 @@
+{
+  "version": "0.2.1",
+  "profile": "Fresh fictional demonstration data",
+  "capture": "Electron and local dashboard content only",
+  "frames": 28,
+  "files": [
+    "pet.png",
+    "quick-tasks.png",
+    "dashboard.png",
+    "dashboard-rpg.png",
+    "demo.gif"
+  ],
+  "rendererErrors": []
+}

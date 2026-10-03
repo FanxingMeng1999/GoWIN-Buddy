@@ -1,0 +1,31 @@
+# Personal state and machine-specific runtime discovery
+/.research-os/
+/data/
+/state/
+/runtime/
+/logs/
+/tmp/
+/.venv/
+.env
+.env.*
+configs/runtime-paths.resolved.json
+# Dependencies and generated builds
+node_modules/
+__pycache__/
+*.pyc
+*.log
+tools/runtime/
+tools/downloads/
+installer/windows/build/
+installer/windows/dist/
+.tmp*/
+apps/pet-desktop/dist/
+# Credentials and local editor state
+*.pem
+*.key
+*.pfx
+*.p12
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

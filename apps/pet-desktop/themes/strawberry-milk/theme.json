@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "name": "Strawberry Milk",
+  "author": "FanxingMeng1999",
+  "version": "1.1.0",
+  "description": "Original Sprout Buddy artwork · Strawberry Milk",
+  "order": 30,
+  "license": "MIT",
+  "repo": "https://github.com/FanxingMeng1999/GoWIN-Buddy",
+  "viewBox": {
+    "x": -15,
+    "y": -25,
+    "width": 45,
+    "height": 45
+  },
+  "eyeTracking": {
+    "enabled": true,
+    "states": [
+      "idle",
+      "dozing",
+      "mini-idle"
+    ],
+    "eyeRatioX": 0.5,
+    "eyeRatioY": 0.76,
+    "maxOffset": 1.1,
+    "bodyScale": 0.15,
+    "shadowStretch": 0.15,
+    "shadowShift": 0.3,
+    "ids": {
+      "eyes": "eyes-js",
+      "body": "body-js",
+      "shadow": "shadow-js",
+      "dozeEyes": "eyes-doze"
+    },
+    "shadowOrigin": "7.5px 15px"
+  },
+  "states": {
+    "idle": [
+      "strawberry-milk-idle-follow.svg"
+    ],
+    "yawning": [
+      "strawberry-milk-idle-yawn.svg"
+    ],
+    "dozing": [
+      "strawberry-milk-idle-doze.svg"
+    ],
+    "collapsing": [
+      "strawberry-milk-collapse-sleep.svg"
+    ],
+    "thinking": [
+      "strawberry-milk-working-thinking.svg"
+    ],
+    "working": [
+      "strawberry-milk-working-typing.svg"
+    ],
+    "juggling": [
+      "strawberry-milk-working-juggling.svg"
+    ],
+    "sweeping": [
+      "strawberry-milk-working-sweeping.svg"
+    ],
+    "error": [
+      "strawberry-milk-error.svg"
+    ],
+    "attention": [
+      "strawberry-milk-happy.svg"
+    ],
+    "notification": [
+      "strawberry-milk-notification.svg"
+    ],
+    "carrying": [
+      "strawberry-milk-working-carrying.svg"
+    ],
+    "sleeping": [
+      "strawberry-milk-sleeping.svg"
+    ],
+    "waking": [
+      "strawberry-milk-wake.svg"
+    ]
+  },
+  "workingTiers": [
+    {
+      "minSessions": 3,
+      "file": "strawberry-milk-working-building.svg"
+    },
+    {
+      "minSessions": 2,
+      "file": "strawberry-milk-working-juggling.svg"
+    },
+    {
+      "minSessions": 1,
+      "file": "strawberry-milk-working-typing.svg"
+    }
+  ],
+  "jugglingTiers": [
+    {
+      "minSessions": 2,
+      "file": "strawberry-milk-working-conducting.svg"
+    },
+    {
+      "minSessions": 1,
+      "file": "strawberry-milk-working-juggling.svg"
+    }
+  ],
+  "idleAnimations": [
+    {
+      "file": "strawberry-milk-idle-look.svg",
+      "duration": 6500
+    },
+    {
+      "file": "strawberry-milk-working-debugger.svg",
+      "duration": 14000
+    },
+    {
+      "file": "strawberry-milk-idle-reading.svg",
+      "duration": 14000
+    }
+  ],
+  "displayHintMap": {
+    "strawberry-milk-working-building.svg": "strawberry-milk-working-building.svg",
+    "strawberry-milk-working-typing.svg": "strawberry-milk-working-typing.svg",
+    "strawberry-milk-working-juggling.svg": "strawberry-milk-working-juggling.svg",
+    "strawberry-milk-working-conducting.svg": "strawberry-milk-working-conducting.svg",
+    "strawberry-milk-idle-reading.svg": "strawberry-milk-idle-reading.svg",
+    "strawberry-milk-working-debugger.svg": "strawberry-milk-working-debugger.svg",
+    "strawberry-milk-working-thinking.svg": "strawberry-milk-working-thinking.svg",
+    "rios-idle-base": "strawberry-milk-idle-follow.svg",
+    "rios-work-base": "strawberry-milk-working-typing.svg",
+    "rios-idle-route-compass": "strawberry-milk-idle-look.svg",
+    "rios-work-route-compass": "strawberry-milk-working-building.svg",
+    "rios-idle-midterm-goggles": "strawberry-milk-idle-look.svg",
+    "rios-work-midterm-goggles": "strawberry-milk-working-debugger.svg",
+    "rios-idle-seminar-lanyard": "strawberry-milk-idle-follow.svg",
+    "rios-work-seminar-lanyard": "strawberry-milk-working-conducting.svg",
+    "rios-idle-paper-scroll": "strawberry-milk-idle-reading.svg",
+    "rios-work-paper-scroll": "strawberry-milk-working-thinking.svg",
+    "rios-idle-funding-ribbon": "strawberry-milk-idle-look.svg",
+    "rios-work-funding-ribbon": "strawberry-milk-working-carrying.svg",
+    "rios-idle-gold-medal": "strawberry-milk-happy.svg",
+    "rios-work-gold-medal": "strawberry-milk-working-wizard.svg",
+    "rios-idle-thesis-stack": "strawberry-milk-idle-reading.svg",
+    "rios-work-thesis-stack": "strawberry-milk-working-ultrathink.svg",
+    "rios-idle-defense-crown": "strawberry-milk-happy.svg",
+    "rios-work-defense-crown": "strawberry-milk-working-conducting.svg"
+  },
+  "timings": {
+    "minDisplay": {
+      "attention": 4000,
+      "error": 5000,
+      "sweeping": 5500,
+      "notification": 2500,
+      "carrying": 3000,
+      "working": 1000,
+      "thinking": 1000
+    },
+    "autoReturn": {
+      "attention": 4000,
+      "error": 5000,
+      "sweeping": 300000,
+      "notification": 2500,
+      "carrying": 3000
+    },
+    "yawnDuration": 3000,
+    "wakeDuration": 1500,
+    "deepSleepTimeout": 600000,
+    "mouseIdleTimeout": 20000,
+    "mouseSleepTimeout": 60000
+  },
+  "hitBoxes": {
+    "default": {
+      "x": -2,
+      "y": -7,
+      "w": 19,
+      "h": 25
+    },
+    "sleeping": {
+      "x": -2,
+      "y": 0,
+      "w": 19,
+      "h": 18
+    },
+    "wide": {
+      "x": -5,
+      "y": -8,
+      "w": 25,
+      "h": 26
+    }
+  },
+  "wideHitboxFiles": [
+    "strawberry-milk-error.svg",
+    "strawberry-milk-notification.svg",
+    "strawberry-milk-working-conducting.svg"
+  ],
+  "sleepingHitboxFiles": [
+    "strawberry-milk-sleeping.svg",
+    "strawberry-milk-collapse-sleep.svg"
+  ],
+  "reactions": {
+    "drag": {
+      "file": "strawberry-milk-react-drag.svg"
+    },
+    "clickLeft": {
+      "file": "strawberry-milk-react-left.svg",
+      "duration": 2500
+    },
+    "clickRight": {
+      "file": "strawberry-milk-react-right.svg",
+      "duration": 2500
+    },
+    "annoyed": {
+      "file": "strawberry-milk-react-annoyed.svg",
+      "duration": 3500
+    },
+    "double": {
+      "files": [
+        "strawberry-milk-react-double.svg",
+        "strawberry-milk-react-double-jump.svg"
+      ],
+      "duration": 3500
+    }
+  },
+  "miniMode": {
+    "supported": true,
+    "offsetRatio": 0.486,
+    "states": {
+      "mini-idle": [
+        "strawberry-milk-mini-idle.svg"
+      ],
+      "mini-alert": [
+        "strawberry-milk-mini-alert.svg"
+      ],
+      "mini-happy": [
+        "strawberry-milk-mini-happy.svg"
+      ],
+      "mini-enter": [
+        "strawberry-milk-mini-enter.svg"
+      ],
+      "mini-peek": [
+        "strawberry-milk-mini-peek.svg"
+      ],
+      "mini-crabwalk": [
+        "strawberry-milk-mini-crabwalk.svg"
+      ],
+      "mini-enter-sleep": [
+        "strawberry-milk-mini-enter-sleep.svg"
+      ],
+      "mini-sleep": [
+        "strawberry-milk-mini-sleep.svg"
+      ]
+    },
+    "timings": {
+      "minDisplay": {
+        "mini-alert": 4000,
+        "mini-happy": 4000
+      },
+      "autoReturn": {
+        "mini-alert": 4000,
+        "mini-happy": 4000
+      }
+    },
+    "glyphFlips": {
+      "pixel-z": 4,
+      "pixel-z-small": 3
+    }
+  },
+  "reminderCard": {
+    "variant": "milk",
+    "cardBg": "rgba(255, 246, 250, 0.96)",
+    "cardBorder": "rgba(251, 113, 133, 0.28)",
+    "cardShadow": "0 12px 28px rgba(244, 114, 182, 0.2)",
+    "titleColor": "#66344a",
+    "bodyColor": "#8b6174",
+    "accentStrong": "#f472b6",
+    "accentSoft": "rgba(252, 165, 165, 0.22)",
+    "ornamentColor": "rgba(255, 255, 255, 0.7)"
+  },
+  "quickTaskCard": {
+    "variant": "milk",
+    "panelBg": "rgba(255, 246, 250, 0.96)",
+    "panelBorder": "rgba(251, 113, 133, 0.28)",
+    "panelShadow": "0 12px 28px rgba(244, 114, 182, 0.2)",
+    "textMain": "#66344a",
+    "textMuted": "#8b6174",
+    "line": "rgba(252, 165, 165, 0.22)",
+    "chipBg": "rgba(252, 165, 165, 0.22)",
+    "chipText": "#f472b6",
+    "success": "#F9A8D4",
+    "summaryBg": "rgba(255,255,255,0.72)",
+    "itemBg": "rgba(255,255,255,0.84)",
+    "itemDoneBg": "rgba(245,248,251,0.92)",
+    "inputBg": "rgba(255,255,255,0.9)",
+    "closeBg": "rgba(255, 255, 255, 0.7)",
+    "closeText": "#f472b6",
+    "scrollThumb": "rgba(252, 165, 165, 0.22)",
+    "autoDot": "#F472B6",
+    "autoDotGlow": "rgba(252, 165, 165, 0.22)"
+  },
+  "sounds": {
+    "complete": "complete.wav",
+    "confirm": "confirm.wav"
+  },
+  "objectScale": {
+    "widthRatio": 1.9,
+    "heightRatio": 1.3,
+    "offsetX": -0.45,
+    "offsetY": -0.25
+  }
+}

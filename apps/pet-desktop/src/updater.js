@@ -1,0 +1,605 @@
+// src/updater.js — Auto-update system (electron-updater + GitHub API version check)
+// Extracted from main.js L1877-2271
+
+const https = require("https");
+const { execFile } = require("child_process");
+const path = require("path");
+const fs = require("fs");
+const { app, dialog, shell, Notification } = require("electron");
+
+const isMac = process.platform === "darwin";
+
+module.exports = function initUpdater(ctx) {
+const UPDATE_REPO_ENV = process.env.GOWIN_UPDATE_REPO || "";
+
+function normalizeUpdateRepo(input) {
+  const raw = String(input || "").trim();
+  if (!raw) return "";
+  const githubUrlMatch = raw.match(/github\.com[/:]([^/\s]+)\/([^/\s]+?)(?:\.git)?$/i);
+  if (githubUrlMatch) {
+    return `${githubUrlMatch[1]}/${githubUrlMatch[2]}`.replace(/\/+$/, "");
+  }
+  const plain = raw.replace(/^\/+|\/+$/g, "");
+  if (/^[^/\s]+\/[^/\s]+$/.test(plain)) return plain;
+  return "";
+}
+
+const updateRepo = normalizeUpdateRepo(UPDATE_REPO_ENV);
+const updateSourceConfigured = !!updateRepo;
+const releaseLatestUrl = updateSourceConfigured ? `https://github.com/${updateRepo}/releases/latest` : "";
+const releaseApiPath = updateSourceConfigured ? `/repos/${updateRepo}/releases/latest` : "";
+
+function showUpdateSourceNotConfigured(manual) {
+  ctx.updateLog("Update source is not configured. Set GOWIN_UPDATE_REPO=owner/repo to enable online updates.");
+  updateStatus = "idle";
+  manualUpdateCheck = false;
+  ctx.rebuildAllMenus();
+  if (!manual) return;
+  dialog.showMessageBox({
+    type: "info",
+    title: ctx.t("updateNotAvailable"),
+    message: "在线更新未配置（请设置 GOWIN_UPDATE_REPO）。当前可继续使用本地安装包更新。",
+    noLink: true,
+  });
+}
+
+// ── Git-based update (for non-packaged installs: cloned repo on mac/linux) ──
+
+let _repoRoot;  // undefined = not checked yet, null = not a git repo
+
+function getRepoRoot() {
+  if (_repoRoot !== undefined) return _repoRoot;
+  if (app.isPackaged) { _repoRoot = null; return null; }
+  const root = path.join(__dirname, "..");
+  try {
+    if (fs.statSync(path.join(root, ".git")).isDirectory()) {
+      _repoRoot = root;
+      return root;
+    }
+  } catch {}
+  _repoRoot = null;
+  return null;
+}
+
+function gitCmd(args, cwd, timeout = 30000) {
+  return new Promise((resolve, reject) => {
+    execFile("git", args, { cwd, timeout }, (err, stdout) => {
+      if (err) reject(err);
+      else resolve(stdout.trim());
+    });
+  });
+}
+
+async function _gitCheckForUpdates(repoRoot, manual) {
+  updateStatus = "checking";
+  ctx.rebuildAllMenus();
+  ctx.updateLog("Git-based update check starting...");
+
+  try {
+    const branch = await gitCmd(["rev-parse", "--abbrev-ref", "HEAD"], repoRoot);
+    ctx.updateLog(`Current branch: ${branch}`);
+
+    await gitCmd(["fetch", "origin", branch], repoRoot);
+
+    const localHead = await gitCmd(["rev-parse", "HEAD"], repoRoot);
+    const remoteHead = await gitCmd(["rev-parse", `origin/${branch}`], repoRoot);
+    ctx.updateLog(`Local: ${localHead.slice(0, 8)}, Remote: ${remoteHead.slice(0, 8)}`);
+
+    if (localHead === remoteHead) {
+      ctx.updateLog("Already up to date");
+      updateStatus = "idle";
+      manualUpdateCheck = false;
+      ctx.rebuildAllMenus();
+      if (manual) {
+        new Notification({
+          title: ctx.t("updateNotAvailable"),
+          body: ctx.t("updateNotAvailableMsg").replace("{version}", app.getVersion()),
+        }).show();
+      }
+      return;
+    }
+
+    // Get remote version from package.json
+    let remoteVersion;
+    try {
+      const remotePkg = await gitCmd(["show", `origin/${branch}:package.json`], repoRoot);
+      remoteVersion = JSON.parse(remotePkg).version;
+    } catch {
+      remoteVersion = remoteHead.slice(0, 8);
+    }
+    ctx.updateLog(`Remote version: v${remoteVersion}`);
+
+    updateStatus = "available";
+    ctx.rebuildAllMenus();
+
+    // Silent mode: skip dialog
+    if (!manual && (ctx.doNotDisturb || ctx.miniMode)) {
+      ctx.updateLog("Silent mode, skipping dialog");
+      updateStatus = "idle";
+      ctx.rebuildAllMenus();
+      return;
+    }
+
+    const { response } = await dialog.showMessageBox({
+      type: "info",
+      title: ctx.t("updateAvailable"),
+      message: ctx.t("updateAvailableMsg").replace("{version}", remoteVersion),
+      buttons: [ctx.t("updateNow"), ctx.t("restartLater")],
+      defaultId: 0,
+      noLink: true,
+    });
+
+    if (response !== 0) {
+      ctx.updateLog("User chose to update later");
+      updateStatus = "idle";
+      ctx.rebuildAllMenus();
+      return;
+    }
+
+    // Check for uncommitted changes before pulling
+    const dirty = await gitCmd(["status", "--porcelain"], repoRoot);
+    if (dirty) {
+      ctx.updateLog(`Working directory is dirty:\n${dirty}`);
+      updateStatus = "idle";
+      ctx.rebuildAllMenus();
+      dialog.showMessageBox({
+        type: "warning",
+        title: ctx.t("updateError"),
+        message: ctx.t("updateDirtyMsg"),
+        noLink: true,
+      });
+      return;
+    }
+
+    // Pull and restart
+    ctx.updateLog("Starting git pull...");
+    updateStatus = "downloading";
+    ctx.rebuildAllMenus();
+
+    await gitCmd(["pull", "origin", branch], repoRoot, 60000);
+    ctx.updateLog("Git pull complete");
+
+    // Run npm install if dependencies changed
+    const diff = await gitCmd(["diff", "--name-only", localHead, "HEAD"], repoRoot);
+    if (diff.includes("package.json") || diff.includes("package-lock.json")) {
+      ctx.updateLog("Dependencies changed, running npm install...");
+      await new Promise((resolve, reject) => {
+        execFile("npm", ["install", "--no-fund", "--no-audit"],
+          { cwd: repoRoot, timeout: 120000, shell: process.platform === "win32" },
+          (err) => { if (err) reject(err); else resolve(); });
+      });
+      ctx.updateLog("npm install complete");
+    }
+
+    ctx.updateLog("Relaunching app...");
+    app.relaunch();
+    app.exit(0);
+
+  } catch (err) {
+    ctx.updateLog(`ERROR: git update failed: ${err.message}`);
+    updateStatus = "error";
+    manualUpdateCheck = false;
+    ctx.rebuildAllMenus();
+    if (manual) {
+      dialog.showMessageBox({
+        type: "error",
+        title: ctx.t("updateError"),
+        message: ctx.t("updateErrorMsg"),
+        noLink: true,
+      });
+    }
+  }
+}
+
+// ── electron-updater (for packaged installs: Windows NSIS) ──
+
+let _autoUpdater = null;
+function getAutoUpdater() {
+  if (!_autoUpdater) {
+    try {
+      _autoUpdater = require("electron-updater").autoUpdater;
+      _autoUpdater.autoDownload = false;
+      _autoUpdater.autoInstallOnAppQuit = true;
+      ctx.updateLog("Auto-updater initialized successfully");
+    } catch (err) {
+      const errMsg = `electron-updater load failed: ${err.message}`;
+      console.warn("GoWIN:", errMsg);
+      ctx.updateLog(`ERROR: ${errMsg}`);
+      ctx.updateLog(`Stack: ${err.stack}`);
+      return null;
+    }
+  }
+  return _autoUpdater;
+}
+
+let updateStatus = "idle"; // idle | checking | available | downloading | ready | error
+let manualUpdateCheck = false;
+
+function setupAutoUpdater() {
+  const autoUpdater = getAutoUpdater();
+  if (!autoUpdater) {
+    ctx.updateLog("setupAutoUpdater: autoUpdater is null, skipping event setup");
+    return;
+  }
+  ctx.updateLog("Setting up auto-updater event handlers");
+
+  autoUpdater.on("update-available", (info) => {
+    ctx.updateLog(`Update available: v${info.version} (current: v${app.getVersion()})`);
+    const wasManual = manualUpdateCheck;
+    manualUpdateCheck = false;
+    // Silent check during DND/mini: skip dialog, stay idle so user can check later
+    if (!wasManual && (ctx.doNotDisturb || ctx.miniMode)) {
+      ctx.updateLog("Silent mode (DND/mini), skipping dialog");
+      updateStatus = "idle";
+      ctx.rebuildAllMenus();
+      return;
+    }
+    updateStatus = "available";
+    ctx.rebuildAllMenus();
+    if (isMac) {
+      // macOS: no code signing → can't auto-update, open GitHub Releases page instead
+      if (!updateSourceConfigured) {
+        showUpdateSourceNotConfigured(wasManual);
+        return;
+      }
+      ctx.updateLog("macOS detected: will open configured GitHub Releases page");
+      dialog.showMessageBox({
+        type: "info",
+        title: ctx.t("updateAvailable"),
+        message: ctx.t("updateAvailableMacMsg").replace("{version}", info.version),
+        buttons: [ctx.t("download"), ctx.t("restartLater")],
+        defaultId: 0,
+        noLink: true,
+      }).then(({ response }) => {
+        if (response === 0) {
+          ctx.updateLog("User chose to download, opening configured releases page");
+          shell.openExternal(releaseLatestUrl);
+        } else {
+          ctx.updateLog("User chose to download later");
+        }
+        updateStatus = "idle";
+        ctx.rebuildAllMenus();
+      });
+    } else {
+      // Windows: auto-download
+      ctx.updateLog("Windows detected: will offer auto-download");
+      dialog.showMessageBox({
+        type: "info",
+        title: ctx.t("updateAvailable"),
+        message: ctx.t("updateAvailableMsg").replace("{version}", info.version),
+        buttons: [ctx.t("download"), ctx.t("restartLater")],
+        defaultId: 0,
+        noLink: true,
+      }).then(({ response }) => {
+        if (response === 0) {
+          ctx.updateLog("User chose to download, starting download");
+          updateStatus = "downloading";
+          ctx.rebuildAllMenus();
+          autoUpdater.downloadUpdate();
+        } else {
+          ctx.updateLog("User chose to download later");
+          updateStatus = "idle";
+          ctx.rebuildAllMenus();
+        }
+      });
+    }
+  });
+
+  autoUpdater.on("update-not-available", (info) => {
+    ctx.updateLog(`No update available: current v${app.getVersion()} is latest`);
+    updateStatus = "idle";
+    ctx.rebuildAllMenus();
+    if (manualUpdateCheck) {
+      manualUpdateCheck = false;
+      ctx.updateLog("Showing 'up to date' dialog");
+      dialog.showMessageBox({
+        type: "info",
+        title: ctx.t("updateNotAvailable"),
+        message: ctx.t("updateNotAvailableMsg").replace("{version}", app.getVersion()),
+        noLink: true,
+      });
+    }
+  });
+
+  autoUpdater.on("update-downloaded", (info) => {
+    ctx.updateLog(`Update downloaded: v${info.version}`);
+    updateStatus = "ready";
+    ctx.rebuildAllMenus();
+    dialog.showMessageBox({
+      type: "info",
+      title: ctx.t("updateReady"),
+      message: ctx.t("updateReadyMsg").replace("{version}", info.version),
+      buttons: [ctx.t("restartNow"), ctx.t("restartLater")],
+      defaultId: 0,
+      noLink: true,
+    }).then(({ response }) => {
+      if (response === 0) {
+        ctx.updateLog("User chose to restart now");
+        autoUpdater.quitAndInstall(false, true);
+      } else {
+        ctx.updateLog("User chose to restart later");
+      }
+    });
+  });
+
+  autoUpdater.on("error", (err) => {
+    ctx.updateLog(`ERROR: AutoUpdater error: ${err.message}`);
+    ctx.updateLog(`Error code: ${err.code || 'none'}`);
+    ctx.updateLog(`Error stack: ${err.stack}`);
+
+    // Note: 404 errors during download might mean:
+    // 1. Release files not uploaded yet (check GitHub first)
+    // 2. Real network error
+    // Since we now check GitHub API first, 404 here likely means
+    // the release exists but files aren't ready
+    // For auto-checks (not manual), just log silently
+    if (!manualUpdateCheck) {
+      ctx.updateLog("Auto-check error, not showing dialog");
+      updateStatus = "error";
+      ctx.rebuildAllMenus();
+      return;
+    }
+
+    // For manual checks, show user-friendly error
+    manualUpdateCheck = false;
+    if (isUpdate404Error(err)) {
+      // 404 after GitHub API check = release exists but files missing
+      updateStatus = "idle";
+      ctx.rebuildAllMenus();
+      ctx.updateLog("404 error: release files not ready, showing 'up to date'");
+      dialog.showMessageBox({
+        type: "info",
+        title: ctx.t("updateNotAvailable"),
+        message: ctx.t("updateNotAvailableMsg").replace("{version}", app.getVersion()),
+        noLink: true,
+      });
+    } else {
+      // Real error: network, permissions, corrupted download, etc.
+      updateStatus = "error";
+      ctx.rebuildAllMenus();
+      ctx.updateLog("Real error: showing error dialog");
+      dialog.showMessageBox({
+        type: "error",
+        title: ctx.t("updateError"),
+        message: ctx.t("updateErrorMsg"),
+        noLink: true,
+      });
+    }
+  });
+}
+
+// ── Version comparison utilities ──
+// Compare two version strings (e.g., "0.5.0" vs "0.5.1")
+// Returns: -1 if v1 < v2, 0 if v1 == v2, 1 if v1 > v2
+function compareVersions(v1, v2) {
+  const parts1 = v1.replace('v', '').split('.').map(Number);
+  const parts2 = v2.replace('v', '').split('.').map(Number);
+  const maxLength = Math.max(parts1.length, parts2.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    const p1 = parts1[i] || 0;
+    const p2 = parts2[i] || 0;
+    if (p1 < p2) return -1;
+    if (p1 > p2) return 1;
+  }
+  return 0;
+}
+
+// Fetch latest release version from GitHub API (10s timeout)
+function fetchLatestVersion() {
+  return new Promise((resolve, reject) => {
+    if (!updateSourceConfigured) {
+      reject(new Error("Update source not configured"));
+      return;
+    }
+    const options = {
+      hostname: 'api.github.com',
+      path: releaseApiPath,
+      headers: {
+        'User-Agent': 'GoWIN-Buddy-Updater'
+      }
+    };
+
+    const req = https.get(options, (res) => {
+      let data = '';
+      res.on('data', chunk => { data += chunk; });
+      res.on('end', () => {
+        if (res.statusCode === 200) {
+          try {
+            const release = JSON.parse(data);
+            if (!release.tag_name) return reject(new Error('No tag_name in release'));
+            resolve(release.tag_name);
+          } catch (err) {
+            reject(new Error(`Failed to parse GitHub response: ${err.message}`));
+          }
+        } else if (res.statusCode === 404) {
+          reject(new Error('No releases found'));
+        } else {
+          reject(new Error(`GitHub API returned ${res.statusCode}`));
+        }
+      });
+    }).on('error', reject);
+
+    req.setTimeout(10000, () => {
+      req.destroy();
+      reject(new Error('GitHub API request timed out (10s)'));
+    });
+  });
+}
+
+function isUpdate404Error(err) {
+  return err.code === 'ERR_UPDATER_CHANNEL_FILE_NOT_FOUND' ||
+         err.message?.includes('404') ||
+         err.message?.includes('Cannot find latest.yml');
+}
+
+async function checkForUpdates(manual = false) {
+  try { return await _checkForUpdatesInner(manual); }
+  catch (e) {
+    ctx.updateLog(`ERROR: unhandled in checkForUpdates: ${e.message}`);
+    updateStatus = "idle";
+    manualUpdateCheck = false;
+    ctx.rebuildAllMenus();
+  }
+}
+
+async function _checkForUpdatesInner(manual) {
+  if (updateStatus === "checking" || updateStatus === "downloading") {
+    ctx.updateLog(`Check skipped: already ${updateStatus}`);
+    return;
+  }
+
+  // Non-packaged git clone → use git-based updates
+  const repoRoot = getRepoRoot();
+  if (repoRoot) {
+    return _gitCheckForUpdates(repoRoot, manual);
+  }
+
+  const currentVersion = app.getVersion();
+  ctx.updateLog(`Starting update check (manual: ${manual}, current version: v${currentVersion})`);
+  manualUpdateCheck = manual;
+  updateStatus = "checking";
+  ctx.rebuildAllMenus();
+
+  if (!updateSourceConfigured) {
+    showUpdateSourceNotConfigured(manual);
+    return;
+  }
+
+  // Step 1: Check GitHub API for latest version
+  ctx.updateLog("Fetching latest version from GitHub API...");
+  let latestVersion;
+  try {
+    latestVersion = await fetchLatestVersion();
+    ctx.updateLog(`Latest version on GitHub: ${latestVersion}`);
+  } catch (err) {
+    ctx.updateLog(`ERROR: Failed to fetch latest version: ${err.message}`);
+
+    // Network error or GitHub API issue
+    updateStatus = "error";
+    manualUpdateCheck = false;
+    ctx.rebuildAllMenus();
+    if (manual) {
+      ctx.updateLog("Showing error dialog (GitHub API failed)");
+      dialog.showMessageBox({
+        type: "error",
+        title: ctx.t("updateError"),
+        message: ctx.t("updateErrorMsg"),
+        noLink: true,
+      });
+    }
+    return;
+  }
+
+  // Step 2: Compare versions
+  const versionCompare = compareVersions(currentVersion, latestVersion);
+  ctx.updateLog(`Version comparison: ${currentVersion} vs ${latestVersion} = ${versionCompare}`);
+
+  if (versionCompare >= 0) {
+    // Current version is up-to-date or newer
+    ctx.updateLog("Current version is up-to-date or newer");
+    updateStatus = "idle";
+    manualUpdateCheck = false;
+    ctx.rebuildAllMenus();
+    if (manual) {
+      ctx.updateLog("Showing 'up to date' notification");
+      new Notification({
+        title: ctx.t("updateNotAvailable"),
+        body: ctx.t("updateNotAvailableMsg").replace("{version}", currentVersion),
+      }).show();
+    }
+    return;
+  }
+
+  // Step 3: Newer version available, use electron-updater to download
+  ctx.updateLog(`Newer version available: ${latestVersion}, proceeding with electron-updater`);
+  const au = getAutoUpdater();
+  if (!au) {
+    ctx.updateLog("ERROR: AutoUpdater not available");
+    updateStatus = "error";
+    manualUpdateCheck = false;
+    ctx.rebuildAllMenus();
+    if (manual) {
+      ctx.updateLog("Showing error dialog (auto-updater not available)");
+      dialog.showMessageBox({
+        type: "error",
+        title: ctx.t("updateError"),
+        message: ctx.t("updateErrorMsg"),
+        noLink: true,
+      });
+    }
+    return;
+  }
+
+  // Let electron-updater handle the download
+  au.checkForUpdates().then((result) => {
+    if (!result) {
+      ctx.updateLog("Update check returned null (likely dev mode)");
+      updateStatus = "idle";
+      manualUpdateCheck = false;
+      ctx.rebuildAllMenus();
+    } else {
+      const info = result.updateInfo || result.versionInfo || {};
+      ctx.updateLog(`Update check result: v${info.version}, files: ${info.files?.map(f => f.url)?.join(", ")}`);
+    }
+  }).catch((err) => {
+    ctx.updateLog(`ERROR: checkForUpdates promise rejected: ${err.message}`);
+    ctx.updateLog(`Stack: ${err.stack}`);
+
+    // Distinguish between real errors and "no newer version"
+    if (isUpdate404Error(err)) {
+      // This might mean the release files aren't ready yet
+      ctx.updateLog("404 error: release files may not be uploaded yet");
+      updateStatus = "idle";
+      manualUpdateCheck = false;
+      ctx.rebuildAllMenus();
+      if (manual) {
+        ctx.updateLog("Showing 'up to date' dialog (release files not found)");
+        dialog.showMessageBox({
+          type: "info",
+          title: ctx.t("updateNotAvailable"),
+          message: ctx.t("updateNotAvailableMsg").replace("{version}", currentVersion),
+          noLink: true,
+        });
+      }
+    } else {
+      // Real error: network, permissions, etc.
+      ctx.updateLog("Real error in promise: showing error dialog");
+      updateStatus = "error";
+      manualUpdateCheck = false;
+      ctx.rebuildAllMenus();
+      if (manual) {
+        ctx.updateLog("Showing error dialog (check failed)");
+        dialog.showMessageBox({
+          type: "error",
+          title: ctx.t("updateError"),
+          message: ctx.t("updateErrorMsg"),
+          noLink: true,
+        });
+      }
+    }
+  });
+}
+
+function getUpdateMenuItem() {
+  return {
+    label: getUpdateMenuLabel(),
+    enabled: updateStatus !== "checking" && updateStatus !== "downloading",
+    click: () => updateStatus === "ready"
+      ? getAutoUpdater()?.quitAndInstall(false, true)
+      : checkForUpdates(true),
+  };
+}
+
+function getUpdateMenuLabel() {
+  switch (updateStatus) {
+    case "checking": return ctx.t("checkingForUpdates");
+    case "downloading": return getRepoRoot() ? ctx.t("updating") : ctx.t("updateDownloading");
+    case "ready": return ctx.t("updateReady");
+    default: return ctx.t("checkForUpdates");
+  }
+}
+
+return { setupAutoUpdater, checkForUpdates, getUpdateMenuItem, getUpdateMenuLabel };
+
+};
