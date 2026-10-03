@@ -4,7 +4,7 @@ Version: **0.2.1**. Verification recorded on **2026-10-03 UTC**, on Windows x64.
 
 | Check | Result |
 | --- | --- |
-| Desktop runtime Node tests | 380 passed, 0 failed, 0 skipped |
+| Desktop runtime Node tests | 383 passed, 0 failed, 0 skipped |
 | Python local-host tests | 11 passed |
 | Dashboard browser tests | 5 passed, 0 skipped |
 | Changed theme/Gemini fixtures after publication cleanup | 29 passed |
@@ -32,4 +32,4 @@ The development-only dependency graph reports eight high-severity entries from t
 
 The public snapshot contains product source, locked npm metadata, original art, vendor fonts with licenses, build/QA tools and bilingual documents. Personal task state, preferences, project research records, local logs, machine-resolved configuration, credentials, local runtimes and compiled installers are excluded from Git. Installers are distributed through Releases. Demonstrations use fresh fictional task data and capture app content only.
 
-中文：公开版桌宠测试 380 项、Host 测试 11 项、浏览器测试 5 项均通过；安装版 8 个关键路径通过，渲染错误为 0。升级与卸载保留测试存档、偏好和用户文件，隔离安装不改变正常快捷方式及注册信息。源码隐私检查通过，372 个原创 SVG 的清单校验通过。运行依赖审计为 0；开发构建链中尚未有修复版本的缓存库告警单独记录。动图和截图均使用虚构演示任务。
+中文：公开版桌宠测试 383 项、Host 测试 11 项、浏览器测试 5 项均通过；安装版 8 个关键路径通过，渲染错误为 0。升级与卸载保留测试存档、偏好和用户文件，隔离安装不改变正常快捷方式及注册信息。源码隐私检查通过，372 个原创 SVG 的清单校验通过。运行依赖审计为 0；开发构建链中尚未有修复版本的缓存库告警单独记录。动图和截图均使用虚构演示任务。

@@ -108,19 +108,37 @@ function createPidResolver(options) {
     let agentPid = null;
     const pidChain = [];
 
+    // Query the requested ancestor chain once; modern Windows may not ship WMIC.
+    let windowsProcesses = new Map();
+    if (isWin && Number.isSafeInteger(Number(startPid)) && Number(startPid) > 0) {
+      try {
+        const depth = Number.isSafeInteger(Number(maxDepth)) && Number(maxDepth) > 0 ? Number(maxDepth) : 8;
+        const fields = agentCmdlineCheck ? 'ProcessId,ParentProcessId,Name,CommandLine' : 'ProcessId,ParentProcessId,Name';
+        const script = [
+          '$OutputEncoding=[Console]::OutputEncoding=New-Object System.Text.UTF8Encoding($false)',
+          '$walkPid=' + Number(startPid), '$rows=@()',
+          'for($i=0;$i -lt ' + depth + ' -and $walkPid -gt 1;$i++){',
+          '$p=Get-CimInstance Win32_Process -Filter ("ProcessId="+$walkPid) -Property ' + fields + ' -ErrorAction Stop',
+          'if(-not $p){break}', '$rows+=($p | Select-Object ' + fields + ')',
+          'if($p.Name.ToLowerInvariant() -in @("explorer.exe","services.exe","winlogon.exe","svchost.exe")){break}',
+          'if($p.ParentProcessId -eq $walkPid){break}', '$walkPid=$p.ParentProcessId', '}',
+          'ConvertTo-Json -InputObject $rows -Compress'
+        ].join(';');
+        const raw = require('child_process').execFileSync('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], { encoding: 'utf8', timeout: 5000, windowsHide: true });
+        const parsed = JSON.parse(raw);
+        const rows = Array.isArray(parsed) ? parsed : (parsed ? [parsed] : []);
+        windowsProcesses = new Map(rows.map(row => [Number(row.ProcessId), row]));
+      } catch { /* A disappeared/inaccessible process falls back to startPid. */ }
+    }
+
     for (let i = 0; i < maxDepth; i++) {
       let name, parentPid;
       try {
         if (isWin) {
-          const out = execSync(
-            `wmic process where "ProcessId=${pid}" get Name,ParentProcessId /format:csv`,
-            { encoding: "utf8", timeout: 1500, windowsHide: true }
-          );
-          const lines = out.trim().split("\n").filter(l => l.includes(","));
-          if (!lines.length) break;
-          const parts = lines[lines.length - 1].split(",");
-          name = (parts[1] || "").trim().toLowerCase();
-          parentPid = parseInt(parts[2], 10);
+          const row = windowsProcesses.get(Number(pid));
+          if (!row) break;
+          name = String(row.Name || '').trim().toLowerCase();
+          parentPid = Number(row.ParentProcessId);
         } else {
           const cp = require("child_process");
           const ppidOut = cp.execSync(`ps -o ppid= -p ${pid}`, { encoding: "utf8", timeout: 1000 }).trim();
@@ -146,8 +164,7 @@ function createPidResolver(options) {
         } else if (agentCmdlineCheck && (name === "node.exe" || name === "node")) {
           try {
             const cmdOut = isWin
-              ? execSync(`wmic process where "ProcessId=${pid}" get CommandLine /format:csv`,
-                  { encoding: "utf8", timeout: 500, windowsHide: true })
+              ? String(windowsProcesses.get(Number(pid))?.CommandLine || "")
               : execSync(`ps -o command= -p ${pid}`, { encoding: "utf8", timeout: 500 });
             if (agentCmdlineCheck(cmdOut)) agentPid = pid;
           } catch {}
