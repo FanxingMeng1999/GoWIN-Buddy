@@ -61,3 +61,7 @@ python scripts/sync-brand-icons.py --root .
 设计源文件在 assets/brand/source/，SVG/PNG 导出和元数据在 assets/brand/extracted/，运行时图标在 assets/brand/runtime/。新增素材应具有可再分发许可。
 
 目录职责：apps/pet-desktop/ 为桌宠与测试，apps/rpg-hub/ 为本机 Host 和网页，scripts/ 为工具，launcher/windows/ 为启动器，installer/windows/ 为安装器，assets/brand/ 为原创素材，docs/ 为双语文档和实际演示。不依赖任何外部 RIOS 项目路径；部分旧内部标识为兼容保留。
+
+## 自动发布
+
+推送与应用版本一致的标签（例如 `v0.2.2`）会触发 Windows 安装器工作流。工作流构建带版本号的 EXE 和 SHA-256 清单，使用 `docs/release-<version>.md` 发布 GitHub Release，并检查两个发布资源是否齐全。手动运行工作流只生成同样的安装包资源，不会发布 Release。

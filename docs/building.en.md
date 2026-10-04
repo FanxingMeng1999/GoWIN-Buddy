@@ -78,3 +78,7 @@ Keep design sources in assets/brand/source/, SVG/PNG exports and their manifest 
 | docs/ | English/Chinese guides, actual demo images and release verification |
 
 No external RIOS checkout or directory layout is required. Some inherited internal identifiers retain their old names for compatibility.
+
+## Automated release
+
+Push a tag matching the app version (for example, `v0.2.2`) to run the Windows installer workflow. It builds and checksums the versioned EXE, publishes a GitHub Release using `docs/release-<version>.md`, and verifies that both release assets are present. Manually dispatching the workflow builds the same assets without publishing a release.
