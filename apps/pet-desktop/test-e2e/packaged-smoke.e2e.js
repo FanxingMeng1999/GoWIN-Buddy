@@ -73,10 +73,10 @@ async function captureNative(app, suffix, target) {
     assert.ok(configuration.bundledPython.toLowerCase().startsWith(installedRoot.toLowerCase()));
     const installedTick = await app.evaluate(({ app }) => process.getBuiltinModule("fs").readFileSync(process.getBuiltinModule("path").join(app.getAppPath(), "src/tick.js"), "utf8"));
     assert.match(installedTick, /Hidden pets do not need native cursor polling/);
-    const expectedPetHashes = Object.fromEntries(["dashboard-env.js", "dashboard-bridge.js", "runtime-state.js", "tick.js", "updater.js", "quick-tasks-renderer.js", "quick-tasks.html", "renderer.js", "styles.css", "../hooks/shared-process.js"].map(file => [file, crypto.createHash("sha256").update(fs.readFileSync(path.join(repo, "apps/pet-desktop/src", file))).digest("hex")]));
+    const expectedPetHashes = Object.fromEntries(["dashboard-env.js", "dashboard-bridge.js", "runtime-state.js", "tick.js", "updater.js", "quick-tasks-renderer.js", "quick-tasks.html", "renderer.js", "styles.css", "../hooks/shared-process.js"].map(file => [file, crypto.createHash("sha256").update(fs.readFileSync(path.join(repo, "apps/pet-desktop/src", file), "utf8").replace(/\r\n/g, "\n")).digest("hex")]));
     const actualPetHashes = await app.evaluate(({ app }, files) => {
       const fs = process.getBuiltinModule("fs"), path = process.getBuiltinModule("path"), crypto = process.getBuiltinModule("crypto");
-      return Object.fromEntries(files.map(file => [file, crypto.createHash("sha256").update(fs.readFileSync(path.join(app.getAppPath(), "src", file))).digest("hex")]));
+      return Object.fromEntries(files.map(file => [file, crypto.createHash("sha256").update(fs.readFileSync(path.join(app.getAppPath(), "src", file), "utf8").replace(/\r\n/g, "\n")).digest("hex")]));
     }, Object.keys(expectedPetHashes));
     assert.deepEqual(actualPetHashes, expectedPetHashes);
     for (const file of ["apps/rpg-hub/host/personal_dashboard_host.py", "apps/rpg-hub/web/dashboard.html", "apps/rpg-hub/web/state-sync.js", "scripts/windows/gowin-quality-common.ps1"]) assert.equal(fs.readFileSync(path.join(installedRoot, file), "utf8").replace(/\r\n/g, "\n"), fs.readFileSync(path.join(repo, file), "utf8").replace(/\r\n/g, "\n"));

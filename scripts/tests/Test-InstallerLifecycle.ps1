@@ -1,11 +1,12 @@
-param([Parameter(Mandatory=$true)][string]$InstallRoot)
+param([Parameter(Mandatory=$true)][string]$InstallRoot,[string]$SetupPath)
 $ErrorActionPreference='Stop'
 $workspaceRoot=(Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '../..')).Path
 $InstallRoot=(Resolve-Path -LiteralPath $InstallRoot).Path
 $allowed=[IO.Path]::GetFullPath((Join-Path $workspaceRoot 'tmp')).TrimEnd('\')+'\'
 if (-not $InstallRoot.StartsWith($allowed,[StringComparison]::OrdinalIgnoreCase)) { throw 'Lifecycle checks require a fixture under this checkout tmp/' }
 if (-not (Test-Path -LiteralPath (Join-Path $InstallRoot 'qa-install.marker'))) { throw 'Isolated /QA installation marker required' }
-$setup=Join-Path $workspaceRoot 'installer/windows/dist/GoWINBuddy-Setup.exe'
+if (-not $SetupPath) { $SetupPath=Join-Path $workspaceRoot 'installer/windows/dist/GoWINBuddy-Setup.exe' }
+$setup=(Resolve-Path -LiteralPath $SetupPath).Path
 $profile=Join-Path (Split-Path $InstallRoot -Parent) 'test-user-data'
 $state=Join-Path $profile 'state/game_state.json'
 $prefs=Join-Path $profile 'gowin-prefs.json'
