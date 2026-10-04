@@ -26,6 +26,24 @@ describe("theme-loader built-in themes", () => {
     assert.ok(ids.includes("campfire-cocoa"));
     assert.ok(ids.includes("pixel-pro"));
     assert.ok(!ids.includes("template"));
+    const mascots = { clawd: "sprout", "mint-chip": "turtle", "blue-hour": "penguin", "matcha-lab": "frog", "strawberry-milk": "crab", "sunset-soda": "fox", "paper-parade": "mushroom", "aurora-pop": "owl", "campfire-cocoa": "cat", "pixel-pro": "robot" };
+    for (const [id, species] of Object.entries(mascots)) {
+      const theme = themeLoader.loadTheme(id);
+      assert.ok(theme, `missing ${id}`);
+      assert.strictEqual(theme.mascot.species, species);
+      assert.strictEqual(theme.hitBoxes.default.x, -1);
+      assert.strictEqual(theme.hitBoxes.default.y, 5);
+      assert.strictEqual(theme.hitBoxes.default.w, 17);
+      assert.strictEqual(theme.hitBoxes.default.h, 12);
+      assert.strictEqual(theme.objectScale.widthRatio, 1.9);
+      assert.strictEqual(theme.objectScale.heightRatio, 1.3);
+      const idleFile = path.resolve(__dirname, "..", "assets", "svg", theme.states.idle[0]);
+      const idleSvg = fs.readFileSync(idleFile, "utf8");
+      assert.ok(idleSvg.includes(`data-species="${species}"`), id);
+      assert.ok(idleSvg.includes("viewBox=\"-15 -25 45 45\""), id);
+      assert.ok(idleSvg.includes("data-size-profile=\"legacy-pet-footprint\" transform=\"translate(0 6.08) scale(1 .62)\""), id);
+      assert.ok(idleSvg.includes("id=\"body-js\"") && idleSvg.includes("id=\"eyes-js\""), id);
+    }
     const matchaTheme = themes.find((theme) => theme.id === "matcha-lab");
     assert.ok(matchaTheme && matchaTheme.preview);
     assert.strictEqual(matchaTheme.preview.swatches.length, 3);

@@ -8,7 +8,15 @@
 
 小芽 Sprout Buddy 待在屏幕边缘。鼠标移过去记一条待办，双击看看今天的进度；学习、工作和生活中的小步推进，可以在本机 RPG 仪表盘里积累经验、星尘与里程碑。
 
-公开版提供独立制作的小芽角色、十套内置主题、本地字体、空白首启存档和独立 Windows 安装器。日常任务与 RPG 功能无需云账号。
+公开版提供十种原创桌宠角色和配色主题、本地字体、空白首启存档和独立 Windows 安装器。日常任务与 RPG 功能无需云账号。
+
+## 认识十位桌面伙伴
+
+小芽、苔龟、午夜企鹅、抹茶蛙、蔷薇蟹、汽水狐狸、纸伞蘑菇、极光猫头鹰、可可猫与口袋机器人，各有独立轮廓和待机、工作、休息动作。尺寸按早期 GoWIN!Buddy 桌宠的可视范围调整。
+
+![十种原创桌宠角色，大小调整至接近早期 GoWIN!Buddy](docs/media/mascot-gallery.png)
+
+可以在宠物外观菜单中选择角色与配色。
 
 ## 实际演示
 
@@ -31,13 +39,13 @@
 | 本机双向同步 | 桌宠与仪表盘使用同一份本地存档 |
 | 保存与恢复 | 原子写入、上一份有效状态备份、损坏文件留存 |
 | 个人仪表盘 | 目标倒计时、心情与反思、历史记录、JSON 导出 |
-| 自定义 | 十套原创小芽主题，以及可编辑的主题模板 |
+| 自定义 | 十种轮廓不同的原创桌宠角色及配色，也可从模板继续自定义 |
 
 已完成临时任务通过“收起”清理，这个操作本身不发放经验；奖励按仪表盘的任务、签到和里程碑规则计算。
 
 ## 安装与上手
 
-1. 进入 [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest)，下载 **GoWINBuddy-Setup-0.2.1.exe**。
+1. 进入 [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest)，下载 **GoWINBuddy-Setup-0.2.2.exe**。
 2. 运行安装器，选择简体中文或 English、安装位置并启动。
 3. 鼠标移到宠物上，添加一个小任务；双击宠物打开仪表盘。
 
@@ -60,7 +68,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap-local-deps
 powershell -NoProfile -ExecutionPolicy Bypass -File installer/windows/build-installer.ps1
 ~~~
 
-安装包输出到 installer/windows/dist/。npm 版本由锁文件固定，工具运行时、个人数据、本机日志和解析后的机器路径不进入 Git。详见[中文构建指南](docs/building.zh-CN.md)、[实际验收结果](docs/validation.md)、[主题说明](docs/themes.md)和[贡献说明](CONTRIBUTING.md)。
+安装包输出到 installer/windows/dist/。npm 版本由锁文件固定，工具运行时、个人数据、本机日志和解析后的机器路径不进入 Git。详见[中文构建指南](docs/building.zh-CN.md)、[实际验收结果](docs/validation.md)、[角色主题说明](docs/themes.md)和[贡献说明](CONTRIBUTING.md)。
 
 ## 开源协议与致谢
 

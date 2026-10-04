@@ -1,10 +1,10 @@
-# GoWIN!Buddy 0.2.1 — User guide
+# GoWIN!Buddy 0.2.2 — User guide
 
 GoWIN!Buddy combines an original Sprout Buddy desktop pet, a quick task panel and a local RPG dashboard. The release installer is for Windows 10/11 x64 and includes Node.js and Python.
 
 ## Install and start
 
-Download **GoWINBuddy-Setup-0.2.1.exe** from the GitHub Releases page. Run it, choose English or Simplified Chinese, select a folder, and launch GoWIN!Buddy. Installation is per user. Use the desktop or Start menu shortcut afterwards. This release is unsigned; the executable SHA-256 is published with the release.
+Download **GoWINBuddy-Setup-0.2.2.exe** from the GitHub Releases page. Run it, choose English or Simplified Chinese, select a folder, and launch GoWIN!Buddy. Installation is per user. Use the desktop or Start menu shortcut afterwards. This release is unsigned; the executable SHA-256 is published with the release.
 
 ## Everyday controls
 

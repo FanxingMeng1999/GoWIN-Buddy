@@ -21,6 +21,8 @@ jobs:
           python-version: '3.11.9'
       - name: Check public source
         run: python scripts/verify-public-source.py
+      - name: Verify mascot art and original-size footprint
+        run: python scripts/tests/test_mascot_art.py
       - name: Install locked dependencies
         run: npm ci --prefix apps/pet-desktop
       - name: Unit and persistence checks

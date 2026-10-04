@@ -5,7 +5,7 @@
   "name": "My Theme",
   "author": "FanxingMeng1999",
   "version": "1.0.0",
-  "description": "Original Sprout Buddy artwork · My Theme",
+  "description": "A customizable desktop companion.",
   "license": "MIT",
   "viewBox": {
     "x": -15,
@@ -91,22 +91,22 @@
   },
   "hitBoxes": {
     "default": {
-      "x": -2,
-      "y": -7,
-      "w": 19,
-      "h": 25
+      "x": -1,
+      "y": 5,
+      "w": 17,
+      "h": 12
     },
     "sleeping": {
       "x": -2,
-      "y": 0,
+      "y": 9,
       "w": 19,
-      "h": 18
+      "h": 7
     },
     "wide": {
-      "x": -5,
-      "y": -8,
-      "w": 25,
-      "h": 26
+      "x": -3,
+      "y": 3,
+      "w": 21,
+      "h": 14
     }
   },
   "sleepingHitboxFiles": [
@@ -142,11 +142,14 @@
     "supported": false
   },
   "objectScale": {
-    "_comment": "Fine-tune the rendered size relative to viewBox. Defaults work for most themes.",
     "widthRatio": 1.9,
     "heightRatio": 1.3,
     "offsetX": -0.45,
     "offsetY": -0.25
   },
-  "repo": "https://github.com/FanxingMeng1999/GoWIN-Buddy"
+  "repo": "https://github.com/FanxingMeng1999/GoWIN-Buddy",
+  "mascot": {
+    "species": "sprout",
+    "name": "My Theme"
+  }
 }

@@ -1,35 +1,29 @@
 # Public release verification / 公开版验收
 
-Version: **0.2.1**. Verification recorded on **2026-10-03 UTC**, on Windows x64. Results below are local checks of the public source and standalone installed runtime. GitHub Actions provides an additional source check after publication.
+Version: **0.2.2**. Verified on **2026-10-04** on Windows x64.
 
 | Check | Result |
 | --- | --- |
 | Desktop runtime Node tests | 383 passed, 0 failed, 0 skipped |
 | Python local-host tests | 11 passed |
 | Dashboard browser tests | 5 passed, 0 skipped |
-| Changed theme/Gemini fixtures after publication cleanup | 29 passed |
+| Mascot art/manifest check | 10 distinct silhouettes; 372 SVG states; XML, interaction anchors and all SHA-256 entries valid |
 | Runtime discovery precedence | 7 passed |
 | Process ownership/scope | 7 passed |
-| Standalone installed smoke checks | 8 passed |
+| Standalone installed smoke checks | 8 passed from a path containing Chinese characters, spaces and `!` |
 | Installed renderer errors | 0 |
-| Ctrl+Alt+Q in the isolated final run | Registered |
-| Reinstall/upgrade | State and preferences preserved |
-| Uninstall | State, preferences and user-created files preserved; app-owned payload removed |
-| Isolated /QA installation | Existing normal shortcut and registration unchanged |
+| Upgrade/uninstall retention | Passed; state, preferences and user files retained, normal registration unchanged |
 | Production npm audit | 0 reported vulnerabilities |
-| Original-art manifest | 372 SVG states; hashes checked; 0 identical to upstream restricted artwork |
 | Public-source privacy gate | Passed; empty first-run records and required notices |
 
-Installed checks exercise packaged resource discovery, offline task add/check/clear, work clock, drag IPC, repeated launch, bundled Python hosting, conditional writes, dashboard rendering and synchronization back to the pet. Core packaged source hashes and dashboard source content were compared with the reviewed checkout; Windows newline differences are normalized for script/text comparisons. The screenshot tools use Electron's native capturePage interface for hidden windows. Installation was also checked in a path containing Chinese characters, spaces and an exclamation mark.
+The installed capture measured the mascot silhouette, including its shadow, at 86×56 pixels in a 200×200 window. The original SVG occupied 15×9 units at the same effective render scale (about 87×52 pixels). The new characters keep that compact footprint, the original 45×45 canvas, 1.9×/1.3× object placement and 17×12 default hitbox. The pet size menu, level badge and task/RPG window interaction remain unchanged. The bilingual screenshots and 28-frame demo GIF were recaptured from the installed 0.2.2 build using fictional tasks; the captured dashboard reported zero renderer errors.
 
-The release installer is unsigned. Its exact SHA-256 and size are listed on the GitHub Release and in SHA256SUMS.txt. The build includes Electron 41.10.7, Node 24.14.0 and Python 3.11.9. Build timestamps and generated installer metadata mean separate builds can have different file hashes.
+The installer bundles Node 24.14.0 and Python 3.11.9; developer runtimes stay out of the public Git source. The package contains no personal user profile and is unsigned. Its SHA-256 is published in the Release assets.
 
 ## Build dependency advisory
 
-The development-only dependency graph reports eight high-severity entries from the http-cache-semantics chain used by Electron download/build tools. On the audit date, the latest published 4.2.0 version was affected and the [upstream advisory](https://github.com/advisories/GHSA-ch52-4w7c-c8xp) listed no patched version. These download/build packages are not included as production application dependencies. The production audit returned zero. No forced downgrade was used to hide the build advisory.
+The development-only dependency graph reports eight high-severity entries from the http-cache-semantics chain used by Electron download/build tools. On the audit date, the published 4.2.0 version was affected and the upstream advisory listed no patched version. These build-only packages are not included as production application dependencies. The production audit returned zero. No forced downgrade was used to hide the build advisory.
 
 ## Publication boundary
 
-The public snapshot contains product source, locked npm metadata, original art, vendor fonts with licenses, build/QA tools and bilingual documents. Personal task state, preferences, project research records, local logs, machine-resolved configuration, credentials, local runtimes and compiled installers are excluded from Git. Installers are distributed through Releases. Demonstrations use fresh fictional task data and capture app content only.
-
-中文：公开版桌宠测试 383 项、Host 测试 11 项、浏览器测试 5 项均通过；安装版 8 个关键路径通过，渲染错误为 0。升级与卸载保留测试存档、偏好和用户文件，隔离安装不改变正常快捷方式及注册信息。源码隐私检查通过，372 个原创 SVG 的清单校验通过。运行依赖审计为 0；开发构建链中尚未有修复版本的缓存库告警单独记录。动图和截图均使用虚构演示任务。
+Public first-run records remain empty. All 10 character silhouettes, mascot source SVGs and preview PNG are original MIT artwork; third-party font/runtime licenses remain in THIRD_PARTY_NOTICES.md. Screenshot/GIF scenes use fictional tasks. Personal state, research records, local paths, credentials, runtimes, dependencies and logs are excluded from Git.

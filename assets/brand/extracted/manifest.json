@@ -3,2242 +3,2755 @@
   "author": "FanxingMeng1999",
   "license": "MIT",
   "generator": "scripts/generate-public-art.py",
-  "design": "Original round seed spirit with a leaf shoot and star badge. No upstream pet artwork is included.",
+  "design": "Ten compact original mascot silhouettes including a seed sprout, turtle, penguin, frog, pink crab, fox, mushroom, owl, cat and pocket robot. No upstream pet artwork is included.",
   "assets": [
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-collapse-sleep.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "e400731168b77b7d9ff69fa252d763416ed41d8e1e469e172666cada83cd1400"
+      "sha256": "ba45dfa00b99c3769252cf599378d6ff07fe388153614438f6553fe4cec04d6e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-error.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "30bd8a959e980fcf3cc32fc7f3c064d67663e183870e02fddf97643364aea9c5"
+      "sha256": "66acc38510f8183a8eb1d5a88b515837b95fad6c1239a98074ffb7a034b14d13"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-happy.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8106ef741e96066804d8fac0decd779e5af848b7c0c495e64176e0ed7db92d77"
+      "sha256": "4856f9bc9eb21f6e329e2cd30dcb7508a3b0e2c19a89ed2042dc40cceeeffe06"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-idle-doze.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "e400731168b77b7d9ff69fa252d763416ed41d8e1e469e172666cada83cd1400"
+      "sha256": "ba45dfa00b99c3769252cf599378d6ff07fe388153614438f6553fe4cec04d6e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-idle-follow.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "253a1b3adcdf2201c3d4e35ee18ee7037a347df4bd0e8f45048b53d373f9c5ab"
+      "sha256": "4dd84f3b9588e11eb2cec4b139f5282841a1382fbd6a6f78f014e90fa0eda4d6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-idle-look.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "253a1b3adcdf2201c3d4e35ee18ee7037a347df4bd0e8f45048b53d373f9c5ab"
+      "sha256": "4dd84f3b9588e11eb2cec4b139f5282841a1382fbd6a6f78f014e90fa0eda4d6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-idle-reading.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "253a1b3adcdf2201c3d4e35ee18ee7037a347df4bd0e8f45048b53d373f9c5ab"
+      "sha256": "4dd84f3b9588e11eb2cec4b139f5282841a1382fbd6a6f78f014e90fa0eda4d6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-idle-yawn.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "253a1b3adcdf2201c3d4e35ee18ee7037a347df4bd0e8f45048b53d373f9c5ab"
+      "sha256": "4dd84f3b9588e11eb2cec4b139f5282841a1382fbd6a6f78f014e90fa0eda4d6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-alert.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "164688f812a86b263445bedd3148d05c318b819a575cbd6e8f0009e6b3cf7f10"
+      "sha256": "239e2119e62fc875c552730b6262b6b36690cbf8c8bc5e9e54bb994b64801276"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-crabwalk.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "164688f812a86b263445bedd3148d05c318b819a575cbd6e8f0009e6b3cf7f10"
+      "sha256": "239e2119e62fc875c552730b6262b6b36690cbf8c8bc5e9e54bb994b64801276"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-enter-sleep.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "e4ea8e1978c14e443d5c9716595331126efe01f0742e32eb74ead9dc2397d64d"
+      "sha256": "739f1d475df76d1eb3896adbf1574784d79c97913bdd036a699aaccaea67f61a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-enter.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "164688f812a86b263445bedd3148d05c318b819a575cbd6e8f0009e6b3cf7f10"
+      "sha256": "239e2119e62fc875c552730b6262b6b36690cbf8c8bc5e9e54bb994b64801276"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-happy.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "774bb4a9379d2bd24f0b4c3f9a3d02c2891e6cfa49ad6f81fc6b7f166b20c943"
+      "sha256": "257d561e6f6da5c84af63f292b124ab7e224d1bedffd0ad0e5c6f63323154bcb"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-idle.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "164688f812a86b263445bedd3148d05c318b819a575cbd6e8f0009e6b3cf7f10"
+      "sha256": "239e2119e62fc875c552730b6262b6b36690cbf8c8bc5e9e54bb994b64801276"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-peek.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "164688f812a86b263445bedd3148d05c318b819a575cbd6e8f0009e6b3cf7f10"
+      "sha256": "239e2119e62fc875c552730b6262b6b36690cbf8c8bc5e9e54bb994b64801276"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-mini-sleep.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "e4ea8e1978c14e443d5c9716595331126efe01f0742e32eb74ead9dc2397d64d"
+      "sha256": "739f1d475df76d1eb3896adbf1574784d79c97913bdd036a699aaccaea67f61a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-notification.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8106ef741e96066804d8fac0decd779e5af848b7c0c495e64176e0ed7db92d77"
+      "sha256": "4856f9bc9eb21f6e329e2cd30dcb7508a3b0e2c19a89ed2042dc40cceeeffe06"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-react-annoyed.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8063afa1e98fa1139fa718f0ee264c2d2901b4d7141616fea7193d68a88a8aad"
+      "sha256": "f64dbf8961f38c7ff6c0e91f2e86e37530370a69d505aca961cff844dba5e138"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-react-double-jump.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8063afa1e98fa1139fa718f0ee264c2d2901b4d7141616fea7193d68a88a8aad"
+      "sha256": "f64dbf8961f38c7ff6c0e91f2e86e37530370a69d505aca961cff844dba5e138"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-react-double.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8063afa1e98fa1139fa718f0ee264c2d2901b4d7141616fea7193d68a88a8aad"
+      "sha256": "f64dbf8961f38c7ff6c0e91f2e86e37530370a69d505aca961cff844dba5e138"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-react-drag.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8063afa1e98fa1139fa718f0ee264c2d2901b4d7141616fea7193d68a88a8aad"
+      "sha256": "f64dbf8961f38c7ff6c0e91f2e86e37530370a69d505aca961cff844dba5e138"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-react-left.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8063afa1e98fa1139fa718f0ee264c2d2901b4d7141616fea7193d68a88a8aad"
+      "sha256": "f64dbf8961f38c7ff6c0e91f2e86e37530370a69d505aca961cff844dba5e138"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-react-right.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8063afa1e98fa1139fa718f0ee264c2d2901b4d7141616fea7193d68a88a8aad"
+      "sha256": "f64dbf8961f38c7ff6c0e91f2e86e37530370a69d505aca961cff844dba5e138"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-sleeping.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "e400731168b77b7d9ff69fa252d763416ed41d8e1e469e172666cada83cd1400"
+      "sha256": "ba45dfa00b99c3769252cf599378d6ff07fe388153614438f6553fe4cec04d6e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-wake.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "8106ef741e96066804d8fac0decd779e5af848b7c0c495e64176e0ed7db92d77"
+      "sha256": "4856f9bc9eb21f6e329e2cd30dcb7508a3b0e2c19a89ed2042dc40cceeeffe06"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-building.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-carrying.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-conducting.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-debugger.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-juggling.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-sweeping.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-thinking.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-typing.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-ultrathink.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/aurora-pop-working-wizard.svg",
       "theme": "aurora-pop",
+      "character": "owl",
       "license": "MIT",
-      "sha256": "b221b4047d82cf76f0a2c047e7589b1474b38e449f91451fe2d235597cc5c512"
+      "sha256": "a24d394296beed8dd1e1df7cf5ed602adcfba777edb577bac8ce0d529be235cc"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-collapse-sleep.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "40f4dadeae41f08b6a9fa23414d0a026966a7cf613d903e5508dc2d53695c004"
+      "sha256": "1c6ea027309932ee52cd4993fe5be4ffae9f3d518f067a0531260436338c0017"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-error.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "98ddab18eaf24e069f2d5854084214b883ce12c4320ca4da47d743449dee46a9"
+      "sha256": "0aca196bc9e4ea4f153d4bed4d2b8d9f3120cfd07cc9691c7e4902eb9ce4b72d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-happy.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "90af39bbfb3cc4b9fe682d40db473f6d5f7ff380f01b9b42ac105c7676971024"
+      "sha256": "6a96df1bfb21768cebadd2d72882eb78e75afbd33ad64c0032c565c1975be451"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-idle-doze.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "40f4dadeae41f08b6a9fa23414d0a026966a7cf613d903e5508dc2d53695c004"
+      "sha256": "1c6ea027309932ee52cd4993fe5be4ffae9f3d518f067a0531260436338c0017"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-idle-follow.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "f0322895d21eb61a5173c1ae8fd2c5e6d1a67cc748b3c2b32bb2054d7ba37fef"
+      "sha256": "cf9c6e7554384117c636cc1fda5b5d90bebaed7edde469e6d86ee8379cdd9e44"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-idle-look.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "f0322895d21eb61a5173c1ae8fd2c5e6d1a67cc748b3c2b32bb2054d7ba37fef"
+      "sha256": "cf9c6e7554384117c636cc1fda5b5d90bebaed7edde469e6d86ee8379cdd9e44"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-idle-reading.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "f0322895d21eb61a5173c1ae8fd2c5e6d1a67cc748b3c2b32bb2054d7ba37fef"
+      "sha256": "cf9c6e7554384117c636cc1fda5b5d90bebaed7edde469e6d86ee8379cdd9e44"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-idle-yawn.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "f0322895d21eb61a5173c1ae8fd2c5e6d1a67cc748b3c2b32bb2054d7ba37fef"
+      "sha256": "cf9c6e7554384117c636cc1fda5b5d90bebaed7edde469e6d86ee8379cdd9e44"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-alert.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "5c3a5060198aabd2c6a4431487c518c8728713eb9ade80636ba3d41f95f658c4"
+      "sha256": "41c544195bc4000fdd1a1bff805e86fdb5b4abefef3f788d666c960265e48386"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-crabwalk.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "5c3a5060198aabd2c6a4431487c518c8728713eb9ade80636ba3d41f95f658c4"
+      "sha256": "41c544195bc4000fdd1a1bff805e86fdb5b4abefef3f788d666c960265e48386"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-enter-sleep.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "7db9038667ad5b9050a72ff2b4ae291bb1771a5636076b3b95f09f627c1aa2eb"
+      "sha256": "2abfa708c8389e2720ae4dbc259c5ac9c2410b510e777059d2a84a69a91232ae"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-enter.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "5c3a5060198aabd2c6a4431487c518c8728713eb9ade80636ba3d41f95f658c4"
+      "sha256": "41c544195bc4000fdd1a1bff805e86fdb5b4abefef3f788d666c960265e48386"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-happy.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "0335d98d4f1af620978ee2a0eee9a071deef06017659dc2c2393d19ef83268b7"
+      "sha256": "c1564eed8b3e65f8c5005d92d60368e603fee4a6b82d6df7e212c88f82f957a6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-idle.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "5c3a5060198aabd2c6a4431487c518c8728713eb9ade80636ba3d41f95f658c4"
+      "sha256": "41c544195bc4000fdd1a1bff805e86fdb5b4abefef3f788d666c960265e48386"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-peek.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "5c3a5060198aabd2c6a4431487c518c8728713eb9ade80636ba3d41f95f658c4"
+      "sha256": "41c544195bc4000fdd1a1bff805e86fdb5b4abefef3f788d666c960265e48386"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-mini-sleep.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "7db9038667ad5b9050a72ff2b4ae291bb1771a5636076b3b95f09f627c1aa2eb"
+      "sha256": "2abfa708c8389e2720ae4dbc259c5ac9c2410b510e777059d2a84a69a91232ae"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-notification.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "90af39bbfb3cc4b9fe682d40db473f6d5f7ff380f01b9b42ac105c7676971024"
+      "sha256": "6a96df1bfb21768cebadd2d72882eb78e75afbd33ad64c0032c565c1975be451"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-react-annoyed.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "8ec42900265cbebdfccdac280d55a175e5af5dfc2a31cc35622ef4da242a2ebe"
+      "sha256": "4d7f6fa0e71856dc3d4a0b05067b17f9142b37ade8147d9fd198575dbe958201"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-react-double-jump.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "8ec42900265cbebdfccdac280d55a175e5af5dfc2a31cc35622ef4da242a2ebe"
+      "sha256": "4d7f6fa0e71856dc3d4a0b05067b17f9142b37ade8147d9fd198575dbe958201"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-react-double.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "8ec42900265cbebdfccdac280d55a175e5af5dfc2a31cc35622ef4da242a2ebe"
+      "sha256": "4d7f6fa0e71856dc3d4a0b05067b17f9142b37ade8147d9fd198575dbe958201"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-react-drag.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "8ec42900265cbebdfccdac280d55a175e5af5dfc2a31cc35622ef4da242a2ebe"
+      "sha256": "4d7f6fa0e71856dc3d4a0b05067b17f9142b37ade8147d9fd198575dbe958201"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-react-left.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "8ec42900265cbebdfccdac280d55a175e5af5dfc2a31cc35622ef4da242a2ebe"
+      "sha256": "4d7f6fa0e71856dc3d4a0b05067b17f9142b37ade8147d9fd198575dbe958201"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-react-right.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "8ec42900265cbebdfccdac280d55a175e5af5dfc2a31cc35622ef4da242a2ebe"
+      "sha256": "4d7f6fa0e71856dc3d4a0b05067b17f9142b37ade8147d9fd198575dbe958201"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-sleeping.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "40f4dadeae41f08b6a9fa23414d0a026966a7cf613d903e5508dc2d53695c004"
+      "sha256": "1c6ea027309932ee52cd4993fe5be4ffae9f3d518f067a0531260436338c0017"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-wake.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "90af39bbfb3cc4b9fe682d40db473f6d5f7ff380f01b9b42ac105c7676971024"
+      "sha256": "6a96df1bfb21768cebadd2d72882eb78e75afbd33ad64c0032c565c1975be451"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-building.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-carrying.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-conducting.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-debugger.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-juggling.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-sweeping.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-thinking.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-typing.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-ultrathink.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/blue-hour-working-wizard.svg",
       "theme": "blue-hour",
+      "character": "penguin",
       "license": "MIT",
-      "sha256": "28181d137fda8bdfbc06b81d59a33b68de711cc9e40dc7ce71ca8b41dc6319cc"
+      "sha256": "d255d6df1e8701b375273d06560eadc1da74c7470c6dfc6503de889e509aa27a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-collapse-sleep.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "5638c4b3705bbeeab629e29a5e684adfcf7e6776d7b840a07b83eafcfce1afb8"
+      "sha256": "a37bd19a6d11db8dc5cb8178701caf534be4da246637a7d23e29eb042e1370cf"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-error.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "4cb3852d93203b5b57d143f65e928ccbdd4b7c7965ec2f1466fd32f1a4902dc7"
+      "sha256": "d83030fa6b59b241fb00bc71e310fdeacc3ebca4506205fa96df103fcf9be03c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-happy.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "6294144797c05c714bbc612a9fb1bc56b08cd0d54ca7dfb1d52b777dba10f8d1"
+      "sha256": "a3a5fef98f7fab9e1b97974b8d65837ef94b3d8a61200d7f930b94b1059c9db4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-idle-doze.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "5638c4b3705bbeeab629e29a5e684adfcf7e6776d7b840a07b83eafcfce1afb8"
+      "sha256": "a37bd19a6d11db8dc5cb8178701caf534be4da246637a7d23e29eb042e1370cf"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-idle-follow.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "2e64468302b7c5c3b90e5428e2e57614ae7a07d79a2f5c78503db1a48afa836c"
+      "sha256": "ac693c84ec54eed836f19dec301ee8aacef15386b3f4d809875c9b954da38b48"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-idle-look.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "2e64468302b7c5c3b90e5428e2e57614ae7a07d79a2f5c78503db1a48afa836c"
+      "sha256": "ac693c84ec54eed836f19dec301ee8aacef15386b3f4d809875c9b954da38b48"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-idle-reading.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "2e64468302b7c5c3b90e5428e2e57614ae7a07d79a2f5c78503db1a48afa836c"
+      "sha256": "ac693c84ec54eed836f19dec301ee8aacef15386b3f4d809875c9b954da38b48"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-idle-yawn.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "2e64468302b7c5c3b90e5428e2e57614ae7a07d79a2f5c78503db1a48afa836c"
+      "sha256": "ac693c84ec54eed836f19dec301ee8aacef15386b3f4d809875c9b954da38b48"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-alert.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "a4ba2fbdcda6e4ce9bbf4e5f072c255fe46a114c65dd99ed4650fd5741e57bb8"
+      "sha256": "b8300dece2ba640726a9b38737221449d84a265eb6f20b61a64855aec0253353"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-crabwalk.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "a4ba2fbdcda6e4ce9bbf4e5f072c255fe46a114c65dd99ed4650fd5741e57bb8"
+      "sha256": "b8300dece2ba640726a9b38737221449d84a265eb6f20b61a64855aec0253353"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-enter-sleep.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "1929230207e254c99d18af37c6610793890060b12989aa39f4b17fc444e3039f"
+      "sha256": "996af38bca356e5280827676c3b2b423873e5b254336fb7428ca0032ad679256"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-enter.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "a4ba2fbdcda6e4ce9bbf4e5f072c255fe46a114c65dd99ed4650fd5741e57bb8"
+      "sha256": "b8300dece2ba640726a9b38737221449d84a265eb6f20b61a64855aec0253353"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-happy.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "eb22b29643813601254400863b6810bfd3a340fe5d4ad1a8badecd9c73691648"
+      "sha256": "dbb804fd8fb98a5481a45c7b25555a9584278210ef9f3982a2e5fc487a55ac5a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-idle.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "a4ba2fbdcda6e4ce9bbf4e5f072c255fe46a114c65dd99ed4650fd5741e57bb8"
+      "sha256": "b8300dece2ba640726a9b38737221449d84a265eb6f20b61a64855aec0253353"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-peek.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "a4ba2fbdcda6e4ce9bbf4e5f072c255fe46a114c65dd99ed4650fd5741e57bb8"
+      "sha256": "b8300dece2ba640726a9b38737221449d84a265eb6f20b61a64855aec0253353"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-mini-sleep.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "1929230207e254c99d18af37c6610793890060b12989aa39f4b17fc444e3039f"
+      "sha256": "996af38bca356e5280827676c3b2b423873e5b254336fb7428ca0032ad679256"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-notification.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "6294144797c05c714bbc612a9fb1bc56b08cd0d54ca7dfb1d52b777dba10f8d1"
+      "sha256": "a3a5fef98f7fab9e1b97974b8d65837ef94b3d8a61200d7f930b94b1059c9db4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-react-annoyed.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "fca2f733711b951358a0ebbe032494f336feecf2f3b6da89a9e2b0e1860f1987"
+      "sha256": "da8aabdb7e86191367760f75a8ee176bb7b5f9263bd09cbe9b97335125267735"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-react-double-jump.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "fca2f733711b951358a0ebbe032494f336feecf2f3b6da89a9e2b0e1860f1987"
+      "sha256": "da8aabdb7e86191367760f75a8ee176bb7b5f9263bd09cbe9b97335125267735"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-react-double.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "fca2f733711b951358a0ebbe032494f336feecf2f3b6da89a9e2b0e1860f1987"
+      "sha256": "da8aabdb7e86191367760f75a8ee176bb7b5f9263bd09cbe9b97335125267735"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-react-drag.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "fca2f733711b951358a0ebbe032494f336feecf2f3b6da89a9e2b0e1860f1987"
+      "sha256": "da8aabdb7e86191367760f75a8ee176bb7b5f9263bd09cbe9b97335125267735"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-react-left.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "fca2f733711b951358a0ebbe032494f336feecf2f3b6da89a9e2b0e1860f1987"
+      "sha256": "da8aabdb7e86191367760f75a8ee176bb7b5f9263bd09cbe9b97335125267735"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-react-right.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "fca2f733711b951358a0ebbe032494f336feecf2f3b6da89a9e2b0e1860f1987"
+      "sha256": "da8aabdb7e86191367760f75a8ee176bb7b5f9263bd09cbe9b97335125267735"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-sleeping.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "5638c4b3705bbeeab629e29a5e684adfcf7e6776d7b840a07b83eafcfce1afb8"
+      "sha256": "a37bd19a6d11db8dc5cb8178701caf534be4da246637a7d23e29eb042e1370cf"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-wake.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "6294144797c05c714bbc612a9fb1bc56b08cd0d54ca7dfb1d52b777dba10f8d1"
+      "sha256": "a3a5fef98f7fab9e1b97974b8d65837ef94b3d8a61200d7f930b94b1059c9db4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-building.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-carrying.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-conducting.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-debugger.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-juggling.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-sweeping.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-thinking.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-typing.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-ultrathink.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/campfire-cocoa-working-wizard.svg",
       "theme": "campfire-cocoa",
+      "character": "cat",
       "license": "MIT",
-      "sha256": "9ad7f6c4033fd68166d8acc06bd8068844e6cc297374f4744bc05352248c06b9"
+      "sha256": "722f7886828ad0c78595ca67e36bfbc6a0c099a3635b0a5a60dc8aae215044c6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-collapse-sleep.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "64b571e49f053231a3c77932d7d56ab0f1a1f3409915f34f352c49b496d46f6f"
+      "sha256": "dd5d5e22166c137b69d71e50eb053ba7a09ef3b7f8cb7a4a051a4ae1109acbb3"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-error.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "13d3edcfd7e0264d09dd4fcc8fdde26999510b572ae9a260cc707c13d5b339b3"
+      "sha256": "002662ab38d3ffdeb8a685b456f2917540f6f7e8e6c0bcef860159c356837cb6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-happy.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "5e3971b81f9717fe435ae143ef9072dc87787a8659d7fe3adc6ce4d9cd35de14"
+      "sha256": "27c169a8cd2ff85af443176936e33f363a5b9e9f9f1e3c7c3ac998c1ba1661c0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-idle-doze.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "64b571e49f053231a3c77932d7d56ab0f1a1f3409915f34f352c49b496d46f6f"
+      "sha256": "dd5d5e22166c137b69d71e50eb053ba7a09ef3b7f8cb7a4a051a4ae1109acbb3"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-idle-follow.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "7b60611d8315ae3f321cb5d1e156b8e13144c0966ec9f26dd1ff6ce199ba7e3c"
+      "sha256": "3bdc39314433576f02a0417eb694034c6b5f20bb3ccf7d087d6a2daee52ea457"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-idle-look.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "7b60611d8315ae3f321cb5d1e156b8e13144c0966ec9f26dd1ff6ce199ba7e3c"
+      "sha256": "3bdc39314433576f02a0417eb694034c6b5f20bb3ccf7d087d6a2daee52ea457"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-idle-reading.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "7b60611d8315ae3f321cb5d1e156b8e13144c0966ec9f26dd1ff6ce199ba7e3c"
+      "sha256": "3bdc39314433576f02a0417eb694034c6b5f20bb3ccf7d087d6a2daee52ea457"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-idle-yawn.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "7b60611d8315ae3f321cb5d1e156b8e13144c0966ec9f26dd1ff6ce199ba7e3c"
+      "sha256": "3bdc39314433576f02a0417eb694034c6b5f20bb3ccf7d087d6a2daee52ea457"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-alert.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "0593c09800350a012bdf5bf974b6d469086c16519c81d947a20e485dd830f85e"
+      "sha256": "29a1fce72dda9ff65b6c02d557bc3f59d414979aceae5a2a64b2ff8d06903952"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-crabwalk.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "0593c09800350a012bdf5bf974b6d469086c16519c81d947a20e485dd830f85e"
+      "sha256": "29a1fce72dda9ff65b6c02d557bc3f59d414979aceae5a2a64b2ff8d06903952"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-enter-sleep.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "d0723465affaffc19d99f1406cb783cd59e948963adae133eacce097e8ea3623"
+      "sha256": "06afe7cce76d9dee65a805db62f392d82c74bec6b93fd2c303e8abbf98b7d3b3"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-enter.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "0593c09800350a012bdf5bf974b6d469086c16519c81d947a20e485dd830f85e"
+      "sha256": "29a1fce72dda9ff65b6c02d557bc3f59d414979aceae5a2a64b2ff8d06903952"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-happy.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "fea8ab297cfb908a888696a9150a2f76716d21f75796669260ecdc18639a1f86"
+      "sha256": "5afe201b58f1c4c053ca2a5610916f95e33b14846a9606e7b5a5dbd9ae38b138"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-idle.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "0593c09800350a012bdf5bf974b6d469086c16519c81d947a20e485dd830f85e"
+      "sha256": "29a1fce72dda9ff65b6c02d557bc3f59d414979aceae5a2a64b2ff8d06903952"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-peek.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "0593c09800350a012bdf5bf974b6d469086c16519c81d947a20e485dd830f85e"
+      "sha256": "29a1fce72dda9ff65b6c02d557bc3f59d414979aceae5a2a64b2ff8d06903952"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-mini-sleep.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "d0723465affaffc19d99f1406cb783cd59e948963adae133eacce097e8ea3623"
+      "sha256": "06afe7cce76d9dee65a805db62f392d82c74bec6b93fd2c303e8abbf98b7d3b3"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-notification.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "5e3971b81f9717fe435ae143ef9072dc87787a8659d7fe3adc6ce4d9cd35de14"
+      "sha256": "27c169a8cd2ff85af443176936e33f363a5b9e9f9f1e3c7c3ac998c1ba1661c0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-react-annoyed.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "f3edaa7f54d014814c2de8c44c0efa68ab517b01cdf37f1078aebea3bd01be69"
+      "sha256": "2add5c56188944c131771c48e1dedce73f7683726e397695cbc54dbff972ae59"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-react-double-jump.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "f3edaa7f54d014814c2de8c44c0efa68ab517b01cdf37f1078aebea3bd01be69"
+      "sha256": "2add5c56188944c131771c48e1dedce73f7683726e397695cbc54dbff972ae59"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-react-double.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "f3edaa7f54d014814c2de8c44c0efa68ab517b01cdf37f1078aebea3bd01be69"
+      "sha256": "2add5c56188944c131771c48e1dedce73f7683726e397695cbc54dbff972ae59"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-react-drag.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "f3edaa7f54d014814c2de8c44c0efa68ab517b01cdf37f1078aebea3bd01be69"
+      "sha256": "2add5c56188944c131771c48e1dedce73f7683726e397695cbc54dbff972ae59"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-react-left.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "f3edaa7f54d014814c2de8c44c0efa68ab517b01cdf37f1078aebea3bd01be69"
+      "sha256": "2add5c56188944c131771c48e1dedce73f7683726e397695cbc54dbff972ae59"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-react-right.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "f3edaa7f54d014814c2de8c44c0efa68ab517b01cdf37f1078aebea3bd01be69"
+      "sha256": "2add5c56188944c131771c48e1dedce73f7683726e397695cbc54dbff972ae59"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-sleeping.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "64b571e49f053231a3c77932d7d56ab0f1a1f3409915f34f352c49b496d46f6f"
+      "sha256": "dd5d5e22166c137b69d71e50eb053ba7a09ef3b7f8cb7a4a051a4ae1109acbb3"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-wake.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "5e3971b81f9717fe435ae143ef9072dc87787a8659d7fe3adc6ce4d9cd35de14"
+      "sha256": "27c169a8cd2ff85af443176936e33f363a5b9e9f9f1e3c7c3ac998c1ba1661c0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-building.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-carrying.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-conducting.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-debugger.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-juggling.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-sweeping.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-thinking.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-typing.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-ultrathink.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/clawd-working-wizard.svg",
       "theme": "clawd",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "745282a6241cd173c8e4b1c7f3e1cd4478ac59b875f92c235fd33817ec85a953"
+      "sha256": "bf9327e7eda44ea34afa9845b636c105c0bb8a99ac218a4f0ccfdef34bbfe70b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-collapse-sleep.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "01a5fe7f79eb030514d037561d383cc20c2c699ae43cd990c19f28e4552a32b7"
+      "sha256": "37daddba25d5037dc049df8d207366e0fb9da7bdb0cf8f66cc46dd8a6212d9f0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-error.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "bd8f5139ce6cda1073b1b38ca9debb8f6aae560d58c2f76dc4b5ac599ccb6f15"
+      "sha256": "ccd2f5491def78f482a97b2af0101e4daa61c52e59dc0d4a6971fd671061735c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-happy.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "60d25da681a4d941cdcda47a7cd0223d32a8b7c4ae79ce7198bb0d052ad34ffc"
+      "sha256": "7d9c0d9fd255c08bb8e1b600d702565262b97a92e4b12f5853105ea28c2a2954"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-idle-doze.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "01a5fe7f79eb030514d037561d383cc20c2c699ae43cd990c19f28e4552a32b7"
+      "sha256": "37daddba25d5037dc049df8d207366e0fb9da7bdb0cf8f66cc46dd8a6212d9f0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-idle-follow.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "c6290884a1db78866c8288c279b6ad353737b2b490235a84e74de19d786f3352"
+      "sha256": "d9c6126833363b25b945d74a9036355b1da7073dd8e62fcfa5bdca48a8e169b1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-idle-look.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "c6290884a1db78866c8288c279b6ad353737b2b490235a84e74de19d786f3352"
+      "sha256": "d9c6126833363b25b945d74a9036355b1da7073dd8e62fcfa5bdca48a8e169b1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-idle-reading.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "c6290884a1db78866c8288c279b6ad353737b2b490235a84e74de19d786f3352"
+      "sha256": "d9c6126833363b25b945d74a9036355b1da7073dd8e62fcfa5bdca48a8e169b1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-idle-yawn.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "c6290884a1db78866c8288c279b6ad353737b2b490235a84e74de19d786f3352"
+      "sha256": "d9c6126833363b25b945d74a9036355b1da7073dd8e62fcfa5bdca48a8e169b1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-alert.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "ad3c8db9dde197d1e276cca7bbb1fb60968878c9613c0ee64b0c7a74acc9f385"
+      "sha256": "1bb59e78e4587d7060994522e4a03956fccde4f52628c09236a0ab25698aad4a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-crabwalk.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "ad3c8db9dde197d1e276cca7bbb1fb60968878c9613c0ee64b0c7a74acc9f385"
+      "sha256": "1bb59e78e4587d7060994522e4a03956fccde4f52628c09236a0ab25698aad4a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-enter-sleep.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "bcd9c7e7a4b9186201eb30986194b3648b1128703bb6974b66bbc2ca425a3888"
+      "sha256": "bb47750dd71228a6204197bf2c04ed3915f40d5b37eb406f06d9fe4f6f81ff4e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-enter.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "ad3c8db9dde197d1e276cca7bbb1fb60968878c9613c0ee64b0c7a74acc9f385"
+      "sha256": "1bb59e78e4587d7060994522e4a03956fccde4f52628c09236a0ab25698aad4a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-happy.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "82aa71a37b7034b02458691e936878b5ced35bb18ee45c7951c2a5763ab1e6d0"
+      "sha256": "1fdfe9277294f9708bfae8838573d415d39641d3d78eee4f737113f45b487cf7"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-idle.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "ad3c8db9dde197d1e276cca7bbb1fb60968878c9613c0ee64b0c7a74acc9f385"
+      "sha256": "1bb59e78e4587d7060994522e4a03956fccde4f52628c09236a0ab25698aad4a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-peek.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "ad3c8db9dde197d1e276cca7bbb1fb60968878c9613c0ee64b0c7a74acc9f385"
+      "sha256": "1bb59e78e4587d7060994522e4a03956fccde4f52628c09236a0ab25698aad4a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-mini-sleep.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "bcd9c7e7a4b9186201eb30986194b3648b1128703bb6974b66bbc2ca425a3888"
+      "sha256": "bb47750dd71228a6204197bf2c04ed3915f40d5b37eb406f06d9fe4f6f81ff4e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-notification.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "60d25da681a4d941cdcda47a7cd0223d32a8b7c4ae79ce7198bb0d052ad34ffc"
+      "sha256": "7d9c0d9fd255c08bb8e1b600d702565262b97a92e4b12f5853105ea28c2a2954"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-react-annoyed.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "f536d6110078f7ae87200cbb7420a84e03d541f9d99bc25fb12f5389a6e78274"
+      "sha256": "995712b182be3c3da7abb64db0614b81a62da8b96bd772644451e3e1d293830a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-react-double-jump.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "f536d6110078f7ae87200cbb7420a84e03d541f9d99bc25fb12f5389a6e78274"
+      "sha256": "995712b182be3c3da7abb64db0614b81a62da8b96bd772644451e3e1d293830a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-react-double.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "f536d6110078f7ae87200cbb7420a84e03d541f9d99bc25fb12f5389a6e78274"
+      "sha256": "995712b182be3c3da7abb64db0614b81a62da8b96bd772644451e3e1d293830a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-react-drag.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "f536d6110078f7ae87200cbb7420a84e03d541f9d99bc25fb12f5389a6e78274"
+      "sha256": "995712b182be3c3da7abb64db0614b81a62da8b96bd772644451e3e1d293830a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-react-left.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "f536d6110078f7ae87200cbb7420a84e03d541f9d99bc25fb12f5389a6e78274"
+      "sha256": "995712b182be3c3da7abb64db0614b81a62da8b96bd772644451e3e1d293830a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-react-right.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "f536d6110078f7ae87200cbb7420a84e03d541f9d99bc25fb12f5389a6e78274"
+      "sha256": "995712b182be3c3da7abb64db0614b81a62da8b96bd772644451e3e1d293830a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-sleeping.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "01a5fe7f79eb030514d037561d383cc20c2c699ae43cd990c19f28e4552a32b7"
+      "sha256": "37daddba25d5037dc049df8d207366e0fb9da7bdb0cf8f66cc46dd8a6212d9f0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-wake.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "60d25da681a4d941cdcda47a7cd0223d32a8b7c4ae79ce7198bb0d052ad34ffc"
+      "sha256": "7d9c0d9fd255c08bb8e1b600d702565262b97a92e4b12f5853105ea28c2a2954"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-building.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-carrying.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-conducting.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-debugger.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-juggling.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-sweeping.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-thinking.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-typing.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-ultrathink.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/matcha-lab-working-wizard.svg",
       "theme": "matcha-lab",
+      "character": "frog",
       "license": "MIT",
-      "sha256": "993993a7132040051890637a2fbe61958e3853fbe505274756e8b7c250da4de2"
+      "sha256": "835fc83ca5c6ad610b727d3f219f1211a5ca6240b37a7e77881fe2c61a368dd0"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-collapse-sleep.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "22ddd0454917928c6d61134155e2f1168d28922aab2c7769171d3fff443602cd"
+      "sha256": "f6494723dc867125bee76b78d1a84bdb11e5ec31e0bb273a6e56fbdb87b7a4bb"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-error.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "0ca88b59914129fdff28c9beb6d1997542a533e68bddf9d0f9d2e055aac90244"
+      "sha256": "e01954b590786ded615dd9e60e9548523a10abd146048d840653ffeae76d9dc1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-happy.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "8daee4b2b88daa03645f051dad5d60881d0031a4dc8009cbe5dfcd2c6553fd83"
+      "sha256": "ba9e519cc08901e0fe50741eb0652cb2b31607b653be4180c6156282ddf66c25"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-idle-doze.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "22ddd0454917928c6d61134155e2f1168d28922aab2c7769171d3fff443602cd"
+      "sha256": "f6494723dc867125bee76b78d1a84bdb11e5ec31e0bb273a6e56fbdb87b7a4bb"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-idle-follow.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "16dcc991546c40a4c75f284858598ae6d65d17ca727e6276c62e6a1a77cc2f3a"
+      "sha256": "80e4d8376d8e7a831030d3c39bf9befe70f2958b3dea1b7715acb358432aa331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-idle-look.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "16dcc991546c40a4c75f284858598ae6d65d17ca727e6276c62e6a1a77cc2f3a"
+      "sha256": "80e4d8376d8e7a831030d3c39bf9befe70f2958b3dea1b7715acb358432aa331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-idle-reading.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "16dcc991546c40a4c75f284858598ae6d65d17ca727e6276c62e6a1a77cc2f3a"
+      "sha256": "80e4d8376d8e7a831030d3c39bf9befe70f2958b3dea1b7715acb358432aa331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-idle-yawn.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "16dcc991546c40a4c75f284858598ae6d65d17ca727e6276c62e6a1a77cc2f3a"
+      "sha256": "80e4d8376d8e7a831030d3c39bf9befe70f2958b3dea1b7715acb358432aa331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-alert.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "a6ac4aadca439adcfb1750b86ad9b8cfffcbc10fe8a918dfaaf873b6897f7566"
+      "sha256": "644fdd6657213197701277da809a7c994a185210894bc5539a5777f301e1d720"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-crabwalk.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "a6ac4aadca439adcfb1750b86ad9b8cfffcbc10fe8a918dfaaf873b6897f7566"
+      "sha256": "644fdd6657213197701277da809a7c994a185210894bc5539a5777f301e1d720"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-enter-sleep.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "bdcf9a3950601f9c130b233240a2ace56c73107e4e2e2830e669a26c848b28a3"
+      "sha256": "449b8d3f3f46e7c47dec1ae287c4a0d6842b671197355cc11fe86ea54bf2b449"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-enter.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "a6ac4aadca439adcfb1750b86ad9b8cfffcbc10fe8a918dfaaf873b6897f7566"
+      "sha256": "644fdd6657213197701277da809a7c994a185210894bc5539a5777f301e1d720"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-happy.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "b0ce3f9ecb37023eda1631b364d0b3bab7bdcd4876b986f51973ebfa11e59db5"
+      "sha256": "cb58ac230847cf7969005d075d201cf0a045760d81e18ecd037c7dcd95f4c182"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-idle.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "a6ac4aadca439adcfb1750b86ad9b8cfffcbc10fe8a918dfaaf873b6897f7566"
+      "sha256": "644fdd6657213197701277da809a7c994a185210894bc5539a5777f301e1d720"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-peek.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "a6ac4aadca439adcfb1750b86ad9b8cfffcbc10fe8a918dfaaf873b6897f7566"
+      "sha256": "644fdd6657213197701277da809a7c994a185210894bc5539a5777f301e1d720"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-mini-sleep.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "bdcf9a3950601f9c130b233240a2ace56c73107e4e2e2830e669a26c848b28a3"
+      "sha256": "449b8d3f3f46e7c47dec1ae287c4a0d6842b671197355cc11fe86ea54bf2b449"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-notification.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "8daee4b2b88daa03645f051dad5d60881d0031a4dc8009cbe5dfcd2c6553fd83"
+      "sha256": "ba9e519cc08901e0fe50741eb0652cb2b31607b653be4180c6156282ddf66c25"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-react-annoyed.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "97be123b599b2d4e7f21e66238ba156eafd5f4c8960712e9b07e550cc0357c11"
+      "sha256": "836635c55944734b58c46fab672c2ccdf147d16288316212d8334456ebfdafa4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-react-double-jump.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "97be123b599b2d4e7f21e66238ba156eafd5f4c8960712e9b07e550cc0357c11"
+      "sha256": "836635c55944734b58c46fab672c2ccdf147d16288316212d8334456ebfdafa4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-react-double.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "97be123b599b2d4e7f21e66238ba156eafd5f4c8960712e9b07e550cc0357c11"
+      "sha256": "836635c55944734b58c46fab672c2ccdf147d16288316212d8334456ebfdafa4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-react-drag.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "97be123b599b2d4e7f21e66238ba156eafd5f4c8960712e9b07e550cc0357c11"
+      "sha256": "836635c55944734b58c46fab672c2ccdf147d16288316212d8334456ebfdafa4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-react-left.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "97be123b599b2d4e7f21e66238ba156eafd5f4c8960712e9b07e550cc0357c11"
+      "sha256": "836635c55944734b58c46fab672c2ccdf147d16288316212d8334456ebfdafa4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-react-right.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "97be123b599b2d4e7f21e66238ba156eafd5f4c8960712e9b07e550cc0357c11"
+      "sha256": "836635c55944734b58c46fab672c2ccdf147d16288316212d8334456ebfdafa4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-sleeping.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "22ddd0454917928c6d61134155e2f1168d28922aab2c7769171d3fff443602cd"
+      "sha256": "f6494723dc867125bee76b78d1a84bdb11e5ec31e0bb273a6e56fbdb87b7a4bb"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-wake.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "8daee4b2b88daa03645f051dad5d60881d0031a4dc8009cbe5dfcd2c6553fd83"
+      "sha256": "ba9e519cc08901e0fe50741eb0652cb2b31607b653be4180c6156282ddf66c25"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-building.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-carrying.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-conducting.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-debugger.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-juggling.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-sweeping.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-thinking.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-typing.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-ultrathink.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/mint-chip-working-wizard.svg",
       "theme": "mint-chip",
+      "character": "turtle",
       "license": "MIT",
-      "sha256": "7033de2b5211ae6b27ecd09ce7381b2562dcfd1471e7336f7691d35ccc4c61c1"
+      "sha256": "0ebe2e3aab7bbdd4991a2d29a4d868e3be7e1e45e2f24aac844495a68b68c371"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-collapse-sleep.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "d5ba8c97c9fcd11ff547e440258fb5fd1983c6983fd1305fcf640a93ba190f61"
+      "sha256": "ec45bfe53c304741ef35cd10b7fd65b9948f13da6a3c9ca5059d11540310bfa1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-error.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "b28a39b103403d73ffd41bae8286f367cb5c3182e28b63cb98b62141d24b12c4"
+      "sha256": "a2254743d537d19aebd28c576910b56afe4f329222a46ce1af620165ca7e685b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-happy.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9baa4172e8554fb25751e6a537b749d2f3479ee0537daaecff3e52afab6dba35"
+      "sha256": "c73ded79eb4121787dce4e2dffab6ee1201423addd1ecd3bccebace75cd582f7"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-idle-doze.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "d5ba8c97c9fcd11ff547e440258fb5fd1983c6983fd1305fcf640a93ba190f61"
+      "sha256": "ec45bfe53c304741ef35cd10b7fd65b9948f13da6a3c9ca5059d11540310bfa1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-idle-follow.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "2ffadeeb8b583ccc7ccd4ebbb267f3f4fae8ac73ef6db9830659446ed17b9eac"
+      "sha256": "2d8ed7bbb380d9698dfa092ea7d059963e80c50fcb1d9c8110b8ee0f18d55192"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-idle-look.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "2ffadeeb8b583ccc7ccd4ebbb267f3f4fae8ac73ef6db9830659446ed17b9eac"
+      "sha256": "2d8ed7bbb380d9698dfa092ea7d059963e80c50fcb1d9c8110b8ee0f18d55192"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-idle-reading.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "2ffadeeb8b583ccc7ccd4ebbb267f3f4fae8ac73ef6db9830659446ed17b9eac"
+      "sha256": "2d8ed7bbb380d9698dfa092ea7d059963e80c50fcb1d9c8110b8ee0f18d55192"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-idle-yawn.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "2ffadeeb8b583ccc7ccd4ebbb267f3f4fae8ac73ef6db9830659446ed17b9eac"
+      "sha256": "2d8ed7bbb380d9698dfa092ea7d059963e80c50fcb1d9c8110b8ee0f18d55192"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-alert.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "0cf164a9945803c5e3a96bcd1d1cfb454600e5463205cd39aad8831bd6f4ff09"
+      "sha256": "44802b3c5a2ef52fd7b552ffa95aaa2823b4ea365f71050f8fed1ea1c85a1331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-crabwalk.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "0cf164a9945803c5e3a96bcd1d1cfb454600e5463205cd39aad8831bd6f4ff09"
+      "sha256": "44802b3c5a2ef52fd7b552ffa95aaa2823b4ea365f71050f8fed1ea1c85a1331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-enter-sleep.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "35f22cde4e7c697ba2afce499aa19a7f3d73e14b2755adb192cf5d12850cbefa"
+      "sha256": "db51439f0a7603137165c654328a846f801d845a5d4e35cc8c605486b2189ed6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-enter.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "0cf164a9945803c5e3a96bcd1d1cfb454600e5463205cd39aad8831bd6f4ff09"
+      "sha256": "44802b3c5a2ef52fd7b552ffa95aaa2823b4ea365f71050f8fed1ea1c85a1331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-happy.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "2a7c036a210d6c4c3e9676d9b76b90604a99e87750de9a6f32c4ca2492a15833"
+      "sha256": "782d8b47f48a5deffcd65f000779e6313eb6c6035ea45af6558887b014f179db"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-idle.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "0cf164a9945803c5e3a96bcd1d1cfb454600e5463205cd39aad8831bd6f4ff09"
+      "sha256": "44802b3c5a2ef52fd7b552ffa95aaa2823b4ea365f71050f8fed1ea1c85a1331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-peek.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "0cf164a9945803c5e3a96bcd1d1cfb454600e5463205cd39aad8831bd6f4ff09"
+      "sha256": "44802b3c5a2ef52fd7b552ffa95aaa2823b4ea365f71050f8fed1ea1c85a1331"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-mini-sleep.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "35f22cde4e7c697ba2afce499aa19a7f3d73e14b2755adb192cf5d12850cbefa"
+      "sha256": "db51439f0a7603137165c654328a846f801d845a5d4e35cc8c605486b2189ed6"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-notification.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9baa4172e8554fb25751e6a537b749d2f3479ee0537daaecff3e52afab6dba35"
+      "sha256": "c73ded79eb4121787dce4e2dffab6ee1201423addd1ecd3bccebace75cd582f7"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-react-annoyed.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "f4da4e539b33b3db1ee8be6b8cbbd9780301de357f91379b5f329b9f30d1486a"
+      "sha256": "a49cedcc1e312aa49f06ae9d73e8be453678ef1309bf410be6bfd21bf4b80f72"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-react-double-jump.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "f4da4e539b33b3db1ee8be6b8cbbd9780301de357f91379b5f329b9f30d1486a"
+      "sha256": "a49cedcc1e312aa49f06ae9d73e8be453678ef1309bf410be6bfd21bf4b80f72"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-react-double.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "f4da4e539b33b3db1ee8be6b8cbbd9780301de357f91379b5f329b9f30d1486a"
+      "sha256": "a49cedcc1e312aa49f06ae9d73e8be453678ef1309bf410be6bfd21bf4b80f72"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-react-drag.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "f4da4e539b33b3db1ee8be6b8cbbd9780301de357f91379b5f329b9f30d1486a"
+      "sha256": "a49cedcc1e312aa49f06ae9d73e8be453678ef1309bf410be6bfd21bf4b80f72"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-react-left.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "f4da4e539b33b3db1ee8be6b8cbbd9780301de357f91379b5f329b9f30d1486a"
+      "sha256": "a49cedcc1e312aa49f06ae9d73e8be453678ef1309bf410be6bfd21bf4b80f72"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-react-right.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "f4da4e539b33b3db1ee8be6b8cbbd9780301de357f91379b5f329b9f30d1486a"
+      "sha256": "a49cedcc1e312aa49f06ae9d73e8be453678ef1309bf410be6bfd21bf4b80f72"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-sleeping.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "d5ba8c97c9fcd11ff547e440258fb5fd1983c6983fd1305fcf640a93ba190f61"
+      "sha256": "ec45bfe53c304741ef35cd10b7fd65b9948f13da6a3c9ca5059d11540310bfa1"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-wake.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9baa4172e8554fb25751e6a537b749d2f3479ee0537daaecff3e52afab6dba35"
+      "sha256": "c73ded79eb4121787dce4e2dffab6ee1201423addd1ecd3bccebace75cd582f7"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-building.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-carrying.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-conducting.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-debugger.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-juggling.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-sweeping.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-thinking.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-typing.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-ultrathink.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/paper-parade-working-wizard.svg",
       "theme": "paper-parade",
+      "character": "mushroom",
       "license": "MIT",
-      "sha256": "9af5e26c993050c31e56f8178d399e60e4748db238895f762d25d515b2d844f0"
+      "sha256": "4b194ae8ce37f8c4ef4c177c5152022621125eb8dbe3e8f019fe5c3e8d15849c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-cozy-dance.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-focus-cast.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-gift-pop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-idle-breathe.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-mini-alert.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-mini-idle.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-reading.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-sleep-loop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edb604e36e960aeae36ecb92519a54d8e88c9562e99a010c86505855feb050ca"
+      "sha256": "c9a6bc941ea9e7e693b9edc5785e52a712c37262087067e43fc434c1f70b87d4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-snack-time.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-stretch.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-victory.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-wave.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-working-debugger.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-berry-working-focus.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-cozy-dance.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-focus-cast.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-gift-pop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-idle-breathe.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-mini-alert.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-mini-idle.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-reading.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-sleep-loop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edb604e36e960aeae36ecb92519a54d8e88c9562e99a010c86505855feb050ca"
+      "sha256": "c9a6bc941ea9e7e693b9edc5785e52a712c37262087067e43fc434c1f70b87d4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-snack-time.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-stretch.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-victory.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-wave.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-working-debugger.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-cocoa-working-focus.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-cozy-dance.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-focus-cast.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-gift-pop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-idle-breathe.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-mini-alert.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-mini-idle.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-reading.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-sleep-loop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edb604e36e960aeae36ecb92519a54d8e88c9562e99a010c86505855feb050ca"
+      "sha256": "c9a6bc941ea9e7e693b9edc5785e52a712c37262087067e43fc434c1f70b87d4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-snack-time.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-stretch.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-victory.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-wave.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-working-debugger.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-honey-working-focus.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-cozy-dance.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-focus-cast.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-gift-pop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-idle-breathe.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-mini-alert.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-mini-idle.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "336ece0b92279515ddc50c57300723598a719ca789b85880dce992065ab29a27"
+      "sha256": "015f7fe2101d596329bf07e01f4a5589cfabcf76bf789d669c02d763e826700d"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-reading.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-sleep-loop.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edb604e36e960aeae36ecb92519a54d8e88c9562e99a010c86505855feb050ca"
+      "sha256": "c9a6bc941ea9e7e693b9edc5785e52a712c37262087067e43fc434c1f70b87d4"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-snack-time.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-stretch.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-victory.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-wave.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "edec78de14101201b2fd18b23c3adfab2a106b4218d944f3f70d322c5678dfa3"
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-working-debugger.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/pixel-pro-peach-working-focus.svg",
       "theme": "pixel-pro",
+      "character": "robot",
       "license": "MIT",
-      "sha256": "390f734b3f2c0a9bf8e55830c11a5af44b00562a5a6fb69c27af1ec00f6c5618"
+      "sha256": "a63c8ade6a2b51c35a7a06638efab1b220d0393860ec93d8c1a6a2def57d7d35"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-collapse-sleep.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "c78052a624571c748925f3b2768feab84939de0c93af6f30bdc0c99a9c29247e"
+      "sha256": "a390702474c20732ed97e40f5fc29715717acffbee5a47a68337fadf1ae2c662"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-error.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "0ef25369875daee0450a5078c42e8958e1467b9dfe556947e3f308929fb97d9c"
+      "sha256": "f250d11fe8623f05d495606cb1a48f252d81a7b20bd1ef3f68f8d0ca1a42ea65"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-happy.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "7025b142915dd1d0f746c15cf0180c18cca70422f1df3718c7b556ac6dc7d686"
+      "sha256": "a848a29bae9ac11bdb1f8732253ddf9101c45d755cda6bb941993a2bbf9a8808"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-idle-doze.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "c78052a624571c748925f3b2768feab84939de0c93af6f30bdc0c99a9c29247e"
+      "sha256": "a390702474c20732ed97e40f5fc29715717acffbee5a47a68337fadf1ae2c662"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-idle-follow.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "fb7429942eab1fbaf7a5bb04088c925de717c46af448b0aab7a4e8e400c1c5a7"
+      "sha256": "a5bf0fa96fe7f4693230df262aa8fa64eca3c054e04a1ed63bb01891f164d05c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-idle-look.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "fb7429942eab1fbaf7a5bb04088c925de717c46af448b0aab7a4e8e400c1c5a7"
+      "sha256": "a5bf0fa96fe7f4693230df262aa8fa64eca3c054e04a1ed63bb01891f164d05c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-idle-reading.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "fb7429942eab1fbaf7a5bb04088c925de717c46af448b0aab7a4e8e400c1c5a7"
+      "sha256": "a5bf0fa96fe7f4693230df262aa8fa64eca3c054e04a1ed63bb01891f164d05c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-idle-yawn.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "fb7429942eab1fbaf7a5bb04088c925de717c46af448b0aab7a4e8e400c1c5a7"
+      "sha256": "a5bf0fa96fe7f4693230df262aa8fa64eca3c054e04a1ed63bb01891f164d05c"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-alert.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "30144b40ed404ff1d5a5e18cd4e3e07b76f304ffd70b9946e8f206f5bc3d895f"
+      "sha256": "d402bfba5af4d6ccb709b1d9ee6dc90ec4f87f71ba74958a9fe6e2978a371109"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-crabwalk.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "30144b40ed404ff1d5a5e18cd4e3e07b76f304ffd70b9946e8f206f5bc3d895f"
+      "sha256": "d402bfba5af4d6ccb709b1d9ee6dc90ec4f87f71ba74958a9fe6e2978a371109"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-enter-sleep.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "47a91c7f83f6186e6afe63bf48c538a05b5707b40ba9d955a32c9e79f156ecd8"
+      "sha256": "6cc1f0b4ac0ee31a892b7795907d33ee2fc04de50d44c241c7ec441667da3b61"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-enter.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "30144b40ed404ff1d5a5e18cd4e3e07b76f304ffd70b9946e8f206f5bc3d895f"
+      "sha256": "d402bfba5af4d6ccb709b1d9ee6dc90ec4f87f71ba74958a9fe6e2978a371109"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-happy.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "f0da889cca1ae811976e46e776d12f030b17d41d35565eae7a52838bcb74cf27"
+      "sha256": "caa830a452f1b51b814231de7b08aa290b4b1b87ae1d670302b07098d91d71ad"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-idle.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "30144b40ed404ff1d5a5e18cd4e3e07b76f304ffd70b9946e8f206f5bc3d895f"
+      "sha256": "d402bfba5af4d6ccb709b1d9ee6dc90ec4f87f71ba74958a9fe6e2978a371109"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-peek.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "30144b40ed404ff1d5a5e18cd4e3e07b76f304ffd70b9946e8f206f5bc3d895f"
+      "sha256": "d402bfba5af4d6ccb709b1d9ee6dc90ec4f87f71ba74958a9fe6e2978a371109"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-mini-sleep.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "47a91c7f83f6186e6afe63bf48c538a05b5707b40ba9d955a32c9e79f156ecd8"
+      "sha256": "6cc1f0b4ac0ee31a892b7795907d33ee2fc04de50d44c241c7ec441667da3b61"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-notification.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "7025b142915dd1d0f746c15cf0180c18cca70422f1df3718c7b556ac6dc7d686"
+      "sha256": "a848a29bae9ac11bdb1f8732253ddf9101c45d755cda6bb941993a2bbf9a8808"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-react-annoyed.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "1dbe11c7c262c39885f62aedb33253d14a9b6edcbf85314d25f345a13562c0f2"
+      "sha256": "6901380773b25934822f0b9335530207a8dc8b335d6935402042546a34e95b1e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-react-double-jump.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "1dbe11c7c262c39885f62aedb33253d14a9b6edcbf85314d25f345a13562c0f2"
+      "sha256": "6901380773b25934822f0b9335530207a8dc8b335d6935402042546a34e95b1e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-react-double.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "1dbe11c7c262c39885f62aedb33253d14a9b6edcbf85314d25f345a13562c0f2"
+      "sha256": "6901380773b25934822f0b9335530207a8dc8b335d6935402042546a34e95b1e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-react-drag.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "1dbe11c7c262c39885f62aedb33253d14a9b6edcbf85314d25f345a13562c0f2"
+      "sha256": "6901380773b25934822f0b9335530207a8dc8b335d6935402042546a34e95b1e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-react-left.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "1dbe11c7c262c39885f62aedb33253d14a9b6edcbf85314d25f345a13562c0f2"
+      "sha256": "6901380773b25934822f0b9335530207a8dc8b335d6935402042546a34e95b1e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-react-right.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "1dbe11c7c262c39885f62aedb33253d14a9b6edcbf85314d25f345a13562c0f2"
+      "sha256": "6901380773b25934822f0b9335530207a8dc8b335d6935402042546a34e95b1e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-sleeping.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "c78052a624571c748925f3b2768feab84939de0c93af6f30bdc0c99a9c29247e"
+      "sha256": "a390702474c20732ed97e40f5fc29715717acffbee5a47a68337fadf1ae2c662"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-wake.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "7025b142915dd1d0f746c15cf0180c18cca70422f1df3718c7b556ac6dc7d686"
+      "sha256": "a848a29bae9ac11bdb1f8732253ddf9101c45d755cda6bb941993a2bbf9a8808"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-building.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-carrying.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-conducting.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-debugger.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-juggling.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-sweeping.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-thinking.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-typing.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-ultrathink.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/strawberry-milk-working-wizard.svg",
       "theme": "strawberry-milk",
+      "character": "crab",
       "license": "MIT",
-      "sha256": "a067ae4aa84300d0ec5a25957729b83690b3e5082798ee7f02f31f50cb81f303"
+      "sha256": "ac96c9cead6e2130da86e07fc967b35b9b574582c2432f33b1140dc7216a133e"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-collapse-sleep.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "de0b42781fd20d6ce4e81c1feae3d87ad52e909bde018d73ea2dc3b12a112ae6"
+      "sha256": "212c85c8d1104c50e7aae925f456e9feeca1ce72db5a1f83400c624026bb8c01"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-error.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "fdcad042dd462510a5a9e6ba8c84984eb6c6bb40a7af9b15b59caa0f49e172e3"
+      "sha256": "c7a4765c26d7c2a3465a2b9554656de009ddc0f4c6fa0f629e17b2adc5fdc688"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-happy.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "3bcf1d2e1d57c8564f200bba438817f34fb85161daaba1e90ef4405d0e825048"
+      "sha256": "7e528524418fc899e73104f2ba0fc63c9262257aa5f91d9b4fc34ea8951cbbc5"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-idle-doze.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "de0b42781fd20d6ce4e81c1feae3d87ad52e909bde018d73ea2dc3b12a112ae6"
+      "sha256": "212c85c8d1104c50e7aae925f456e9feeca1ce72db5a1f83400c624026bb8c01"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-idle-follow.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "e87f56a72bd0f412105099ea121e711c35653621942ed488b583afe33e6f5d7d"
+      "sha256": "4ee3f2e4d38870ec0beb5af25047af4bdb7a153d1b4d31163a311bc511ae3221"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-idle-look.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "e87f56a72bd0f412105099ea121e711c35653621942ed488b583afe33e6f5d7d"
+      "sha256": "4ee3f2e4d38870ec0beb5af25047af4bdb7a153d1b4d31163a311bc511ae3221"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-idle-reading.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "e87f56a72bd0f412105099ea121e711c35653621942ed488b583afe33e6f5d7d"
+      "sha256": "4ee3f2e4d38870ec0beb5af25047af4bdb7a153d1b4d31163a311bc511ae3221"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-idle-yawn.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "e87f56a72bd0f412105099ea121e711c35653621942ed488b583afe33e6f5d7d"
+      "sha256": "4ee3f2e4d38870ec0beb5af25047af4bdb7a153d1b4d31163a311bc511ae3221"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-alert.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "9c0d34674457ec484ee4cb78e5d2789a79ceb11466eb592b5a135500bdf0652c"
+      "sha256": "5502047d97d6982a3e50e5bb2d419c0bddb46ea104c364ffd144ce612f775eb2"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-crabwalk.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "9c0d34674457ec484ee4cb78e5d2789a79ceb11466eb592b5a135500bdf0652c"
+      "sha256": "5502047d97d6982a3e50e5bb2d419c0bddb46ea104c364ffd144ce612f775eb2"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-enter-sleep.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "65ff311295bd403f49e743b854ee4eff28fa678e61f54f0be934465548f97b28"
+      "sha256": "3732cd95b9392005aeb7f2f88ff4f6c09356c360baeda93fa08236c2f387f6ed"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-enter.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "9c0d34674457ec484ee4cb78e5d2789a79ceb11466eb592b5a135500bdf0652c"
+      "sha256": "5502047d97d6982a3e50e5bb2d419c0bddb46ea104c364ffd144ce612f775eb2"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-happy.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "f2825522426c5e2b5ca7ff029c8fe3d4d6d9d410e10402e4403a70c9a36c0952"
+      "sha256": "2e5550c4ae62c4f0deb9975fe7a250fd6dabca1c26df62c889751e40d02a0d7a"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-idle.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "9c0d34674457ec484ee4cb78e5d2789a79ceb11466eb592b5a135500bdf0652c"
+      "sha256": "5502047d97d6982a3e50e5bb2d419c0bddb46ea104c364ffd144ce612f775eb2"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-peek.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "9c0d34674457ec484ee4cb78e5d2789a79ceb11466eb592b5a135500bdf0652c"
+      "sha256": "5502047d97d6982a3e50e5bb2d419c0bddb46ea104c364ffd144ce612f775eb2"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-mini-sleep.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "65ff311295bd403f49e743b854ee4eff28fa678e61f54f0be934465548f97b28"
+      "sha256": "3732cd95b9392005aeb7f2f88ff4f6c09356c360baeda93fa08236c2f387f6ed"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-notification.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "3bcf1d2e1d57c8564f200bba438817f34fb85161daaba1e90ef4405d0e825048"
+      "sha256": "7e528524418fc899e73104f2ba0fc63c9262257aa5f91d9b4fc34ea8951cbbc5"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-react-annoyed.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "f91efb18190ab38e342729aff970cf315a0bdb498bc0079c8093f4a0cd23e70c"
+      "sha256": "a35a0e26bfea91ea5c31aa46dbe1cfc07288173c24967bbc8b6259266b23cf1b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-react-double-jump.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "f91efb18190ab38e342729aff970cf315a0bdb498bc0079c8093f4a0cd23e70c"
+      "sha256": "a35a0e26bfea91ea5c31aa46dbe1cfc07288173c24967bbc8b6259266b23cf1b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-react-double.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "f91efb18190ab38e342729aff970cf315a0bdb498bc0079c8093f4a0cd23e70c"
+      "sha256": "a35a0e26bfea91ea5c31aa46dbe1cfc07288173c24967bbc8b6259266b23cf1b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-react-drag.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "f91efb18190ab38e342729aff970cf315a0bdb498bc0079c8093f4a0cd23e70c"
+      "sha256": "a35a0e26bfea91ea5c31aa46dbe1cfc07288173c24967bbc8b6259266b23cf1b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-react-left.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "f91efb18190ab38e342729aff970cf315a0bdb498bc0079c8093f4a0cd23e70c"
+      "sha256": "a35a0e26bfea91ea5c31aa46dbe1cfc07288173c24967bbc8b6259266b23cf1b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-react-right.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "f91efb18190ab38e342729aff970cf315a0bdb498bc0079c8093f4a0cd23e70c"
+      "sha256": "a35a0e26bfea91ea5c31aa46dbe1cfc07288173c24967bbc8b6259266b23cf1b"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-sleeping.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "de0b42781fd20d6ce4e81c1feae3d87ad52e909bde018d73ea2dc3b12a112ae6"
+      "sha256": "212c85c8d1104c50e7aae925f456e9feeca1ce72db5a1f83400c624026bb8c01"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-wake.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "3bcf1d2e1d57c8564f200bba438817f34fb85161daaba1e90ef4405d0e825048"
+      "sha256": "7e528524418fc899e73104f2ba0fc63c9262257aa5f91d9b4fc34ea8951cbbc5"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-building.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-carrying.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-conducting.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-debugger.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-juggling.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-sweeping.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-thinking.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-typing.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-ultrathink.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/sunset-soda-working-wizard.svg",
       "theme": "sunset-soda",
+      "character": "fox",
       "license": "MIT",
-      "sha256": "a4c2d74566b2094c1a1995a8f9d3983f16a9b32a05b02a4ecae8a2ff250bfda8"
+      "sha256": "ff3cea8b3bbaeb6b2f5670453f77804ed9693bc0d84e2dca2bf9103fa1074050"
     },
     {
       "path": "apps/pet-desktop/assets/svg/idle-follow.svg",
       "theme": "template",
+      "character": "sprout",
       "license": "MIT",
-      "sha256": "2930cfabda2daa9f2b90900b78f64ea6798128f0914ec84f49a90bf2c4307271"
+      "sha256": "b332b1dc13ff1b82f268d68457fe3f4b4ed99e0300dc2cd466c5044ee256871d"
     }
   ],
   "brandSource": "assets/brand/source/sprout-buddy.svg",
+  "characters": {
+    "aurora-pop": {
+      "name": "Aurora Owl",
+      "nameZh": "极光猫头鹰",
+      "species": "owl"
+    },
+    "blue-hour": {
+      "name": "Midnight Penguin",
+      "nameZh": "午夜企鹅",
+      "species": "penguin"
+    },
+    "campfire-cocoa": {
+      "name": "Cocoa Cat",
+      "nameZh": "可可猫",
+      "species": "cat"
+    },
+    "clawd": {
+      "name": "Sprout Buddy",
+      "nameZh": "小芽",
+      "species": "sprout"
+    },
+    "matcha-lab": {
+      "name": "Matcha Frog",
+      "nameZh": "抹茶蛙",
+      "species": "frog"
+    },
+    "mint-chip": {
+      "name": "Mossy Turtle",
+      "nameZh": "苔龟",
+      "species": "turtle"
+    },
+    "paper-parade": {
+      "name": "Paper Mushroom",
+      "nameZh": "纸伞蘑菇",
+      "species": "mushroom"
+    },
+    "pixel-pro": {
+      "name": "Pocket Robot",
+      "nameZh": "口袋机器人",
+      "species": "robot"
+    },
+    "strawberry-milk": {
+      "name": "Rosy Crab",
+      "nameZh": "蔷薇蟹",
+      "species": "crab"
+    },
+    "sunset-soda": {
+      "name": "Soda Fox",
+      "nameZh": "汽水狐狸",
+      "species": "fox"
+    }
+  },
+  "characterSources": [
+    {
+      "species": "owl",
+      "name": "Aurora Owl",
+      "nameZh": "极光猫头鹰",
+      "path": "assets/brand/source/characters/owl.svg",
+      "license": "MIT",
+      "sha256": "4dd84f3b9588e11eb2cec4b139f5282841a1382fbd6a6f78f014e90fa0eda4d6"
+    },
+    {
+      "species": "penguin",
+      "name": "Midnight Penguin",
+      "nameZh": "午夜企鹅",
+      "path": "assets/brand/source/characters/penguin.svg",
+      "license": "MIT",
+      "sha256": "cf9c6e7554384117c636cc1fda5b5d90bebaed7edde469e6d86ee8379cdd9e44"
+    },
+    {
+      "species": "cat",
+      "name": "Cocoa Cat",
+      "nameZh": "可可猫",
+      "path": "assets/brand/source/characters/cat.svg",
+      "license": "MIT",
+      "sha256": "ac693c84ec54eed836f19dec301ee8aacef15386b3f4d809875c9b954da38b48"
+    },
+    {
+      "species": "sprout",
+      "name": "Sprout Buddy",
+      "nameZh": "小芽",
+      "path": "assets/brand/source/characters/sprout.svg",
+      "license": "MIT",
+      "sha256": "3bdc39314433576f02a0417eb694034c6b5f20bb3ccf7d087d6a2daee52ea457"
+    },
+    {
+      "species": "frog",
+      "name": "Matcha Frog",
+      "nameZh": "抹茶蛙",
+      "path": "assets/brand/source/characters/frog.svg",
+      "license": "MIT",
+      "sha256": "d9c6126833363b25b945d74a9036355b1da7073dd8e62fcfa5bdca48a8e169b1"
+    },
+    {
+      "species": "turtle",
+      "name": "Mossy Turtle",
+      "nameZh": "苔龟",
+      "path": "assets/brand/source/characters/turtle.svg",
+      "license": "MIT",
+      "sha256": "80e4d8376d8e7a831030d3c39bf9befe70f2958b3dea1b7715acb358432aa331"
+    },
+    {
+      "species": "mushroom",
+      "name": "Paper Mushroom",
+      "nameZh": "纸伞蘑菇",
+      "path": "assets/brand/source/characters/mushroom.svg",
+      "license": "MIT",
+      "sha256": "2d8ed7bbb380d9698dfa092ea7d059963e80c50fcb1d9c8110b8ee0f18d55192"
+    },
+    {
+      "species": "robot",
+      "name": "Pocket Robot",
+      "nameZh": "口袋机器人",
+      "path": "assets/brand/source/characters/robot.svg",
+      "license": "MIT",
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
+    },
+    {
+      "species": "crab",
+      "name": "Rosy Crab",
+      "nameZh": "蔷薇蟹",
+      "path": "assets/brand/source/characters/crab.svg",
+      "license": "MIT",
+      "sha256": "a5bf0fa96fe7f4693230df262aa8fa64eca3c054e04a1ed63bb01891f164d05c"
+    },
+    {
+      "species": "fox",
+      "name": "Soda Fox",
+      "nameZh": "汽水狐狸",
+      "path": "assets/brand/source/characters/fox.svg",
+      "license": "MIT",
+      "sha256": "4ee3f2e4d38870ec0beb5af25047af4bdb7a153d1b4d31163a311bc511ae3221"
+    }
+  ],
+  "previews": [
+    {
+      "path": "docs/media/mascot-gallery.png",
+      "license": "MIT",
+      "sha256": "a422a4c5dd899d166c1d16e2f2f0087ae6524b7520e36db76652bf34f78fdc79"
+    }
+  ],
   "brandExports": [
     {
       "path": "assets/brand/extracted/png/app_tile_green.png",
@@ -2251,9 +2764,59 @@
       "sha256": "f8b91f04798d41fdda154cc703ac70f8e77ffc7a22777554973b70c02110a647"
     },
     {
+      "path": "assets/brand/extracted/svg/mascot_cat.svg",
+      "license": "MIT",
+      "sha256": "ac693c84ec54eed836f19dec301ee8aacef15386b3f4d809875c9b954da38b48"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_crab.svg",
+      "license": "MIT",
+      "sha256": "a5bf0fa96fe7f4693230df262aa8fa64eca3c054e04a1ed63bb01891f164d05c"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_fox.svg",
+      "license": "MIT",
+      "sha256": "4ee3f2e4d38870ec0beb5af25047af4bdb7a153d1b4d31163a311bc511ae3221"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_frog.svg",
+      "license": "MIT",
+      "sha256": "d9c6126833363b25b945d74a9036355b1da7073dd8e62fcfa5bdca48a8e169b1"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_mushroom.svg",
+      "license": "MIT",
+      "sha256": "2d8ed7bbb380d9698dfa092ea7d059963e80c50fcb1d9c8110b8ee0f18d55192"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_owl.svg",
+      "license": "MIT",
+      "sha256": "4dd84f3b9588e11eb2cec4b139f5282841a1382fbd6a6f78f014e90fa0eda4d6"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_penguin.svg",
+      "license": "MIT",
+      "sha256": "cf9c6e7554384117c636cc1fda5b5d90bebaed7edde469e6d86ee8379cdd9e44"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_robot.svg",
+      "license": "MIT",
+      "sha256": "44be17d6b3e935c22987424beee05368a2586e721ccca61befc181d2dc38a70f"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_sprout.svg",
+      "license": "MIT",
+      "sha256": "3bdc39314433576f02a0417eb694034c6b5f20bb3ccf7d087d6a2daee52ea457"
+    },
+    {
+      "path": "assets/brand/extracted/svg/mascot_turtle.svg",
+      "license": "MIT",
+      "sha256": "80e4d8376d8e7a831030d3c39bf9befe70f2958b3dea1b7715acb358432aa331"
+    },
+    {
       "path": "assets/brand/extracted/svg/symbol_primary.svg",
       "license": "MIT",
-      "sha256": "7b60611d8315ae3f321cb5d1e156b8e13144c0966ec9f26dd1ff6ce199ba7e3c"
+      "sha256": "3bdc39314433576f02a0417eb694034c6b5f20bb3ccf7d087d6a2daee52ea457"
     },
     {
       "path": "assets/brand/extracted/svg/wordmark_color.svg",

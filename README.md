@@ -8,7 +8,15 @@
 
 Sprout Buddy lives at the edge of your screen. Hover to capture a task, double-click to see your day, and turn small progress into XP, stars and milestones in a local RPG dashboard. Built for study, work and personal projects.
 
-The public edition includes an original round seed mascot, ten bundled themes, locally served fonts, an empty first-run profile and a standalone Windows installer. Core task and RPG use works without a cloud account.
+The public edition includes ten original mascot characters, ten bundled character themes, locally served fonts, an empty first-run profile and a standalone Windows installer. Core task and RPG use works without a cloud account.
+
+## Meet your mascots
+
+Ten small companions with different silhouettes: the Sprout Buddy, Mossy Turtle, Midnight Penguin, Matcha Frog, Rosy Crab, Soda Fox, Paper Mushroom, Aurora Owl, Cocoa Cat and Pocket Robot. Each has state-aware animations for idle, work, rest and quick reactions.
+
+![Ten original desktop pet characters in a compact size matching the earlier GoWIN!Buddy version](docs/media/mascot-gallery.png)
+
+Choose a character and color theme from the pet’s appearance menu.
 
 ## See it in action
 
@@ -31,13 +39,13 @@ The public edition includes an original round seed mascot, ten bundled themes, l
 | Local synchronization | Changes in the pet and dashboard meet in the same local state file |
 | Recovery | Atomic saves, a previous-state backup and preservation of malformed files |
 | Personal dashboard | Goal countdowns, mood and reflection records, history and JSON export |
-| Customization | Ten original Sprout palettes and an editable theme template |
+| Customization | Ten distinct mascot silhouettes and palettes, plus an editable theme template |
 
 Completed temporary tasks can be cleared with “收起”; that cleanup itself does not grant XP. Rewards follow the dashboard's quest/check-in/milestone rules.
 
 ## Install in a minute
 
-1. Open [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest) and download **GoWINBuddy-Setup-0.2.1.exe**.
+1. Open [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest) and download **GoWINBuddy-Setup-0.2.2.exe**.
 2. Run the installer, choose English or Simplified Chinese and launch GoWIN!Buddy.
 3. Hover over the pet, add a small task and double-click it to open the dashboard.
 
@@ -60,7 +68,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap-local-deps
 powershell -NoProfile -ExecutionPolicy Bypass -File installer/windows/build-installer.ps1
 ~~~
 
-The installer is written to installer/windows/dist/. npm dependencies are locked; build tools, personal state, local logs and machine-resolved paths are excluded from Git. See [build instructions](docs/building.en.md), [verification results](docs/validation.md), [theme customization](docs/themes.md) and [contributing](CONTRIBUTING.md).
+The installer is written to installer/windows/dist/. npm dependencies are locked; build tools, personal state, local logs and machine-resolved paths are excluded from Git. See [build instructions](docs/building.en.md), [verification results](docs/validation.md), [character themes](docs/themes.md) and [contributing](CONTRIBUTING.md).
 
 ## License and credits
 

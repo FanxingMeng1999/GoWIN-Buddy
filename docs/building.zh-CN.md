@@ -54,6 +54,7 @@ $env:ELECTRON_CUSTOM_DIR = '41.10.7'
 ~~~powershell
 python -m pip install 'Pillow>=9.5,<13'
 python scripts/generate-public-art.py --root .
+node scripts/render-mascot-gallery.cjs  # 更新中英角色总览图，需要 Microsoft Edge
 python scripts/sync-brand-icons.py --root .
 ~~~
 

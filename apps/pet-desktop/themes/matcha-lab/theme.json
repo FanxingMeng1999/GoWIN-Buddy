@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "name": "Matcha Lab",
+  "name": "Matcha Frog",
   "author": "FanxingMeng1999",
   "version": "1.1.0",
-  "description": "Original Sprout Buddy artwork · Matcha Lab",
+  "description": "A bright-eyed frog for curious experiments and fresh starts.",
   "order": 40,
   "license": "MIT",
   "repo": "https://github.com/FanxingMeng1999/GoWIN-Buddy",
@@ -168,22 +168,22 @@
   },
   "hitBoxes": {
     "default": {
-      "x": -2,
-      "y": -7,
-      "w": 19,
-      "h": 25
+      "x": -1,
+      "y": 5,
+      "w": 17,
+      "h": 12
     },
     "sleeping": {
       "x": -2,
-      "y": 0,
+      "y": 9,
       "w": 19,
-      "h": 18
+      "h": 7
     },
     "wide": {
-      "x": -5,
-      "y": -8,
-      "w": 25,
-      "h": 26
+      "x": -3,
+      "y": 3,
+      "w": 21,
+      "h": 14
     }
   },
   "wideHitboxFiles": [
@@ -304,5 +304,10 @@
     "heightRatio": 1.3,
     "offsetX": -0.45,
     "offsetY": -0.25
+  },
+  "mascot": {
+    "species": "frog",
+    "name": "Matcha Frog",
+    "nameZh": "抹茶蛙"
   }
 }

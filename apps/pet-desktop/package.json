@@ -1,7 +1,7 @@
 {
   "name": "gowin-buddy-pet",
-  "version": "0.2.1",
-  "description": "GoWIN!Buddy desktop pet runtime for universal RPG feedback loops.",
+  "version": "0.2.2",
+  "description": "A desktop pet and local RPG companion with original mascot characters.",
   "main": "src/main.js",
   "scripts": {
     "start": "node launch.js",

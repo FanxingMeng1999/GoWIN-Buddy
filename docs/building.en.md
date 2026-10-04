@@ -59,6 +59,7 @@ Committed art and icons are sufficient for a normal build. To edit and regenerat
 ~~~powershell
 python -m pip install 'Pillow>=9.5,<13'
 python scripts/generate-public-art.py --root .
+node scripts/render-mascot-gallery.cjs  # optional bilingual mascot lineup; needs Microsoft Edge
 python scripts/sync-brand-icons.py --root .
 ~~~
 
