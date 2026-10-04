@@ -55,7 +55,7 @@ $env:ELECTRON_CUSTOM_DIR = '41.10.7'
 python -m pip install 'Pillow>=9.5,<13'
 python scripts/generate-public-art.py --root .
 node scripts/render-mascot-gallery.cjs  # 更新中英角色总览图，需要 Microsoft Edge
-node scripts/render-mascot-preview.cjs  # 渲染连续动作帧，同样需要 Microsoft Edge
+node scripts/render-mascot-preview.cjs  # 渲染并测量 25 帧/秒动作，同样需要 Microsoft Edge
 python scripts/render-mascot-preview.py  # 合成十角色与螃蟹特写动图
 python scripts/sync-brand-icons.py --root .
 ~~~
@@ -66,4 +66,4 @@ python scripts/sync-brand-icons.py --root .
 
 ## 自动发布
 
-推送与应用版本一致的标签（例如 `v0.2.3`）会触发 Windows 安装器工作流。工作流构建带版本号的 EXE 和 SHA-256 清单，使用 `docs/release-<version>.md` 发布 GitHub Release，并检查两个发布资源是否齐全。手动运行工作流只生成同样的安装包资源，不会发布 Release。
+推送与应用版本一致的标签（例如 `v0.2.4`）会触发 Windows 安装器工作流。工作流构建带版本号的 EXE 和 SHA-256 清单，使用 `docs/release-<version>.md` 发布 GitHub Release，并检查两个发布资源是否齐全。手动运行工作流只生成同样的安装包资源，不会发布 Release。

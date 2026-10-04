@@ -29,7 +29,8 @@ html, body {
   cursor: grabbing;
 }
 
-#clawd {
+#clawd,
+.pet-asset-fading {
   width: 190%;
   height: 130%;
   position: absolute;

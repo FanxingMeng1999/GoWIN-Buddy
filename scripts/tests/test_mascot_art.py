@@ -4,6 +4,7 @@ import json
 import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 EXPECTED = {
@@ -92,4 +93,18 @@ hero_svg = ET.fromstring(hero)
 hero_ids = {node.get('id') for node in hero_svg.iter() if node.get('id')}
 if any(ref not in hero_ids for ref in re.findall(r'url\(#([^)]*)\)', hero)):
     raise SystemExit('Hero image is missing its surface material definitions')
-print('PASS: ten naturally proportioned shaded mascots, compact uniform scaling, 372 SVG states, anchors and material/export hashes.')
+for rel, size in {
+    'docs/media/mascot-preview-v3.gif': (1120, 610),
+    'docs/media/rosy-crab-preview-v3.gif': (500, 460),
+}.items():
+    with Image.open(ROOT / rel) as preview:
+        if preview.format != 'GIF' or preview.size != size or preview.n_frames != 342 or preview.info.get('loop') != 0:
+            raise SystemExit('Preview must be a 25 fps, 342-frame seamless GIF: ' + rel)
+        duration = 0
+        for frame in range(preview.n_frames):
+            preview.seek(frame)
+            duration += preview.info.get('duration', 0)
+        if duration != 13680:
+            raise SystemExit('Unexpected preview loop duration: ' + rel)
+
+print('PASS: ten proportioned mascots, 372 SVG states, compact uniform scale, continuous-motion GIF frame rate and exports.')

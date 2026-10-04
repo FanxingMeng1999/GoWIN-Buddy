@@ -263,6 +263,45 @@ function endDragReaction() {
   window.electronAPI.resumeFromReaction();
 }
 
+const PET_SWAP_FADE_MS = 140;
+
+function showPetAsset(next) {
+  const previous = [...container.querySelectorAll("object, img.clawd-img")].filter((el) => el !== next);
+  const reduceMotion = typeof window.matchMedia === "function"
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const release = (el) => {
+    if (el.tagName === "OBJECT") releaseObject(el);
+    else releaseImg(el);
+  };
+
+  if (!previous.length || reduceMotion) {
+    previous.forEach(release);
+    next.style.transition = "none";
+    next.style.opacity = "1";
+    return;
+  }
+
+  const transition = "opacity " + PET_SWAP_FADE_MS + "ms cubic-bezier(.22,.61,.36,1)";
+  previous.forEach((el) => {
+    el.id = "";
+    el.classList.add("pet-asset-fading");
+    el.style.transition = transition;
+    el.style.willChange = "opacity";
+  });
+  next.style.transition = transition;
+  next.style.willChange = "opacity";
+  void next.getBoundingClientRect();
+  requestAnimationFrame(() => {
+    if (!next.isConnected) return;
+    next.style.opacity = "1";
+    previous.forEach((el) => { if (el.isConnected) el.style.opacity = "0"; });
+  });
+  setTimeout(() => {
+    previous.forEach(release);
+    if (next.isConnected) next.style.willChange = "";
+  }, PET_SWAP_FADE_MS + 24);
+}
+
 // --- Generic swap function: handles both <object> and <img> channels ---
 let clawdEl = document.getElementById("clawd");
 let pendingNext = null;
@@ -294,14 +333,7 @@ function swapToFile(file, state, useObjectChannel) {
 
     const swap = () => {
       if (pendingNext !== next) return;
-      next.style.transition = "none";
-      next.style.opacity = "1";
-      for (const child of [...container.querySelectorAll("object, img.clawd-img")]) {
-        if (child !== next) {
-          if (child.tagName === "OBJECT") releaseObject(child);
-          else releaseImg(child);
-        }
-      }
+      showPetAsset(next);
       pendingNext = null;
       clawdEl = next;
       currentDisplayedSvg = file;
@@ -330,14 +362,7 @@ function swapToFile(file, state, useObjectChannel) {
 
     const swap = () => {
       if (pendingNext !== next) return;
-      next.style.transition = "none";
-      next.style.opacity = "1";
-      for (const child of [...container.querySelectorAll("object, img.clawd-img")]) {
-        if (child !== next) {
-          if (child.tagName === "OBJECT") releaseObject(child);
-          else releaseImg(child);
-        }
-      }
+      showPetAsset(next);
       pendingNext = null;
       clawdEl = next;
       currentDisplayedSvg = file;
@@ -355,7 +380,7 @@ function swapToFile(file, state, useObjectChannel) {
   }
 }
 
-// --- State change → switch animation (preload + instant swap) ---
+// --- State change → switch animation (preload + short crossfade) ---
 window.electronAPI.onStateChange((state, svg) => {
   // Main process state change → cancel any active click reaction
   cancelReaction();

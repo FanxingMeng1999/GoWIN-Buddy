@@ -73,7 +73,7 @@ async function captureNative(app, suffix, target) {
     assert.ok(configuration.bundledPython.toLowerCase().startsWith(installedRoot.toLowerCase()));
     const installedTick = await app.evaluate(({ app }) => process.getBuiltinModule("fs").readFileSync(process.getBuiltinModule("path").join(app.getAppPath(), "src/tick.js"), "utf8"));
     assert.match(installedTick, /Hidden pets do not need native cursor polling/);
-    const expectedPetHashes = Object.fromEntries(["dashboard-env.js", "dashboard-bridge.js", "runtime-state.js", "tick.js", "updater.js", "quick-tasks-renderer.js", "quick-tasks.html", "../hooks/shared-process.js"].map(file => [file, crypto.createHash("sha256").update(fs.readFileSync(path.join(repo, "apps/pet-desktop/src", file))).digest("hex")]));
+    const expectedPetHashes = Object.fromEntries(["dashboard-env.js", "dashboard-bridge.js", "runtime-state.js", "tick.js", "updater.js", "quick-tasks-renderer.js", "quick-tasks.html", "renderer.js", "styles.css", "../hooks/shared-process.js"].map(file => [file, crypto.createHash("sha256").update(fs.readFileSync(path.join(repo, "apps/pet-desktop/src", file))).digest("hex")]));
     const actualPetHashes = await app.evaluate(({ app }, files) => {
       const fs = process.getBuiltinModule("fs"), path = process.getBuiltinModule("path"), crypto = process.getBuiltinModule("crypto");
       return Object.fromEntries(files.map(file => [file, crypto.createHash("sha256").update(fs.readFileSync(path.join(app.getAppPath(), "src", file))).digest("hex")]));
@@ -84,6 +84,34 @@ async function captureNative(app, suffix, target) {
     mark("Installed runtime and dashboard match the final reviewed source files");
     report.configuration = configuration;
     mark("Direct executable launch resolves installed root and writable user data");
+    const reduceMotion = await main.evaluate(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    await app.evaluate(({ BrowserWindow }, file) => {
+      const win = BrowserWindow.getAllWindows().find(item => item.webContents.getURL().endsWith("/index.html"));
+      win.webContents.send("state-change", "working", file);
+    }, "clawd-working-typing.svg");
+    await main.waitForFunction(() => {
+      const active = document.getElementById("clawd");
+      return active && active.tagName === "IMG" && active.complete && active.naturalWidth > 0;
+    }, null, { timeout: 3000, polling: "raf" });
+    if (reduceMotion) {
+      assert.equal(await main.locator(".pet-asset-fading").count(), 0);
+      assert.equal(await main.locator("#clawd").evaluate(el => el.style.opacity), "1");
+    } else {
+      await main.waitForFunction(() => {
+        const outgoing = document.querySelector(".pet-asset-fading");
+        return outgoing && outgoing.style.opacity === "0";
+      }, null, { timeout: 1500, polling: "raf" });
+      const fade = await main.locator(".pet-asset-fading").evaluate(el => ({ transition: el.style.transition, pointerEvents: getComputedStyle(el).pointerEvents }));
+      assert.match(fade.transition, /140ms/);
+      assert.equal(fade.pointerEvents, "none");
+      await main.waitForFunction(() => !document.querySelector(".pet-asset-fading"), null, { timeout: 1500, polling: "raf" });
+    }
+    await app.evaluate(({ BrowserWindow }) => {
+      const win = BrowserWindow.getAllWindows().find(item => item.webContents.getURL().endsWith("/index.html"));
+      win.webContents.send("state-change", "idle", "clawd-idle-follow.svg");
+    });
+    await main.waitForFunction(() => document.getElementById("clawd")?.tagName === "OBJECT", null, { timeout: 3000, polling: "raf" });
+    mark("Mascot movement is visible and state changes use the 140 ms crossfade");
     report.quickTaskShortcutRegistered = await app.evaluate(({ globalShortcut }) => globalShortcut.isRegistered("CommandOrControl+Alt+Q"));
     // A concurrently running previous version can own this system-wide shortcut.
     // Panel interactions below remain available and are verified independently.
