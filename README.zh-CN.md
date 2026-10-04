@@ -12,9 +12,11 @@
 
 ## 认识十位桌面伙伴
 
-小芽、苔龟、午夜企鹅、抹茶蛙、蔷薇蟹、汽水狐狸、纸伞蘑菇、极光猫头鹰、可可猫与口袋机器人，各有独立轮廓和待机、工作、休息动作。尺寸按早期 GoWIN!Buddy 桌宠的可视范围调整。
+小芽、苔龟、午夜企鹅、抹茶蛙、蔷薇蟹、汽水狐狸、纸伞蘑菇、极光猫头鹰、可可猫与口袋机器人，都有独立的自然比例轮廓、柔和体积明暗，以及待机、工作、开心与休息动作。新素材等比例缩放，保留圆润饱满的身体结构。
 
-![十种原创桌宠角色，大小调整至接近早期 GoWIN!Buddy](docs/media/mascot-gallery.png)
+![十种自然比例的原创桌宠和连续动作预览](docs/media/mascot-preview-v3.gif)
+
+[蔷薇蟹动作特写](docs/media/rosy-crab-preview-v3.gif) · [十种桌宠静态总览](docs/media/mascot-gallery.png)
 
 可以在宠物外观菜单中选择角色与配色。
 
@@ -45,7 +47,7 @@
 
 ## 安装与上手
 
-1. 进入 [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest)，下载 **GoWINBuddy-Setup-0.2.2.exe**。
+1. 进入 [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest)，下载 **GoWINBuddy-Setup-0.2.3.exe**。
 2. 运行安装器，选择简体中文或 English、安装位置并启动。
 3. 鼠标移到宠物上，添加一个小任务；双击宠物打开仪表盘。
 

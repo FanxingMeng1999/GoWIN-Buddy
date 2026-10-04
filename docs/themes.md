@@ -1,6 +1,6 @@
 # Original pet characters / 原创桌宠角色
 
-The ten bundled themes now differ in silhouette as well as palette. Their compact SVG footprint and click areas follow the original GoWIN!Buddy viewBox and hitbox. Character body shapes, face details and working/sleeping/reaction poses are generated as original MIT artwork.
+The ten bundled themes now differ in silhouette as well as palette. Each character has a naturally proportioned body, soft material shading and continuous idle, work, happy and rest movements. SVG anatomy uses uniform scaling while preserving the existing 45×45 viewBox, click areas, eye tracking and pet-window geometry. The new art is original MIT artwork.
 
 | Theme | Character | 中文 |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ Regenerate bundled art using scripts/generate-public-art.py as described in the 
 
 ## 中文
 
-十套内置主题不仅颜色不同，角色轮廓也各不相同：小芽、苔龟、午夜企鹅、抹茶蛙、蔷薇蟹、汽水狐狸、纸伞蘑菇、极光猫头鹰、可可猫与口袋机器人。桌宠按 GoWIN!Buddy 较早版本的 viewBox 与点击热区缩小；原创 SVG 动作包含待机、工作、睡眠与交互姿态。
+十套内置主题不仅颜色不同，角色轮廓也各不相同：小芽、苔龟、午夜企鹅、抹茶蛙、蔷薇蟹、汽水狐狸、纸伞蘑菇、极光猫头鹰、可可猫与口袋机器人。原创 SVG 角色具有各自自然比例的身体结构、柔和体积明暗与连续动作；全角色等比例缩放，消除压扁观感，同时沿用已有 viewBox、点击热区、视线追踪和桌宠窗口尺寸。
 
 clawd 等既有主题 ID 与文件名仅保留作为内部兼容标识。
 

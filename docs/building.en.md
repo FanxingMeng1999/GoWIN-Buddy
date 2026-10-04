@@ -59,7 +59,9 @@ Committed art and icons are sufficient for a normal build. To edit and regenerat
 ~~~powershell
 python -m pip install 'Pillow>=9.5,<13'
 python scripts/generate-public-art.py --root .
-node scripts/render-mascot-gallery.cjs  # optional bilingual mascot lineup; needs Microsoft Edge
+node scripts/render-mascot-gallery.cjs  # bilingual character lineup; needs Microsoft Edge
+node scripts/render-mascot-preview.cjs  # deterministic animation frames; needs Microsoft Edge
+python scripts/render-mascot-preview.py  # compose mascot and crab GIF previews
 python scripts/sync-brand-icons.py --root .
 ~~~
 
@@ -81,4 +83,4 @@ No external RIOS checkout or directory layout is required. Some inherited intern
 
 ## Automated release
 
-Push a tag matching the app version (for example, `v0.2.2`) to run the Windows installer workflow. It builds and checksums the versioned EXE, publishes a GitHub Release using `docs/release-<version>.md`, and verifies that both release assets are present. Manually dispatching the workflow builds the same assets without publishing a release.
+Push a tag matching the app version (for example, `v0.2.3`) to run the Windows installer workflow. It builds and checksums the versioned EXE, publishes a GitHub Release using `docs/release-<version>.md`, and verifies that both release assets are present. Manually dispatching the workflow builds the same assets without publishing a release.

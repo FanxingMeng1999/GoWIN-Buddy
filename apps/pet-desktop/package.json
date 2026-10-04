@@ -1,6 +1,6 @@
 {
   "name": "gowin-buddy-pet",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A desktop pet and local RPG companion with original mascot characters.",
   "main": "src/main.js",
   "scripts": {

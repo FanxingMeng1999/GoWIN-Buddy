@@ -41,7 +41,13 @@ describe("theme-loader built-in themes", () => {
       const idleSvg = fs.readFileSync(idleFile, "utf8");
       assert.ok(idleSvg.includes(`data-species="${species}"`), id);
       assert.ok(idleSvg.includes("viewBox=\"-15 -25 45 45\""), id);
-      assert.ok(idleSvg.includes("data-size-profile=\"legacy-pet-footprint\" transform=\"translate(0 6.08) scale(1 .62)\""), id);
+      assert.ok(idleSvg.includes('data-size-profile="compact-uniform"'), id);
+      assert.ok(idleSvg.includes('preserveAspectRatio="xMidYMid meet"'), id);
+      const scale = idleSvg.match(/data-size-profile="compact-uniform"[^>]*scale\(([^)]+)\)/);
+      assert.ok(scale, `missing compact scale: ${id}`);
+      const axes = scale[1].trim().split(/[ ,]+/).map(Number);
+      assert.ok(axes.every(Number.isFinite), id);
+      assert.ok(axes.length === 1 || Math.abs(axes[0] - axes[1]) < 1e-9, `distorted anatomy: ${id}`);
       assert.ok(idleSvg.includes("id=\"body-js\"") && idleSvg.includes("id=\"eyes-js\""), id);
     }
     const matchaTheme = themes.find((theme) => theme.id === "matcha-lab");

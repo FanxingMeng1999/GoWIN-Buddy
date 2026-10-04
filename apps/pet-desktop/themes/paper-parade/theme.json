@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "name": "Paper Mushroom",
   "author": "FanxingMeng1999",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A tiny spotted mushroom from a storybook clearing.",
   "order": 60,
   "license": "MIT",

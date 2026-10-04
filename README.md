@@ -12,9 +12,11 @@ The public edition includes ten original mascot characters, ten bundled characte
 
 ## Meet your mascots
 
-Ten small companions with different silhouettes: the Sprout Buddy, Mossy Turtle, Midnight Penguin, Matcha Frog, Rosy Crab, Soda Fox, Paper Mushroom, Aurora Owl, Cocoa Cat and Pocket Robot. Each has state-aware animations for idle, work, rest and quick reactions.
+Meet ten naturally proportioned companions: Sprout Buddy, Mossy Turtle, Midnight Penguin, Matcha Frog, Rosy Crab, Soda Fox, Paper Mushroom, Aurora Owl, Cocoa Cat and Pocket Robot. Soft surface shading and keyframed idle, work, happy and rest motions give each rounded body a lively, dimensional look. Their SVG geometry scales uniformly, preserving compact size without flattening the artwork.
 
-![Ten original desktop pet characters in a compact size matching the earlier GoWIN!Buddy version](docs/media/mascot-gallery.png)
+![Animated preview of ten natural-proportion desktop pets](docs/media/mascot-preview-v3.gif)
+
+[Rosy Crab motion close-up](docs/media/rosy-crab-preview-v3.gif) · [Static character lineup](docs/media/mascot-gallery.png)
 
 Choose a character and color theme from the pet’s appearance menu.
 
@@ -45,7 +47,7 @@ Completed temporary tasks can be cleared with “收起”; that cleanup itself 
 
 ## Install in a minute
 
-1. Open [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest) and download **GoWINBuddy-Setup-0.2.2.exe**.
+1. Open [Releases](https://github.com/FanxingMeng1999/GoWIN-Buddy/releases/latest) and download **GoWINBuddy-Setup-0.2.3.exe**.
 2. Run the installer, choose English or Simplified Chinese and launch GoWIN!Buddy.
 3. Hover over the pet, add a small task and double-click it to open the dashboard.
 

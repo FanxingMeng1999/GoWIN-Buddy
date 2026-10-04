@@ -1,10 +1,10 @@
-# GoWIN!Buddy 0.2.2 使用说明
+# GoWIN!Buddy 0.2.3 使用说明
 
 GoWIN!Buddy 将原创小芽桌宠、今日速勾与本机 RPG 仪表盘放在一起。发布的安装包适用于 Windows 10/11 x64，已内置 Node.js 和 Python。
 
 ## 安装与启动
 
-从 GitHub Releases 下载 **GoWINBuddy-Setup-0.2.2.exe**，运行后选择简体中文或 English、安装位置并启动。安装面向当前用户；后续使用桌面或开始菜单快捷方式。此版本未进行代码签名，Release 同时提供安装包的 SHA-256。
+从 GitHub Releases 下载 **GoWINBuddy-Setup-0.2.3.exe**，运行后选择简体中文或 English、安装位置并启动。安装面向当前用户；后续使用桌面或开始菜单快捷方式。此版本未进行代码签名，Release 同时提供安装包的 SHA-256。
 
 ## 常用操作
 

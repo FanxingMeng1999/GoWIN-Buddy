@@ -1,4 +1,4 @@
-"""Generate the original MIT-licensed Sprout Buddy artwork and tones.
+"""Generate ten shaded, uniformly scaled MIT mascot characters and tones.
 Requires Pillow only for PNG/ICO export; SVG assets have no external resources.
 """
 from __future__ import annotations
@@ -47,106 +47,118 @@ CHARACTERS = {
 }
 
 
+def tint(color, other, amount):
+    channels = [int(color[i:i + 2], 16) for i in (1, 3, 5)]
+    blend = [int(other[i:i + 2], 16) for i in (1, 3, 5)]
+    return '#' + ''.join('%02x' % round(a * (1 - amount) + b * amount) for a, b in zip(channels, blend))
+
+
+def material_defs(body, trim, accent):
+    return f'''<defs>
+<radialGradient id="paint-body" cx=".29" cy=".20" r=".84"><stop stop-color="{tint(body, '#ffffff', .48)}"/><stop offset=".42" stop-color="{body}"/><stop offset="1" stop-color="{tint(body, trim, .40)}"/></radialGradient>
+<linearGradient id="paint-trim" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="{tint(trim, '#ffffff', .40)}"/><stop offset="1" stop-color="{trim}"/></linearGradient>
+<radialGradient id="paint-cream" cx=".30" cy=".18" r=".85"><stop stop-color="#ffffff"/><stop offset=".6" stop-color="#fff4e8"/><stop offset="1" stop-color="#e9d8c2"/></radialGradient>
+<linearGradient id="paint-gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="{tint(accent, '#ffffff', .45)}"/><stop offset=".45" stop-color="{accent}"/><stop offset="1" stop-color="{tint(accent, '#bc8862', .38)}"/></linearGradient>
+<linearGradient id="paint-screen" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#42615e"/><stop offset="1" stop-color="#263d3b"/></linearGradient>
+</defs>'''
+
+
+def character_parts(species):
+    """Unwarped anatomy in a shared 15-unit space; each silhouette has its own rig."""
+    back, body, detail = '', '', ''
+    if species == 'sprout':
+        back = '<ellipse cx="5.15" cy="15.6" rx="1.05" ry=".6" fill="url(#paint-trim)"/><ellipse cx="9.85" cy="15.6" rx="1.05" ry=".6" fill="url(#paint-trim)"/><g class="limb-left" style="transform-origin:3px 10px"><ellipse cx="2.7" cy="11.1" rx=".75" ry="1.5" fill="url(#paint-body)"/></g><g class="limb-right" style="transform-origin:12px 10px"><ellipse cx="12.3" cy="11.1" rx=".75" ry="1.5" fill="url(#paint-body)"/></g>'
+        body = '<path d="M7.5 5C4.35 5 2.45 7.3 2.5 10.7c.05 3.65 2.05 5.15 5 5.15s4.95-1.5 5-5.15C12.55 7.3 10.65 5 7.5 5Z" fill="url(#paint-body)"/><ellipse cx="7.5" cy="12.6" rx="2.8" ry="1.9" fill="url(#paint-cream)" opacity=".28"/>'
+        detail = '<g class="crest" style="transform-origin:7.5px 5px"><path d="M7.5 5.6V3.5" stroke="url(#paint-trim)" stroke-width=".5" stroke-linecap="round"/><path d="M7.5 4.4C5.3 4.6 3.45 3.6 3.3 1.9c2.35-.55 4.5.4 4.2 2.5Z" fill="url(#paint-trim)"/><path d="M7.6 3.8C7.25 1.3 9.6.6 11.6.85c.15 2.2-1.4 3.6-4 2.95Z" fill="url(#paint-trim)"/><path d="M4.2 2.55 7.4 4M8.05 3.25l2.55-1.55" fill="none" stroke="#ffffff" stroke-width=".14" opacity=".38"/></g><path d="M3.5 9.3C3.7 7.7 4.5 6.5 5.8 6.05" fill="none" stroke="#ffffff" stroke-width=".32" stroke-linecap="round" opacity=".42"/>'
+        face = (5.3, 9.7, 9.5, 11.35)
+    elif species == 'turtle':
+        back = '<ellipse cx="3.6" cy="14.8" rx="1.5" ry=".9" fill="url(#paint-body)"/><ellipse cx="11.4" cy="14.8" rx="1.5" ry=".9" fill="url(#paint-body)"/><path d="M12.5 11.6q2.4.4 1.7 1.8l-2-.55Z" fill="url(#paint-body)"/>'
+        body = '<ellipse cx="7.5" cy="11" rx="5.15" ry="4.45" fill="url(#paint-trim)"/><ellipse cx="7.5" cy="10.5" rx="4.4" ry="3.7" fill="url(#paint-body)"/><path d="m7.5 7.65 2.5 1.5-.15 2.9-2.35 1.3-2.35-1.3L5 9.15Zm0 0V6.8M5 9.15l-1.5-.8m6.5.8 1.5-.8M5.15 12.05l-1.4 1.4m6.1-1.4 1.4 1.4M7.5 13.35v1.2" fill="none" stroke="#e6f8d4" stroke-width=".28" stroke-linecap="round" opacity=".75"/><ellipse cx="7.5" cy="6.25" rx="2.7" ry="2.4" fill="url(#paint-body)"/><path d="M5.75 5.35q.5-.7 1.6-.85" fill="none" stroke="#ffffff" stroke-width=".27" stroke-linecap="round" opacity=".48"/>'
+        detail = '<g class="limb-left" style="transform-origin:3px 10px"><ellipse cx="2.4" cy="10.8" rx=".9" ry="1.7" fill="url(#paint-body)" transform="rotate(18 2.4 10.8)"/></g><g class="limb-right" style="transform-origin:12px 10px"><ellipse cx="12.6" cy="10.8" rx=".9" ry="1.7" fill="url(#paint-body)" transform="rotate(-18 12.6 10.8)"/></g>'
+        face = (6.2, 8.8, 6.2, 7.55)
+    elif species == 'penguin':
+        back = '<g class="limb-left" style="transform-origin:3.5px 8px"><path d="M3.4 7.7C1.45 8.6 1.15 11.4 2 12.6c1.05-.3 1.8-2.5 2.1-4.2Z" fill="url(#paint-trim)"/></g><g class="limb-right" style="transform-origin:11.5px 8px"><path d="M11.6 7.7c1.95.9 2.25 3.7 1.4 4.9-1.05-.3-1.8-2.5-2.1-4.2Z" fill="url(#paint-trim)"/></g><ellipse cx="5.2" cy="15.75" rx="1.4" ry=".58" fill="url(#paint-gold)"/><ellipse cx="9.8" cy="15.75" rx="1.4" ry=".58" fill="url(#paint-gold)"/>'
+        body = '<path d="M7.5 2.85c-3.1 0-4.85 3.35-4.7 7.45.1 4.1 1.55 5.75 4.7 5.75s4.6-1.65 4.7-5.75c.15-4.1-1.6-7.45-4.7-7.45Z" fill="url(#paint-body)"/><path d="M7.5 7.05c-.7-1.4-2.55-1.4-3.4.15-.8 1.6-.7 4.1-.3 5.95.3 1.35 1.5 2.25 3.7 2.25s3.4-.9 3.7-2.25c.4-1.85.5-4.35-.3-5.95-.85-1.55-2.7-1.55-3.4-.15Z" fill="url(#paint-cream)"/><path d="M4.15 6.25q.6-1.65 2.15-2.2" fill="none" stroke="#ffffff" stroke-width=".26" stroke-linecap="round" opacity=".42"/>'
+        detail = '<path d="M6.7 9.3q.8-.25 1.6 0L7.5 10.25Z" fill="url(#paint-gold)"/>'
+        face = (5.4, 9.6, 7.75, 10.9)
+    elif species == 'frog':
+        back = '<ellipse cx="3.3" cy="14.2" rx="2.1" ry="1.5" fill="url(#paint-trim)"/><ellipse cx="11.7" cy="14.2" rx="2.1" ry="1.5" fill="url(#paint-trim)"/><ellipse cx="3.8" cy="15.45" rx="1.9" ry=".6" fill="url(#paint-body)"/><ellipse cx="11.2" cy="15.45" rx="1.9" ry=".6" fill="url(#paint-body)"/>'
+        body = '<ellipse cx="7.5" cy="11.45" rx="4.45" ry="4.4" fill="url(#paint-body)"/><ellipse cx="7.5" cy="12.9" rx="2.7" ry="2.5" fill="url(#paint-cream)"/><ellipse cx="7.5" cy="8.2" rx="5.0" ry="3.45" fill="url(#paint-body)"/><circle cx="4.45" cy="5.5" r="2.05" fill="url(#paint-body)"/><circle cx="10.55" cy="5.5" r="2.05" fill="url(#paint-body)"/><circle cx="4.45" cy="5.6" r="1.22" fill="url(#paint-cream)"/><circle cx="10.55" cy="5.6" r="1.22" fill="url(#paint-cream)"/>'
+        detail = '<g class="limb-left" style="transform-origin:4px 11px"><path d="M4.15 11.2 4.8 14.9" stroke="url(#paint-body)" stroke-width="1.3" stroke-linecap="round"/></g><g class="limb-right" style="transform-origin:11px 11px"><path d="M10.85 11.2 10.2 14.9" stroke="url(#paint-body)" stroke-width="1.3" stroke-linecap="round"/></g><circle cx="6.75" cy="7.9" r=".13" fill="#527346"/><circle cx="8.25" cy="7.9" r=".13" fill="#527346"/>'
+        face = (4.45, 10.55, 5.6, 9.05)
+    elif species == 'crab':
+        back = '<g fill="none" stroke="url(#paint-trim)" stroke-width=".58" stroke-linecap="round"><path d="M3.9 11.7 2.45 12.15 1.7 13.1M3.8 13.25l-1.1.55-.2 1.0M11.1 11.7l1.45.45.75.95M11.2 13.25l1.1.55.2 1"/></g><path d="M4.9 5.1V3.45m5.2 1.65V3.45" stroke="url(#paint-body)" stroke-width=".6" stroke-linecap="round"/><ellipse cx="4.9" cy="3.4" rx=".65" ry=".38" fill="url(#paint-body)"/><ellipse cx="10.1" cy="3.4" rx=".65" ry=".38" fill="url(#paint-body)"/><g class="claw-left" style="transform-origin:2.8px 9.8px"><path d="M3.5 10.2 1.7 9.0" stroke="url(#paint-body)" stroke-width=".9" stroke-linecap="round"/><path d="M1.7 9.1C-.4 9.3-1.25 7.4-.55 6.2L.5 7.25 1.0 5.65c1.2.5 1.8 2.4.7 3.45Z" fill="url(#paint-body)"/><path d="M.05 7.15q-.1.7.7 1.1" fill="none" stroke="#fff6f8" stroke-width=".18" stroke-linecap="round" opacity=".7"/></g><g class="claw-right" style="transform-origin:12.2px 9.8px"><path d="M11.5 10.2 13.3 9.0" stroke="url(#paint-body)" stroke-width=".9" stroke-linecap="round"/><path d="M13.3 9.1c2.1.2 2.95-1.7 2.25-2.9L14.5 7.25 14.0 5.65c-1.2.5-1.8 2.4-.7 3.45Z" fill="url(#paint-body)"/></g>'
+        body = '<rect x="2.85" y="4.75" width="9.3" height="10.45" rx="2.55" fill="url(#paint-body)"/><path d="M10.1 5.05c1.2.4 1.85 1.2 1.85 2.5v4.75c0 1.65-.8 2.55-2.6 2.6.95-.6 1.2-1.4 1.2-2.8V7.2c0-.95-.1-1.6-.45-2.15Z" fill="#ae6682" opacity=".16"/><path d="M4 8V7.1q0-1.05 1.1-1.15h2.35" fill="none" stroke="#fff4f8" stroke-width=".33" stroke-linecap="round" opacity=".64"/>'
+        detail = '<g fill="url(#paint-cream)"><rect x="4.6" y="14.45" width="1.2" height="1.65" rx=".55"/><rect x="6.9" y="14.7" width="1.2" height="1.65" rx=".55"/><rect x="9.2" y="14.45" width="1.2" height="1.65" rx=".55"/></g>'
+        face = (5.45, 9.55, 9.05, 11.4)
+    elif species == 'fox':
+        back = '<g class="tail" style="transform-origin:10.5px 14px"><path d="M10.1 15c4.9 1.0 6.5-1.8 5.45-5.45-2.1.35-3.5 1.7-3.6 3.25l-2.0.5Z" fill="url(#paint-body)"/><path d="M15.55 9.55c.35 1.2.4 2.25.2 3.1l-2.4-.5c.4-1.25 1.1-2.15 2.2-2.6Z" fill="url(#paint-cream)"/></g><ellipse cx="7.5" cy="12.35" rx="3.6" ry="3.6" fill="url(#paint-body)"/><ellipse cx="7.5" cy="12.5" rx="2.0" ry="2.5" fill="url(#paint-cream)"/><ellipse cx="5.2" cy="15.5" rx="1.2" ry=".6" fill="url(#paint-trim)"/><ellipse cx="9.8" cy="15.5" rx="1.2" ry=".6" fill="url(#paint-trim)"/>'
+        body = '<path d="m3.1 5 .45-3.5c1.55.3 2.35 1.6 2.85 2.55q1.1-.3 2.2 0c.5-.95 1.3-2.25 2.85-2.55l.45 3.5c1.15 1.15 1.5 2.4 1.35 3.95-.25 2.0-2.45 3.0-5.75 3.0s-5.5-1.0-5.75-3.0C1.6 7.4 1.95 6.15 3.1 5Z" fill="url(#paint-body)"/><path d="m3.9 2.55.25 2.7 1.45-.5Zm7.2 0-.25 2.7-1.45-.5Z" fill="#efaaaa"/><path d="M2.65 8.95q1.45-1.65 3.0-.85L7.5 9.3l1.85-1.2q1.55-.8 3 .85c-.65 1.6-2.5 2.35-4.85 2.35s-4.2-.75-4.85-2.35Z" fill="url(#paint-cream)"/>'
+        detail = '<path d="M6.95 8.95q.55-.35 1.1 0L7.5 9.5Z" fill="#70504a"/>'
+        face = (5.15, 9.85, 7.2, 10.05)
+    elif species == 'mushroom':
+        back = '<ellipse cx="5.3" cy="15.45" rx="1.15" ry=".5" fill="url(#paint-trim)"/><ellipse cx="9.7" cy="15.45" rx="1.15" ry=".5" fill="url(#paint-trim)"/><g class="limb-left" style="transform-origin:4.8px 11px"><path d="M4.8 11.2q-1.4.8-1.4 2" fill="none" stroke="url(#paint-cream)" stroke-width="1.0" stroke-linecap="round"/></g><g class="limb-right" style="transform-origin:10.2px 11px"><path d="M10.2 11.2q1.4.8 1.4 2" fill="none" stroke="url(#paint-cream)" stroke-width="1.0" stroke-linecap="round"/></g>'
+        body = '<path d="M5.0 7.15h5c-.6 3-.5 4.9.25 7.35.3.95-.8 1.45-2.75 1.45s-3.05-.5-2.75-1.45c.75-2.45.85-4.35.25-7.35Z" fill="url(#paint-cream)"/><g class="crest" style="transform-origin:7.5px 8px"><path d="M.95 7.55C1.35 4.0 4.0 2.25 7.5 2.25s6.15 1.75 6.55 5.3c-1.85 1.35-11.25 1.35-13.1 0Z" fill="url(#paint-body)"/><ellipse cx="7.5" cy="7.65" rx="6.4" ry=".85" fill="url(#paint-trim)" opacity=".45"/><ellipse cx="3.8" cy="5.15" rx=".9" ry=".58" transform="rotate(-25 3.8 5.15)" fill="url(#paint-cream)"/><ellipse cx="8.2" cy="3.65" rx=".75" ry=".5" fill="url(#paint-cream)"/><ellipse cx="11.25" cy="5.5" rx=".9" ry=".65" transform="rotate(24 11.25 5.5)" fill="url(#paint-cream)"/><path d="M2.95 4.65q1.35-1.35 3.25-1.6" fill="none" stroke="#ffffff" stroke-width=".25" stroke-linecap="round" opacity=".48"/></g>'
+        face = (6.15, 8.85, 10.45, 12.1)
+    elif species == 'owl':
+        back = '<ellipse cx="5.3" cy="15.65" rx="1.05" ry=".45" fill="url(#paint-gold)"/><ellipse cx="9.7" cy="15.65" rx="1.05" ry=".45" fill="url(#paint-gold)"/>'
+        body = '<path d="M3.05 6.0 3.5 2.65 5.6 4.1q1.9-.6 3.8 0l2.1-1.45.45 3.35c.9 1.6 1.15 4.25.6 6.5-.55 2.3-2.15 3.35-5.05 3.35s-4.5-1.05-5.05-3.35c-.55-2.25-.3-4.9.6-6.5Z" fill="url(#paint-body)"/><path d="M7.5 6.1c-1.25-2.15-4.0-1.65-4.35.9-.25 2.35 1.2 4.15 4.35 4.75 3.15-.6 4.6-2.4 4.35-4.75-.35-2.55-3.1-3.05-4.35-.9Z" fill="url(#paint-cream)"/><ellipse cx="7.5" cy="12.9" rx="2.7" ry="2.35" fill="url(#paint-cream)" opacity=".5"/>'
+        detail = '<g class="limb-left" style="transform-origin:3.5px 8px"><path d="M3.45 8.1c-1.55 1.75-1.45 4.65.35 6.1 1.0-1.6.8-4.2-.35-6.1Z" fill="url(#paint-trim)" opacity=".72"/></g><g class="limb-right" style="transform-origin:11.5px 8px"><path d="M11.55 8.1c1.55 1.75 1.45 4.65-.35 6.1-1.0-1.6-.8-4.2.35-6.1Z" fill="url(#paint-trim)" opacity=".72"/></g><path d="m6.95 9 .55 1.1.55-1.1Z" fill="url(#paint-gold)"/><path d="m5.8 12.1.4.45.4-.45m1.0 0 .4.45.4-.45m-2.0 1.05.4.45.4-.45m1 0 .4.45.4-.45" fill="none" stroke="#b9a8ca" stroke-width=".25" stroke-linecap="round"/>'
+        face = (5.15, 9.85, 7.45, 10.2)
+    elif species == 'cat':
+        back = '<g class="tail" style="transform-origin:10.5px 14px"><path d="M10.2 14.8c4.0 1.1 5.05-1.75 3.7-3.4-.7-.95-1.9-.2-1.5.7" fill="none" stroke="url(#paint-body)" stroke-width="1.35" stroke-linecap="round"/></g><ellipse cx="7.5" cy="12.35" rx="3.55" ry="3.6" fill="url(#paint-body)"/><ellipse cx="7.5" cy="12.65" rx="1.85" ry="2.55" fill="url(#paint-cream)"/><ellipse cx="5.15" cy="15.5" rx="1.1" ry=".65" fill="url(#paint-cream)"/><ellipse cx="9.85" cy="15.5" rx="1.1" ry=".65" fill="url(#paint-cream)"/>'
+        body = '<path d="M3.0 5.7 3.7 1.85c1.25.3 1.95 1.25 2.55 2.55q1.25-.35 2.5 0c.6-1.3 1.3-2.25 2.55-2.55L12 5.7c.75 1.05 1.0 2.4.65 3.5-.5 1.8-2.3 2.75-5.15 2.75S2.85 11 2.35 9.2C2 8.1 2.25 6.75 3 5.7Z" fill="url(#paint-body)"/><path d="M4.0 3.05 3.7 5.7l1.65-.85Zm7.0 0 .3 2.65-1.65-.85Z" fill="#e8a0a7"/><ellipse cx="7.5" cy="9.3" rx="2.25" ry="1.2" fill="url(#paint-cream)"/><path d="M6.6 4.8 6.95 6m.55-1.4V6m.9-1.2L8.05 6" stroke="url(#paint-trim)" stroke-width=".4" stroke-linecap="round" opacity=".8"/>'
+        detail = '<path d="M7.05 8.8q.45-.2.9 0L7.5 9.3Z" fill="#bc7880"/><path d="M3.7 8.6 4.8 8.9M3.55 9.4 4.7 9.5m6.6-.9-1.1.3m1.25.5-1.15.1" fill="none" stroke="#896550" stroke-width=".15" stroke-linecap="round"/>'
+        face = (5.15, 9.85, 7.35, 10.0)
+    else:
+        back = '<rect x="4.25" y="14.95" width="2.15" height="1.25" rx=".55" fill="url(#paint-trim)"/><rect x="8.6" y="14.95" width="2.15" height="1.25" rx=".55" fill="url(#paint-trim)"/><g class="limb-left" style="transform-origin:3.5px 12px"><rect x="1.8" y="11.45" width="1.6" height="3.1" rx=".7" fill="url(#paint-body)"/></g><g class="limb-right" style="transform-origin:11.5px 12px"><rect x="11.6" y="11.45" width="1.6" height="3.1" rx=".7" fill="url(#paint-body)"/></g><path d="M7.5 4.6V2.2" stroke="url(#paint-trim)" stroke-width=".5"/><g class="crest" style="transform-origin:7.5px 4px"><circle cx="7.5" cy="1.85" r=".7" fill="url(#paint-gold)"/></g><rect x="1.45" y="7.35" width="1.5" height="2.0" rx=".55" fill="url(#paint-gold)"/><rect x="12.05" y="7.35" width="1.5" height="2.0" rx=".55" fill="url(#paint-gold)"/>'
+        body = '<rect x="3.45" y="10.65" width="8.1" height="4.8" rx="1.75" fill="url(#paint-body)"/><rect x="2.6" y="4.5" width="9.8" height="7.95" rx="2.3" fill="url(#paint-body)"/><rect x="3.75" y="6.05" width="7.5" height="4.55" rx="1.45" fill="url(#paint-screen)"/><path d="M3.6 6.0q.1-.65.9-.7h3.0" fill="none" stroke="#ffffff" stroke-width=".25" stroke-linecap="round" opacity=".6"/><path d="M4.35 6.55h2.5" stroke="#b3d8d1" stroke-width=".16" stroke-linecap="round" opacity=".35"/>'
+        detail = '<rect x="6.2" y="13.1" width="2.6" height=".85" rx=".35" fill="url(#paint-trim)" opacity=".7"/><circle cx="7.5" cy="13.5" r=".22" fill="url(#paint-gold)"/>'
+        face = (5.6, 9.4, 8.25, 9.65)
+    return back, body, detail, face
+
+
 def sprite(filename, theme):
-    body, leaf, accent = PALETTES[theme]
-    character_name, species = CHARACTERS.get(theme, CHARACTERS['template'])
+    color, trim, accent = PALETTES[theme]
+    name, species = CHARACTERS.get(theme, CHARACTERS['template'])
     sleepy = any(x in filename for x in ('sleep', 'doze', 'collapse'))
-    happy = any(x in filename for x in ('happy', 'attention', 'notification', 'wake'))
+    happy = any(x in filename for x in ('happy', 'attention', 'notification', 'wake', 'victory', 'wave'))
     busy = any(x in filename for x in ('working', 'focus', 'thinking', 'build', 'debug', 'juggling'))
     reaction = 'react' in filename
     error = 'error' in filename
     mini = 'mini-' in filename
+    state = 'rest' if sleepy else 'happy' if happy else 'working' if busy else 'reaction' if reaction else 'idle'
+    back, body, details, (x1, x2, ey, my) = character_parts(species)
+    eye_color = '#ffd98c' if species == 'robot' else '#283738'
+    eye_r = .30 if species == 'turtle' else .43
+    eye_h = .43 if species == 'turtle' else .65
+    lids = f'<path d="M{x1 - eye_r:.2f} {ey:.2f}q{eye_r:.2f} .40 {2 * eye_r:.2f} 0M{x2 - eye_r:.2f} {ey:.2f}q{eye_r:.2f} .40 {2 * eye_r:.2f} 0" fill="none" stroke="{eye_color}" stroke-width=".25" stroke-linecap="round"/>'
+    if sleepy:
+        eyes = lids
+    else:
+        eyes = f'<g class="blink-open"><ellipse cx="{x1}" cy="{ey}" rx="{eye_r}" ry="{eye_h}"/><ellipse cx="{x2}" cy="{ey}" rx="{eye_r}" ry="{eye_h}"/><circle cx="{x1 - .09:.2f}" cy="{ey - .25:.2f}" r=".13" fill="white"/><circle cx="{x2 - .09:.2f}" cy="{ey - .25:.2f}" r=".13" fill="white"/></g><g class="blink-lids">{lids}</g>'
+    mid = 7.5
+    mouth = f'<path d="M{mid - .60} {my}q.6 {-.38 if error else .62 if happy else .35} 1.2 0" fill="none" stroke="{eye_color}" stroke-width=".22" stroke-linecap="round"/>'
+    cheeks = '' if species == 'robot' else f'<ellipse cx="{x1 - .75:.2f}" cy="{ey + 1.35:.2f}" rx=".60" ry=".32" fill="#ed94a7" opacity=".46"/><ellipse cx="{x2 + .75:.2f}" cy="{ey + 1.35:.2f}" rx=".60" ry=".32" fill="#ed94a7" opacity=".46"/>'
     accent_id = theme + ('-mini-accent' if mini else '-rest-accent' if sleepy or error else '-idle-accent')
-    eye_y = {'sprout': 9, 'turtle': 9, 'penguin': 7.4, 'frog': 6.5, 'crab': 7.1, 'fox': 8.3, 'mushroom': 9, 'owl': 7.4, 'cat': 8.2, 'robot': 8.5}.get(species, 9)
+    badge = '<path d="m7.5 12.7.28.55.6.09-.44.43.11.6-.55-.28-.55.28.11-.6-.44-.43.6-.09Z" fill="url(#paint-gold)"/>' if species == 'sprout' else ''
+    props = '<g class="typing-prop"><rect x="4.55" y="14.1" width="5.9" height="1.15" rx=".40" fill="url(#paint-cream)"/><path d="M5.25 14.65h.45m.55 0h.45m.55 0h.45m.55 0h.45m.55 0h.45" stroke="url(#paint-trim)" stroke-width=".14" stroke-linecap="round"/></g>' if busy else ''
+    decor = '<g class="sparkles" fill="url(#paint-gold)"><path d="m1.15 3.25.3.65.65.3-.65.3-.3.65-.3-.65-.65-.3.65-.3ZM14 2.4l.25.55.55.25-.55.25-.25.55-.25-.55-.55-.25.55-.25Z"/></g>' if happy else ''
     if sleepy:
-        eyes = '<path d="M3.3 %.1fq1.2 1.2 2.5 0M9.2 %.1fq1.2 1.2 2.5 0" fill="none" stroke="#254a44" stroke-width=".75" stroke-linecap="round"/>' % (eye_y + .2, eye_y + .2)
-    elif species in ('frog', 'penguin', 'owl'):
-        eyes = '<g><circle cx="4.5" cy="%.1f" r="1.15" fill="#fff8e8"/><circle cx="10.5" cy="%.1f" r="1.15" fill="#fff8e8"/><ellipse cx="4.65" cy="%.1f" rx=".48" ry=".72"/><ellipse cx="10.65" cy="%.1f" rx=".48" ry=".72"/><circle cx="4.75" cy="%.1f" r=".14" fill="white"/><circle cx="10.75" cy="%.1f" r=".14" fill="white"/></g>' % (eye_y, eye_y, eye_y - .12, eye_y - .12, eye_y - .32, eye_y - .32)
-    elif species == 'cat':
-        eyes = '<path d="M4 8.4v1.3m7.1-1.3v1.3" stroke="#254a44" stroke-width=".75" stroke-linecap="round"/><circle cx="4" cy="8.4" r=".15" fill="white"/><circle cx="11.1" cy="8.4" r=".15" fill="white"/>'
-    else:
-        eyes = '<ellipse cx="4.5" cy="%.1f" rx=".62" ry=".84"/><ellipse cx="10.5" cy="%.1f" rx=".62" ry=".84"/><circle cx="4.7" cy="%.1f" r=".18" fill="white"/><circle cx="10.7" cy="%.1f" r=".18" fill="white"/>' % (eye_y, eye_y, eye_y - .22, eye_y - .22)
-    mouth = '<path d="M6.3 11.2q1.2 1.2 2.4 0"/>' if happy else '<path d="M6.5 11.4q1-.8 2 0"/>' if error else '<path d="M6.6 11.2q.9.55 1.8 0"/>'
-    base_shape = '<path d="M1 10C.4 6.3 3.1 5.3 7.5 5.3s7.1 1 6.5 4.7c-.3 3.7-2.5 5-6.5 5S1.3 13.7 1 10Z" fill="%s" stroke="%s" stroke-width=".55"/>' % (body, leaf)
-    appendages = '<ellipse cx="4.1" cy="15.1" rx="1.35" ry=".8" fill="%s"/><ellipse cx="10.9" cy="15.1" rx="1.35" ry=".8" fill="%s"/>' % (leaf, leaf)
-    extra = ''
-    if species == 'sprout':
-        base_shape = '<path d="M.4 10C-.4 6.4 2.6 5.1 7.5 5.2S15.4 6.4 14.6 10c-.3 3.8-2.8 5.2-7.1 5.2S.7 13.8.4 10Z" fill="%s" stroke="%s" stroke-width=".55"/>' % (body, leaf)
-        extra = '<path d="M7.5 6.4V3.7" stroke="%s" stroke-width=".85" stroke-linecap="round"/><path d="M7.5 4.8C3.4 4.8 3.3 1.8 3.3 1.8c3.4 0 4.8 1.1 4.2 3zM7.6 4.1C7.5.9 11.2.4 11.2.4c.65 2.8-.8 4.2-3.6 3.7z" fill="%s"/>' % (leaf, leaf)
-        appendages = '<ellipse cx="4.3" cy="15.1" rx="1.4" ry=".8" fill="%s"/><ellipse cx="10.7" cy="15.1" rx="1.4" ry=".8" fill="%s"/>' % (leaf, leaf)
-    elif species == 'crab':
-        appendages = '<path d="M2.1 10.1.5 8.7l.6-1.6 1.6 1m10.2 2 1.6-1.4-.6-1.6-1.6 1M4.5 14.5l-1 1m3 .1-.4 1m4.2-2.1 1 1m-3 0 .4 1" fill="none" stroke="%s" stroke-width="1.2" stroke-linecap="round"/><path d="M.7 8.7C-.3 8 .1 6.4 1.3 6.1q1.2-.3 1.5 1m11.5 1.6c1-.7.6-2.3-.6-2.6q-1.2-.3-1.5 1" fill="none" stroke="%s" stroke-width="1.15" stroke-linecap="round"/>' % (leaf, leaf)
-        base_shape = '<path d="M.9 10C.6 6.5 3.1 5.4 7.5 5.4s6.9 1.1 6.6 4.6c-.2 3.1-2.5 4.3-6.6 4.3S1.1 13.1.9 10Z" fill="%s" stroke="%s" stroke-width=".6"/><path d="M2.6 8.1q4.9-3.2 9.8 0" fill="none" stroke="%s" stroke-width=".45" opacity=".6"/>' % (body, leaf, accent)
-        eye_y = 6.9
-        eyes = '<path d="M4.5 7.1V5.8m6 1.3V5.8" stroke="%s" stroke-width=".55"/><circle cx="4.5" cy="5.4" r=".94" fill="#fff8ed"/><circle cx="10.5" cy="5.4" r=".94" fill="#fff8ed"/><circle cx="4.7" cy="5.5" r=".43" fill="#254a44"/><circle cx="10.7" cy="5.5" r=".43" fill="#254a44"/>' % leaf
-        extra += '<path d="M6.9 9q.6.6 1.2 0" fill="none" stroke="%s" stroke-width=".5"/>' % leaf
-    elif species == 'turtle':
-        appendages = '<ellipse cx="3.2" cy="12.7" rx="1.35" ry="1.2" fill="%s"/><ellipse cx="11.8" cy="12.7" rx="1.35" ry="1.2" fill="%s"/><path d="M7.5 12.6l1.1 1.2-1.1.9-1.1-.9z" fill="%s"/>' % (leaf, leaf, leaf)
-        extra = '<path d="M2 10q.2-4.4 5.5-4.4T13 10q-.2 3.6-5.5 3.6T2 10Z" fill="none" stroke="%s" stroke-width=".55"/><path d="M3.8 7.4l1.1 2.4 2.6-1.8 2.2 2 1.1-2.4M7.5 8v4.8" fill="none" stroke="%s" stroke-width=".38"/>' % (accent, leaf)
-        base_shape = '<path d="M2 9c-2-1-1.6-3 0-3.2 1.4-.2 2.2.8 2.5 1.8h6c.4-1 1.2-2 2.6-1.8 1.5.2 1.8 2.2-.1 3.2v4.1H2z" fill="%s" stroke="%s" stroke-width=".55"/><ellipse cx="7.5" cy="6.4" rx="1.8" ry="1.4" fill="%s" stroke="%s" stroke-width=".35"/>' % (leaf, leaf, body, leaf)
-        eyes = '<ellipse cx="6.8" cy="6.2" rx=".32" ry=".42"/><ellipse cx="8.2" cy="6.2" rx=".32" ry=".42"/>'
-        eye_y = 6.2
-    elif species == 'penguin':
-        base_shape = '<path d="M7.5 3.3C3.1 3.3 1.2 6.8 1.4 11c.2 3.7 2.2 5 6.1 5s5.9-1.3 6.1-5c.2-4.2-1.7-7.7-6.1-7.7Z" fill="%s" stroke="%s" stroke-width=".55"/><ellipse cx="7.5" cy="11.4" rx="4" ry="4.1" fill="#fff8e8"/>' % (body, leaf)
-        appendages = '<path d="M4.6 15.2l-1.2.8h2.7m3.5-.8 1.2.8H8.1" fill="none" stroke="%s" stroke-width="1.15" stroke-linecap="round"/>' % accent
-        extra = '<path d="M6.65 9.2 7.5 10.5l.85-1.3z" fill="%s"/>' % accent
-    elif species == 'frog':
-        base_shape = '<path d="M1 8.4C1 5.8 3.2 5.1 7.5 5.1s6.5.7 6.5 3.3v3.1c0 2.7-2.1 4.2-6.5 4.2S1 14.2 1 11.5z" fill="%s" stroke="%s" stroke-width=".55"/><circle cx="4.3" cy="6.1" r="2" fill="%s" stroke="%s" stroke-width=".5"/><circle cx="10.7" cy="6.1" r="2" fill="%s" stroke="%s" stroke-width=".5"/><circle cx="7.5" cy="10.2" r=".42" fill="%s"/><circle cx="4.7" cy="12.6" r=".28" fill="%s" opacity=".55"/><circle cx="10.3" cy="12.6" r=".28" fill="%s" opacity=".55"/>' % (body, leaf, body, leaf, body, leaf, accent, accent, accent)
-        eyes = '<ellipse cx="4.3" cy="5.8" rx=".48" ry=".72"/><ellipse cx="10.7" cy="5.8" rx=".48" ry=".72"/>'
-        eye_y = 5.8
-        appendages = '<ellipse cx="3.6" cy="15.2" rx="1.8" ry=".7" fill="%s"/><ellipse cx="11.4" cy="15.2" rx="1.8" ry=".7" fill="%s"/>' % (leaf, leaf)
-    elif species == 'fox':
-        base_shape = '<path d="M1.1 7 2 3.2l3.1 2.8q2.4-.8 4.8 0L13 3.2l.9 3.8q.7 1.6.4 4.3-.4 4.1-6.8 4.1T.7 11.3q-.3-2.7.4-4.3Z" fill="%s" stroke="%s" stroke-width=".55"/><path d="M1.9 4.1 2.4 7l1.9-.7zM13.1 4.1 12.6 7l-1.9-.7z" fill="%s"/><path d="M2.5 11q1.2-2.4 5-1.6 3.8-.8 5 1.6-.8 3.4-5 3.4t-5-3.4Z" fill="#fff2da"/>' % (body, leaf, accent)
-        appendages = '<path d="M12.3 13.2q3.1.3 2.2-2.7-.5-1.2-2.2-.8" fill="none" stroke="%s" stroke-width="1.1" stroke-linecap="round"/><path d="M4 15.1v.7m7-.7v.7" stroke="%s" stroke-width=".9"/>' % (leaf, leaf)
-        eyes = '<ellipse cx="4.6" cy="8.2" rx=".55" ry=".72"/><ellipse cx="10.4" cy="8.2" rx=".55" ry=".72"/>'
-        extra = '<path d="M6.9 10.1q.6.5 1.2 0" fill="none" stroke="%s" stroke-width=".55"/>' % leaf
-    elif species == 'mushroom':
-        base_shape = '<path d="M4.5 8.3h6v6.5q-.3 1-3 1t-3-1z" fill="#fff0d6" stroke="%s" stroke-width=".45"/><path d="M.7 8C.8 4 3.1 2.5 7.5 2.5s6.7 1.5 6.8 5.5q-1 .9-2 0-1 .9-2 0-1 .9-2 0-1 .9-2 0-1 .9-2 0-1 .9-2 0-.9.5-1.6 0Z" fill="%s" stroke="%s" stroke-width=".6"/><circle cx="4.4" cy="5.2" r=".55" fill="#fff8e8"/><circle cx="9.7" cy="4.5" r=".72" fill="#fff8e8"/><circle cx="11.2" cy="7" r=".42" fill="#fff8e8"/>' % (leaf, body, leaf)
-        eyes = '<ellipse cx="5.5" cy="9.8" rx=".5" ry=".72"/><ellipse cx="9.5" cy="9.8" rx=".5" ry=".72"/>'
-        eye_y = 9.8
-        appendages = '<path d="M3.6 15.2h7.8" stroke="%s" stroke-width=".8" stroke-linecap="round"/>' % leaf
-    elif species == 'owl':
-        base_shape = '<path d="M1 7 1.4 3.1l3.2 2.3q2.9-1.2 5.8 0l3.2-2.3L14 7v4.2q-.4 4.1-6.5 4.1T1 11.2z" fill="%s" stroke="%s" stroke-width=".55"/><path d="M3 11q0-2 2-2t2 2m0 0q0-2 2-2t2 2q-.2 3-3 3t-3-3Z" fill="#fff5df"/>' % (body, leaf)
-        eyes = '<circle cx="5" cy="8.2" r=".62"/><circle cx="10" cy="8.2" r=".62"/>'
-        eye_y = 8.2
-        appendages = '<path d="M3.6 14.4 2.5 15.8h2.2m5.7-1.4 1.1 1.4h-2.2" fill="none" stroke="%s" stroke-width=".8" stroke-linecap="round"/>' % leaf
-        extra = '<path d="M7.1 9.2l.4.6.4-.6" fill="%s"/>' % accent
-    elif species == 'cat':
-        base_shape = '<path d="M1 7 1.5 3l3.3 2.8q2.7-.9 5.4 0L13.5 3 14 7c1.2 4.3-.3 8.5-6.5 8.5S-.2 11.3 1 7Z" fill="%s" stroke="%s" stroke-width=".55"/><path d="M2.1 4.2 2.4 7 4 6.4zm10.8 0L12.6 7 11 6.4z" fill="%s"/>' % (body, leaf, accent)
-        eyes = '<path d="M4.5 8v1.2m6-1.2v1.2" stroke="#254a44" stroke-width=".75" stroke-linecap="round"/><circle cx="4.5" cy="8" r=".15" fill="white"/><circle cx="10.5" cy="8" r=".15" fill="white"/>'
-        extra = '<path d="M4.8 10.4 7.5 11.5l2.7-1.1M1.3 10l2.9.3m-2.8 1.1 2.5-.3m9.8-1.1-2.9.3m2.8 1.1-2.5-.3" fill="none" stroke="%s" stroke-width=".4" stroke-linecap="round"/>' % leaf
-    elif species == 'robot':
-        base_shape = '<path d="M7.5 4.1v1.4m-4.7 2q0-1.2 1.3-1.2h6.8q1.3 0 1.3 1.2v6q0 1.2-1.3 1.2H4.1q-1.3 0-1.3-1.2z" fill="%s" stroke="%s" stroke-width=".65"/><circle cx="7.5" cy="3.3" r=".65" fill="%s"/><rect x="4" y="8" width="7" height="3.5" rx="1.1" fill="#254a44"/><path d="M4.3 14.7v1m6.4-1v1" stroke="%s" stroke-width=".8"/>' % (body, leaf, accent, leaf)
-        eyes = '<circle cx="6" cy="9.2" r=".56" fill="%s"/><circle cx="9" cy="9.2" r=".56" fill="%s"/><circle cx="5.85" cy="9" r=".15" fill="white"/><circle cx="8.85" cy="9" r=".15" fill="white"/>' % (accent, accent)
-        extra = '<path d="M6.4 12.3h2.2" stroke="%s" stroke-width=".45"/>' % leaf
-        mouth = ''
-        appendages = '<rect x="4.2" y="15" width="2" height="1" rx=".4" fill="%s"/><rect x="8.8" y="15" width="2" height="1" rx=".4" fill="%s"/>' % (leaf, leaf)
-    else:
-        base_shape = '<path d="M1 10C.4 6.3 3.1 5.3 7.5 5.3s7.1 1 6.5 4.7c-.3 3.7-2.5 5-6.5 5S1.3 13.7 1 10Z" fill="%s" stroke="%s" stroke-width=".55"/>' % (body, leaf)
-    decor = ''
-    if busy:
-        decor = '<g class="tool"><path d="M4.2 12.5l3.3.45 3.3-.45v2.1l-3.3.5-3.3-.5z" fill="#fff8e7" stroke="%s" stroke-width=".35"/><path d="M7.5 13v2" stroke="%s" stroke-width=".25"/></g>' % (leaf, leaf)
-    if happy:
-        decor += '<g class="sparkle" fill="%s"><path d="M1 2l.4 1.1 1.1.4-1.1.4L1 5l-.4-1.1-1.1-.4 1.1-.4zM14 1l.3.8.8.3-.8.3-.3.8-.3-.8-.8-.3.8-.3z"/></g>' % accent
-    if sleepy:
-        decor += '<text x="13.5" y="3" font-family="sans-serif" font-size="2.4" fill="%s" class="dream">z</text>' % leaf
+        decor += f'<g class="dream" fill="{trim}" opacity=".65"><path d="M12.8 4h1.3l-1.3 1.35h1.3" fill="none" stroke="{trim}" stroke-width=".20" stroke-linecap="round" stroke-linejoin="round"/></g>'
     if error:
-        decor += '<path d="M14 2q2.4 3 0 4q-2.4-1 0-4" fill="#82bfe7"/>'
-    motion = 'rest' if sleepy else 'celebrate' if happy else 'work' if busy else 'sway' if reaction else 'breathe'
-    return chr(10).join([
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -25 45 45" role="img" data-species="%s" aria-label="%s">' % (species, character_name),
-        '<title>%s — original artwork by FanxingMeng1999 (MIT)</title>' % character_name,
-        '<style>#body-js{transform-origin:7.5px 15px}.breathe{animation:breathe 3s ease-in-out infinite}.rest{animation:breathe 5s ease-in-out infinite}.celebrate{animation:bounce .7s ease-in-out infinite}.work{animation:breathe 1.7s ease-in-out infinite}.sway{animation:sway 1s ease-in-out infinite}.sparkle,.dream{animation:glow 1.6s ease-in-out infinite}.leaf{transform-origin:7.5px 3.7px;animation:sway 3s ease-in-out infinite}@keyframes breathe{50%{transform:translateY(-.25px) scaleY(1.012)}}@keyframes bounce{50%{transform:translateY(-1px) rotate(-2deg)}}@keyframes sway{50%{transform:rotate(3deg)}}@keyframes glow{50%{opacity:.4}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>',
-        '<ellipse id="shadow-js" cx="7.5" cy="16.5" rx="7.1" ry=".75" fill="#294b43" opacity=".12"/>',
-        '<g data-size-profile="legacy-pet-footprint" transform="translate(0 6.08) scale(1 .62)"><g id="body-js"><g class="%s">' % motion,
-        appendages,
-        base_shape,
-        extra,
-        '<g id="%s"><path d="M7.5 11.3l.45.9 1 .15-.72.7.17 1-.9-.48-.9.48.17-1-.72-.7 1-.15z" fill="%s"/></g>' % (accent_id, accent),
-        '<g id="eyes-js" fill="#254a44">%s</g><g id="eyes-doze" style="display:none"><path d="M3.3 9.1h2.4m4.2 0h2.4" stroke="#254a44" stroke-width=".7"/></g>' % eyes,
-        '<ellipse cx="2.6" cy="10.7" rx=".9" ry=".38" fill="#ee9caa" opacity=".55"/><ellipse cx="12.4" cy="10.7" rx=".9" ry=".38" fill="#ee9caa" opacity=".55"/>',
-        '<g fill="none" stroke="#254a44" stroke-width=".5" stroke-linecap="round">%s</g>' % mouth,
-        decor,
+        decor += '<path d="M13.5 3.1q1.25 1.8 0 2.25-1.25-.45 0-2.25Z" fill="#89c4e9"/>'
+    css = '''#body-js{transform-origin:7.5px 16px}.idle-motion{animation:breathe 3.6s ease-in-out infinite}.working-motion{animation:focus 2.2s ease-in-out infinite}.happy-motion{animation:hop 1.3s ease-in-out infinite}.rest-motion{animation:rest 4.4s ease-in-out infinite}.reaction-motion{animation:greet 1.8s ease-in-out infinite}.crest{animation:crest 3.6s ease-in-out infinite}.tail{animation:tail 3.6s ease-in-out infinite}.claw-left{animation:claw-left 3.6s ease-in-out infinite}.claw-right{animation:claw-right 3.6s ease-in-out infinite}.happy-motion .claw-left{animation:wave-left 1.3s ease-in-out infinite}.happy-motion .claw-right{animation:wave-right 1.3s ease-in-out infinite}.happy-motion .limb-right{animation:wave-right 1.3s ease-in-out infinite}.working-motion .limb-left{animation:tap .65s ease-in-out infinite}.working-motion .limb-right{animation:tap .65s .32s ease-in-out infinite}.sparkles,.dream{animation:glow 1.8s ease-in-out infinite}.blink-open{animation:blink-open 4.1s linear infinite}.blink-lids{animation:blink-lids 4.1s linear infinite;opacity:0}.rest-motion .crest,.rest-motion .tail,.rest-motion .claw-left,.rest-motion .claw-right{animation-duration:5s}@keyframes breathe{50%{transform:translateY(-.16px)}}@keyframes focus{50%{transform:translateY(-.10px) rotate(.5deg)}}@keyframes rest{50%{transform:translateY(-.09px)}}@keyframes hop{0%,100%{transform:translateY(0) rotate(0)}40%{transform:translateY(-.65px) rotate(-1.2deg)}70%{transform:translateY(-.18px) rotate(1deg)}}@keyframes greet{50%{transform:translateY(-.3px) rotate(2deg)}}@keyframes crest{50%{transform:rotate(3deg)}}@keyframes tail{50%{transform:rotate(-5deg)}}@keyframes claw-left{50%{transform:rotate(-5deg)}}@keyframes claw-right{50%{transform:rotate(5deg)}}@keyframes wave-left{50%{transform:rotate(-20deg)}}@keyframes wave-right{50%{transform:rotate(20deg)}}@keyframes tap{50%{transform:translateY(.3px)}}@keyframes glow{50%{opacity:.35}}@keyframes blink-open{0%,93%,97%,100%{opacity:1}94%,96%{opacity:0}}@keyframes blink-lids{0%,93%,97%,100%{opacity:0}94%,96%{opacity:1}}@media(prefers-reduced-motion:reduce){*{animation:none!important}.blink-lids{display:none}}'''
+    return '\n'.join([
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -25 45 45" preserveAspectRatio="xMidYMid meet" role="img" data-species="{species}" data-art-version="3" aria-label="{name}">',
+        f'<title>{name} — original artwork by FanxingMeng1999 (MIT)</title>',
+        material_defs(color, trim, accent), '<style>' + css + '</style>',
+        '<ellipse id="shadow-js" cx="7.5" cy="16.5" rx="5.5" ry=".55" fill="#294b43" opacity=".09"/><ellipse cx="7.5" cy="16.5" rx="3.6" ry=".32" fill="#294b43" opacity=".07"/>',
+        f'<g data-size-profile="compact-uniform" transform="translate(1.65 3.52) scale(.78)"><g id="body-js"><g class="{state}-motion" style="transform-origin:7.5px 16px">',
+        back, body, details,
+        f'<g id="{accent_id}">{badge}</g>',
+        f'<g id="eyes-js" fill="{eye_color}">{eyes}</g><g id="eyes-doze" style="display:none">{lids}</g>',
+        cheeks, mouth, props, decor,
         '</g></g></g></svg>',
     ])
 
@@ -224,15 +236,15 @@ def main():
     for color,variant in [('#254a44','color'),('#eef8f1','dark')]:
         word='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 110"><text x="10" y="78" fill="'+color+'" font-family="Arial,sans-serif" font-weight="700" font-size="82">GoWIN!Buddy</text></svg>'
         write_utf8(sv/('wordmark_'+variant+'.svg'),word)
-    inner=master[master.index('<style>'):master.rindex('</svg>')]
+    inner=master[master.index('<defs>'):master.rindex('</svg>')]
     hero='<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510"><rect width="1200" height="510" rx="32" fill="#eff7f0"/><circle cx="988" cy="260" r="195" fill="#d9efdf"/><text x="64" y="133" font-family="Arial,sans-serif" font-size="19" font-weight="700" letter-spacing="4" fill="#27856f">YOUR DAY. A LITTLE ADVENTURE.</text><text x="60" y="224" font-family="Arial,sans-serif" font-size="78" font-weight="700" fill="#254a44">GoWIN!Buddy</text><text x="64" y="286" font-family="Arial,sans-serif" font-size="25" fill="#567169">A desktop companion for tasks, focus and tiny wins.</text><text x="64" y="350" font-family="Arial,sans-serif" font-size="19" fill="#27856f">DESKTOP PET   /   LOCAL RPG   /   WINDOWS</text><g transform="translate(861 162) scale(12)">'+inner+'</g><text x="64" y="448" font-family="Arial,sans-serif" font-size="17" fill="#567169">Open source. Original Sprout Buddy artwork. MIT license.</text></svg>'
     write_utf8(media/'hero.svg',hero)
     tone(sounds/'confirm.wav',[659.25,880]);tone(sounds/'complete.wav',[523.25,659.25,783.99])
-    manifest={'schemaVersion':1,'author':'FanxingMeng1999','license':'MIT','generator':'scripts/generate-public-art.py','design':'Ten compact original mascot silhouettes including a seed sprout, turtle, penguin, frog, pink crab, fox, mushroom, owl, cat and pocket robot. No upstream pet artwork is included.','assets':records,'brandSource':'assets/brand/source/sprout-buddy.svg'}
+    manifest={'schemaVersion':1,'author':'FanxingMeng1999','license':'MIT','generator':'scripts/generate-public-art.py','artVersion':3,'sizing':{'profile':'compact-uniform','scale':0.78,'preserveAspectRatio':'xMidYMid meet'},'design':'Ten rounded mascot characters with continuous surfaces, soft material shading and articulated idle, work, celebration and rest movements. Compact uniform scaling preserves natural anatomy.','assets':records,'brandSource':'assets/brand/source/sprout-buddy.svg'}
     manifest['characters']={theme:{'name':CHARACTERS[theme][0],'nameZh':CHARACTER_LABELS_ZH[theme],'species':CHARACTERS[theme][1]} for theme in sorted(CHARACTERS) if theme != 'template'}
     manifest['characterSources']=[{'species':species,'name':name,'nameZh':CHARACTER_LABELS_ZH[theme],'path':f.relative_to(root).as_posix(),'license':'MIT','sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for theme,(name,species) in sorted(CHARACTERS.items()) if theme != 'template' for f in [character_source/(species+'.svg')]]
-    gallery=media/'mascot-gallery.png'
-    manifest['previews']=([{'path':gallery.relative_to(root).as_posix(),'license':'MIT','sha256':hashlib.sha256(gallery.read_bytes()).hexdigest()}] if gallery.is_file() else [])
+    preview_files=[media/name for name in ['mascot-gallery.png','mascot-preview-v3.gif','rosy-crab-preview-v3.gif']]
+    manifest['previews']=[{'path':f.relative_to(root).as_posix(),'license':'MIT','sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in preview_files if f.is_file()]
     manifest['brandExports']=[{'path':f.relative_to(root).as_posix(),'license':'MIT','sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(list(png.glob('*'))+list(sv.glob('*')))]
     manifest['tones']=[{'path':f.relative_to(root).as_posix(),'license':'MIT','sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(sounds.glob('*.wav'))]
     write_utf8(root/'assets/brand/extracted/manifest.json',json.dumps(manifest,ensure_ascii=False,indent=2)+chr(10))
